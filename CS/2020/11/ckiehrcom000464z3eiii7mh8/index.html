@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>解决网站配置完https后访问http失败 - Ryao&#39;s Blog</title>
+  <title>为网站配置https/http2 - Ryao&#39;s Blog</title>
   
     <meta name="keywords" content="http,nginx">
   
@@ -160,6 +160,24 @@
             
             
               <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-address-book fa-fw'></i>Friends
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/about/
                   
                     rel="nofollow"
@@ -266,6 +284,24 @@
               
             
               <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends
+                  
+                    rel="nofollow"
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-address-book fa-fw'></i>Friends
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/about/
                   
                     rel="nofollow"
@@ -312,13 +348,6 @@
       <div class='list-h'>
         
           
-            <a href="/"
-              
-              
-              id="home">
-              <i class='fas fa-home fa-fw'></i><p>Home</p>
-            </a>
-          
             <a href="/tags/"
               
                 rel="nofollow"
@@ -335,6 +364,15 @@
               
               id="categories">
               <i class='fas fa-folder-open fa-fw'></i><p>Categories</p>
+            </a>
+          
+            <a href="/archives/"
+              
+                rel="nofollow"
+              
+              
+              id="archives">
+              <i class='fas fa-archive fa-fw'></i><p>Achives</p>
             </a>
           
             <a href="/about/"
@@ -371,13 +409,9 @@
   <div class="article-meta" id="top">
     
     
-      <a title='解决网站配置完https后访问http失败' href='/uncategorized/2020/11/ckiehrcoq000964z3f9m6asqo/'>
-        <img class='thumbnail' src='https://pic.downk.cc/item/5fcd0730394ac52378a4cb33.jpg'>
-      </a>
-    
     
       <h1 class="title">
-        解决网站配置完https后访问http失败
+        为网站配置https/http2
       </h1>
       <div class='new-meta-box'>
         
@@ -394,6 +428,13 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/CS/">CS</a>
+    </a>
+  </div>
+
 
           
         
@@ -409,7 +450,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月6日</p>
+    <p>发布于：2020年11月15日</p>
   </a>
 </div>
 
@@ -426,15 +467,49 @@
 
 
   
-  <p>报错如下： </p>
-<p>解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line"><span class="attribute">server_name</span> ryaoknw.site; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
+<p>https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2相比于https有了一些新特性。于是这里配置http2. </p>
+<h2 id="配置http2"><a href="#配置http2" class="headerlink" title="配置http2"></a>配置http2</h2><p>使用免费的<a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a>，在官网中会告诉你用 <a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a> ACME 客户端自动配置，进去选择自己的nginx版本和系统版本就好了。页面上会出现操作步骤。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install core;</span><br><span class="line">sudo snap refresh core</span><br></pre></td></tr></table></figure>
 
-<p>注意启用https和http的时候要把80和433端口开放</p>
-<p>之后看了一下各个网站，采用的方式也是把http跳转到 https</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install --classic certbot </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
+
+<p>于是certbot就自动配置好nginx </p>
+<p>使用这个来自动续订：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+
 <hr>
 
-<p>发现也可以直接在配置ssl的server块中监听80端口，自己当时的理解错了，url里的http和https只是指定协议，域名依旧是dns解析出来的ip地址，只要改一下端口就好了</p>
+<p>我们也可以手动折腾一下。</p>
+<p>基本配置:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="comment">#listen 443 ssl http2 default_server; </span></span><br><span class="line"><span class="attribute">listen</span> <span class="number">443</span> ssl http2; </span><br><span class="line"><span class="attribute">server_name</span> www.yoursite.com; </span><br><span class="line"><span class="attribute">ssl_certificate</span> /path/to/public.crt; </span><br><span class="line"><span class="attribute">ssl_certificate_key</span> /path/to/private.key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>禁止不安全的协议:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_ciphers</span> <span class="string">&#x27;ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4&#x27;</span>; </span><br></pre></td></tr></table></figure>
+
+<p>启用HSTS:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>; </span><br><span class="line"><span class="attribute">server_name</span> yoursite;</span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>  其他的安全配置</p>
+</blockquote>
+<p>缓存连接凭据:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">20m</span>;</span><br><span class="line"><span class="attribute">ssl_session_timeout</span> <span class="number">60m</span>;</span><br></pre></td></tr></table></figure>
+
+<p>配置赫尔曼密钥:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">openssl</span> dhparam -out dhparam.pem <span class="number">2048</span> <span class="comment">#在 ssh 运行， openssl 生成 2048 位的密钥而不是当作参数写入 nginx.conf 文件</span></span><br><span class="line">ssl_dhparam /path/to/dhparam.pem; <span class="comment">#在 .conf 中配置</span></span><br></pre></td></tr></table></figure>
+
+<p>OCSP 缝合</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_stapling</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">ssl_stapling_verify</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">ssl_trusted_certificate</span> /etc/nginx/cert/trustchain.crt; </span><br><span class="line"><span class="attribute">resolver</span> <span class="number">233.5.5.5</span> <span class="number">233.6.6.6</span> valid=<span class="number">300s</span>;</span><br></pre></td></tr></table></figure>
+
 
   
   
@@ -452,7 +527,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://blog.ryaoknw.site/uncategorized/2020/11/ckiehrcoq000964z3f9m6asqo/>https://blog.ryaoknw.site/uncategorized/2020/11/ckiehrcoq000964z3f9m6asqo/</a></p>
+                <p>本文永久链接是：<a href=https://blog.ryaoknw.site/CS/2020/11/ckiehrcom000464z3eiii7mh8/>https://blog.ryaoknw.site/CS/2020/11/ckiehrcom000464z3eiii7mh8/</a></p>
               
             
           </blockquote>
@@ -469,10 +544,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-06T15:53:49+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T15:06:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月6日</p>
+    <p>更新于：2020年11月15日</p>
   </a>
 </div>
 
@@ -494,7 +569,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/uncategorized/2020/11/ckiehrcoq000964z3f9m6asqo/&title=解决网站配置完https后访问http失败 - Ryao's Blog&pics=https://pic.downk.cc/item/5fcd0730394ac52378a4cb33.jpg&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/CS/2020/11/ckiehrcom000464z3eiii7mh8/&title=为网站配置https/http2 - Ryao's Blog&summary="
           
           >
           
@@ -506,7 +581,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/uncategorized/2020/11/ckiehrcoq000964z3f9m6asqo/&title=解决网站配置完https后访问http失败 - Ryao's Blog&pics=https://pic.downk.cc/item/5fcd0730394ac52378a4cb33.jpg&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/CS/2020/11/ckiehrcom000464z3eiii7mh8/&title=为网站配置https/http2 - Ryao's Blog&summary="
           
           >
           
@@ -518,7 +593,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/uncategorized/2020/11/ckiehrcoq000964z3f9m6asqo/&title=解决网站配置完https后访问http失败 - Ryao's Blog&pics=https://pic.downk.cc/item/5fcd0730394ac52378a4cb33.jpg&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/CS/2020/11/ckiehrcom000464z3eiii7mh8/&title=为网站配置https/http2 - Ryao's Blog&summary="
           
           >
           
@@ -548,19 +623,19 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/uncategorized/2020/11/ckiehrcol000264z33kwkb75n/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>note:图解HTTP(1)</p>
-          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
-报文要么是一个请求报文，要么就是一个响应报文。
-一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
+        <a class='prev' href='/uncategorized/2020/12/ckiehrcop000764z39bty4dyo/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用hexo搭建个人网站</p>
+          <p class='content'>用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
+来了，网站却用不了
+虽然我启用了81端口，nginx也监听了相应端口，然而Wo...</p>
         </a>
       
       
-        <a class='next' href='/uncategorized/2020/11/ckid7qmu40000ryz325727jta/'>
-          <p class='title'>Hello, World!<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮...</p>
+        <a class='next' href='/CS/2020/11/ckiehrcol000264z33kwkb75n/'>
+          <p class='title'>note:图解HTTP(1)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
+报文要么是一个请求报文，要么就是一个响应报文。
+一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
         </a>
       
     </div>
@@ -593,6 +668,20 @@
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttp2"><span class="toc-text">配置http2</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -609,7 +698,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="解决网站配置完https后访问http失败";
+  pdata.postTitle="为网站配置https/http2";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

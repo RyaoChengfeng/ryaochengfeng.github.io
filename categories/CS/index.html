@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/11 - Ryao&#39;s Blog</title>
+  <title>分类：CS - Ryao&#39;s Blog</title>
   
 
   
@@ -58,7 +58,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -329,7 +329,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://pic.downk.cc/item/5fcd9c193ffa7d37b3859a48.jpg"></div>
           
@@ -400,16 +400,14 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
     
       
-        
-          
-        
-          
         
           
         
@@ -516,100 +514,6 @@ https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/">
-        解决网站配置完https后访问http失败
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        报错如下： 
-解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦
-12345server &#123; listen 80;server_name ryaoknw.site; return 301 https://$server_name$request_uri; &#125;
-
-注意启用https和http的时候要把80和433端口开放
-之后看了一下各个网站，采用...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%8A%A5%E9%94%99/">报错</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/uncategorized/2020/11/ckid7qmu40000ryz325727jta/">
-        Hello, World!
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p><img src="https://pic.downk.cc/item/5fcd0730394ac52378a4cb3b.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fcd0730394ac52378a4cb3b.jpg" srcset="data:image/png;base64,666"></p>
-<p>历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃</p>
-<p>之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-11-05</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/uncategorized/2020/11/ckid7qmu40000ryz325727jta/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -617,7 +521,8 @@ https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -768,7 +673,7 @@ https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

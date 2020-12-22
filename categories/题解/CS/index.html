@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -19,9 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>解决网站配置完https后访问http失败 - Ryao&#39;s Blog</title>
-  
-    <meta name="keywords" content="http,nginx">
+  <title>分类：CS - Ryao&#39;s Blog</title>
   
 
   
@@ -329,7 +329,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper post dock' style="display: none;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://pic.downk.cc/item/5fcd9c193ffa7d37b3859a48.jpg"></div>
           
@@ -400,231 +400,174 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-
-
-  
-  <div class="article-meta" id="top">
     
+      
+  <section class="post-list">
     
-    
-      <h1 class="title">
-        解决网站配置完https后访问http失败
-      </h1>
-      <div class='new-meta-box'>
+      
         
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="https://pic.downk.cc/item/5fcd091c394ac52378a607e9.jpg">
-    <p>Ryao</p>
-  </a>
-</div>
-
           
         
           
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E6%8A%A5%E9%94%99/">报错</a>
-    </a>
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapvd0003maz31imb2fud/">
+        算法题解(3)-贪心
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        P2240 【深基12.例1】部分背包问题好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#include &lt;bits/stdc++.h&gt;s...
+      
+    
   </div>
-
-
-          
-        
-          
-            
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
-
-
-          
+    <div class='meta-v3' line_style='solid'>
+      <div>
         
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月6日</p>
-  </a>
-</div>
-
-          
+        <time>2020-12-21</time>
         
-          
-            
-
-          
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a><span class="sep"></span><a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/CS/">CS</a>
         
       </div>
-    
-  </div>
-
-
-  
-  <p>报错如下： </p>
-<p>解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line"><span class="attribute">server_name</span> ryaoknw.site; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意启用https和http的时候要把80和433端口开放</p>
-<p>之后看了一下各个网站，采用的方式也是把http跳转到 https</p>
-<hr>
-
-<p>发现也可以直接在配置ssl的server块中监听80端口，自己当时的理解错了，url里的http和https只是指定协议，域名依旧是dns解析出来的ip地址，只要改一下端口就好了</p>
-
-  
-  
-    
-    <div class='footer'>
       
-      
-      
-        <div class='copyright'>
-          <blockquote>
-            
-              
-                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-              
-            
-              
-                <p>本文永久链接是：<a href=https://ryaoknw.site/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/>https://ryaoknw.site/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/</a></p>
-              
-            
-          </blockquote>
+        <div>
+          <a class='readmore' href='/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapvd0003maz31imb2fud/'>
+            阅读全文
+          </a>
         </div>
       
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapvc0001maz371ch8arj/">
+        算法题解(2)-二分
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      <p><img src="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" srcset="data:image/png;base64,666"></p>
+<h4 id="洛谷P1873-砍树"><a href="#洛谷P1873-砍树" class="headerlink" title="洛谷P1873 砍树"></a>洛谷P1873 砍树</h4>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-12-12</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a><span class="sep"></span><a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/CS/">CS</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapvc0001maz371ch8arj/'>
+            阅读全文
+          </a>
+        </div>
       
     </div>
   
-  
-    
 
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-06T15:53:49+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月6日</p>
-  </a>
 </div>
 
+          </div>
         
       
         
-          
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapv90000maz3a23sa574/">
+        算法题解(1)-排序
+      </a>
+    </h2>
+  
+  <div class='md'>
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/&title=解决网站配置完https后访问http失败 - Ryao's Blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/&title=解决网站配置完https后访问http失败 - Ryao's Blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/&title=解决网站配置完https后访问http失败 - Ryao's Blog&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
-          
-        </a>
-      
-    
-      
-    
+        排序（c++）虽然是c++，其实是c语法
+洛谷P1271 选举学生会已经得知了数据范围，使用桶排序
+123456789101112131415161718192021#include &lt;cstdio&gt;int main() &#123;    int n, m;    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);    int num;    i...
       
     
   </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time>2020-12-11</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a><span class="sep"></span><a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/CS/">CS</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapv90000maz3a23sa574/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
 </div>
 
-
-
+          </div>
         
       
-    </div>
-  </div>
-
-
-  
-  
-
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/CS/2020/11/ckiehrcol000264z33kwkb75n/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>note:图解HTTP(1)</p>
-          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
-报文要么是一个请求报文，要么就是一个响应报文。
-一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
-        </a>
-      
-      
-        <a class='next' href='/uncategorized/2020/11/ckid7qmu40000ryz325727jta/'>
-          <p class='title'>Hello, World!<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
-  
-
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-  </article>
-
+  </section>
+  
+    
+  
 
 
-
-
-
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -632,14 +575,154 @@
     
     
 
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Ryao</h2>
+        
+        
+          <p>Stay hungry, stay foolish.</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:liaocfe@gmail.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/ryaochengfeng/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
+    
+  </header>
 
 
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/CS/" href="/categories/CS/"
+            id="categoriesCS"
+            ><div class='name'>CS</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
+            id="categoriesE68AA5E99499"
+            ><div class='name'>报错</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%8A%A5%E9%94%99/CS/" href="/categories/%E6%8A%A5%E9%94%99/CS/"
+            id="categoriesE68AA5E99499CS"
+            ><div class='name'>CS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+            id="categoriesE695B0E68DAEE7BB93E69E84"
+            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%94%E8%AE%B0/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%94%E8%AE%B0/"
+            id="categoriesE695B0E68DAEE7BB93E69E84E7AC94E8AEB0"
+            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%94%E8%AE%B0/CS/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%94%E8%AE%B0/CS/"
+            id="categoriesE695B0E68DAEE7BB93E69E84E7AC94E8AEB0CS"
+            ><div class='name'>CS</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            id="categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E9%A2%98%E8%A7%A3/CS/" href="/categories/%E9%A2%98%E8%A7%A3/CS/"
+            id="categoriesE9A298E8A7A3CS"
+            ><div class='name'>CS</div><div class='badge'>(3)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 24px; color: #555">http</a> <a href="/tags/nginx/" style="font-size: 19px; color: #777">nginx</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
+    </div>
+  </section>
+
+
+  
 
   
 
 
 </aside>
-
 
 
         
@@ -649,8 +732,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=true;
-  pdata.postTitle="解决网站配置完https后访问http失败";
+  pdata.ispage=false;
+  pdata.postTitle="";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

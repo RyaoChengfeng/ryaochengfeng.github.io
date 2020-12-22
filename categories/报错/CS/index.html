@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：hexo - Ryao&#39;s Blog</title>
+  <title>分类：CS - Ryao&#39;s Blog</title>
   
 
   
@@ -424,17 +424,20 @@
   
     
     <h2 class="article-title" >
-      <a href="/CS/2020/12/ckiehrcop000764z39bty4dyo/">
-        用hexo搭建个人网站
+      <a href="/%E6%8A%A5%E9%94%99/CS/2020/11/ckiehrcoq000964z3f9m6asqo/">
+        解决网站配置完https后访问http失败
       </a>
     </h2>
   
   <div class='md'>
     
       
-        用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
-来了，网站却用不了
-虽然我启用了81端口，nginx也监听了相应端口，然而WordPress却没有改配置（踩坑）。于是进去后就只是一个html。。WordPress管理端是默认端口，于是也没办法管了，只好迅速配一个hexo，刚好自己也准备做一个，只不过太忙了（所以现在更忙了，淦...
+        报错如下： 
+解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦
+12345server &#123; listen 80;server_name ryaoknw.site; return 301 https://$server_name$request_uri; &#125;
+
+注意启用https和http的时候要把80和433端口开放
+之后看了一下各个网站，采用...
       
     
   </div>
@@ -442,15 +445,15 @@
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-12-07</time>
+        <time>2020-11-06</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/CS/">CS</a>
+          <a class="category-link" href="/categories/%E6%8A%A5%E9%94%99/">报错</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%A5%E9%94%99/CS/">CS</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/CS/2020/12/ckiehrcop000764z39bty4dyo/'>
+          <a class='readmore' href='/%E6%8A%A5%E9%94%99/CS/2020/11/ckiehrcoq000964z3f9m6asqo/'>
             阅读全文
           </a>
         </div>

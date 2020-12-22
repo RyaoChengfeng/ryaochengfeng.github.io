@@ -179,7 +179,7 @@
   </entry>
   <entry>
     <title>解决网站配置完https后访问http失败</title>
-    <url>/%E6%8A%A5%E9%94%99/CS/2020/11/ckiehrcoq000964z3f9m6asqo/</url>
+    <url>/%E6%8A%A5%E9%94%99/2020/11/ckiehrcoq000964z3f9m6asqo/</url>
     <content><![CDATA[<p>报错如下： </p>
 <p>解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦</p>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line"><span class="attribute">server_name</span> ryaoknw.site; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -191,8 +191,8 @@
 <p>发现也可以直接在配置ssl的server块中监听80端口，自己当时的理解错了，url里的http和https只是指定协议，域名依旧是dns解析出来的ip地址，只要改一下端口就好了</p>
 ]]></content>
       <categories>
-        <category>报错</category>
         <category>CS</category>
+        <category>报错</category>
       </categories>
       <tags>
         <tag>http</tag>
@@ -201,7 +201,7 @@
   </entry>
   <entry>
     <title>算法题解(1)-排序</title>
-    <url>/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapv90000maz3a23sa574/</url>
+    <url>/%E9%A2%98%E8%A7%A3/2020/12/ckixxapv90000maz3a23sa574/</url>
     <content><![CDATA[<h3 id="排序（c-）"><a href="#排序（c-）" class="headerlink" title="排序（c++）"></a>排序（c++）</h3><p>虽然是c++，其实是c语法</p>
 <h4 id="洛谷P1271-选举学生会"><a href="#洛谷P1271-选举学生会" class="headerlink" title="洛谷P1271 选举学生会"></a>洛谷P1271 选举学生会</h4><p>已经得知了数据范围，使用桶排序</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">int</span> bucket[n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; ++i) &#123;</span><br><span class="line">        bucket[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">        bucket[num] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; bucket[i]; ++j) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -251,8 +251,8 @@ P1059重新想了一下，也可以用快排
 
 ]]></content>
       <categories>
-        <category>题解</category>
         <category>CS</category>
+        <category>题解</category>
       </categories>
       <tags>
         <tag>排序</tag>
@@ -261,7 +261,7 @@ P1059重新想了一下，也可以用快排
   </entry>
   <entry>
     <title>算法题解(2)-二分</title>
-    <url>/%E9%A2%98%E8%A7%A3/CS/2020/12/ckixxapvc0001maz371ch8arj/</url>
+    <url>/%E9%A2%98%E8%A7%A3/2020/12/ckixxapvc0001maz371ch8arj/</url>
     <content><![CDATA[<p><img src="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" srcset="data:image/png;base64,666"></p>
 <h4 id="洛谷P1873-砍树"><a href="#洛谷P1873-砍树" class="headerlink" title="洛谷P1873 砍树"></a>洛谷P1873 砍树</h4><a id="more"></a>
 
@@ -282,8 +282,8 @@ P1059重新想了一下，也可以用快排
 
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
       <categories>
-        <category>题解</category>
         <category>CS</category>
+        <category>题解</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -318,7 +318,7 @@ P1059重新想了一下，也可以用快排
   </entry>
   <entry>
     <title>数据结构-1-链表</title>
-    <url>/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%94%E8%AE%B0/CS/2020/12/ckj0bcloe0000j5z375ya4xoq/</url>
+    <url>/%E7%AC%94%E8%AE%B0/2020/12/ckj0bcloe0000j5z375ya4xoq/</url>
     <content><![CDATA[<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>指针大法好</p>
 <p>真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久</p>
 <hr>
@@ -344,9 +344,9 @@ P1059重新想了一下，也可以用快排
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> Elemtype;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    Elemtype data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">Link</span>;</span></span><br><span class="line"></span><br><span class="line">Link *clink;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateLink</span><span class="params">(Link *L,Elemtype data[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    Link *p;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    L-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        p-&gt;next=L-&gt;next;</span><br><span class="line">        L-&gt;next=p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到第i个节点的data</span></span><br><span class="line"><span class="function">Elemtype <span class="title">GetElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在第i个节点之前插入新的node，L长度+1</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span>  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*s;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Link));</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Elemtype <span class="title">DeleteElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*q;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p-&gt;next&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(p-&gt;next)||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q=p-&gt;next;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
+        <category>CS</category>
         <category>数据结构</category>
         <category>笔记</category>
-        <category>CS</category>
       </categories>
       <tags>
         <tag>线性表</tag>

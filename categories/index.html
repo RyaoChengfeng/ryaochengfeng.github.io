@@ -422,6 +422,20 @@
                   </span>
                 </a>
               
+                <a class="" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;数据结构</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
+                <a class=" child" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%94%E8%AE%B0/">
+                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;笔记</span>
+                  <span class="title">
+                    (1)
+                  </span>
+                </a>
+              
                 <a class="" href="/categories/%E9%A2%98%E8%A7%A3/">
                   <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;题解</span>
                   <span class="title">
@@ -516,7 +530,7 @@
     
       
         <div class='copyright'>
-        <p><a href="https://blog.ryaoknw.site/">Copyright © 2017-2020 Liaochengfeng</a></p>
+        <p><a href="https://ryaoknw.site/">Copyright © 2017-2020 Liaochengfeng</a></p>
 
         </div>
       
@@ -934,7 +948,7 @@ function setSearchService() {
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://blog.ryaoknw.site' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://ryaoknw.site' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -952,7 +966,7 @@ function setSearchService() {
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://blog.ryaoknw.site' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://ryaoknw.site' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -974,7 +988,7 @@ function setSearchService() {
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://blog.ryaoknw.site' + pv.getAttribute('data-path');
+          var url = 'https://ryaoknw.site' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增

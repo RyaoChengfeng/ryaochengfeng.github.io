@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>为网站配置https/http2 - Ryao&#39;s Blog</title>
+  <title>用hexo搭建个人网站 - Ryao&#39;s Blog</title>
   
-    <meta name="keywords" content="http,nginx">
+    <meta name="keywords" content="hexo">
   
 
   
@@ -413,7 +413,7 @@
     
     
       <h1 class="title">
-        为网站配置https/http2
+        用hexo搭建个人网站
       </h1>
       <div class='new-meta-box'>
         
@@ -443,7 +443,7 @@
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div>
 
 
           
@@ -452,7 +452,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月15日</p>
+    <p>发布于：2020年12月7日</p>
   </a>
 </div>
 
@@ -469,49 +469,62 @@
 
 
   
-  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
-<p>https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2相比于https有了一些新特性。于是这里配置http2. </p>
-<h2 id="配置http2"><a href="#配置http2" class="headerlink" title="配置http2"></a>配置http2</h2><p>使用免费的<a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a>，在官网中会告诉你用 <a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a> ACME 客户端自动配置，进去选择自己的nginx版本和系统版本就好了。页面上会出现操作步骤。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install core;</span><br><span class="line">sudo snap refresh core</span><br></pre></td></tr></table></figure>
+  <h1 id="用hexo搭建个人网站"><a href="#用hexo搭建个人网站" class="headerlink" title="用hexo搭建个人网站"></a>用hexo搭建个人网站</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl</p>
+<p>来了，网站却用不了</p>
+<p>虽然我启用了81端口，nginx也监听了相应端口，然而WordPress却没有改配置（踩坑）。于是进去后就只是一个html。。WordPress管理端是默认端口，于是也没办法管了，只好迅速配一个hexo，刚好自己也准备做一个，只不过太忙了（所以现在更忙了，淦）</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>你需要github或者gitee的账号，以及git的基本操作知识</p>
+<p>我的环境是Ubuntu。</p>
+<p>要求：最新版本的nodejs、npm、git。具体安装 or 更新方法不在此赘述。</p>
+<p><strong>请在自己的电脑上！而不是云服务器！</strong></p>
+<p>使用npm安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo -cil</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install --classic certbot </span><br></pre></td></tr></table></figure>
+<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p><strong>请全部用sudo（不然会出现权限问题）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
+<p>若报错:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.js:39</span><br><span class="line">throw new ERR_CONSOLE_WRITABLE_STREAM(&#39;stdout&#39;);</span><br><span class="line">^</span><br><span class="line"></span><br><span class="line">TypeError [ERR_CONSOLE_WRITABLE_STREAM]: Console expects a writable stream instance for stdout</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
+<p>请更新npm和nodejs</p>
+<p><strong>同时请保证文件夹内是空的！</strong></p>
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
 
-<p>于是certbot就自动配置好nginx </p>
-<p>使用这个来自动续订：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+<p><strong>_config.yml</strong>：网站的 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置</a> 信息，您可以在此配置大部分的参数</p>
+<p>启动服务器。在路径下，命令行（即Git Bash）输入以下命令，运行即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
-<hr>
+<p>浏览器访问网址： <code>http://localhost:4000/</code></p>
+<p>至此，您的Hexo博客已经搭建在本地。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>gitee新建仓库，名为自己的用户名</p>
+<p>进入项目文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim _config.yml </span><br></pre></td></tr></table></figure>
 
-<p>我们也可以手动折腾一下。</p>
-<p>基本配置:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="comment">#listen 443 ssl http2 default_server; </span></span><br><span class="line"><span class="attribute">listen</span> <span class="number">443</span> ssl http2; </span><br><span class="line"><span class="attribute">server_name</span> www.yoursite.com; </span><br><span class="line"><span class="attribute">ssl_certificate</span> /path/to/public.crt; </span><br><span class="line"><span class="attribute">ssl_certificate_key</span> /path/to/private.key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编辑theme来修改主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: volantis</span><br></pre></td></tr></table></figure>
 
-<p>禁止不安全的协议:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_ciphers</span> <span class="string">&#x27;ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4&#x27;</span>; </span><br></pre></td></tr></table></figure>
+<p>终端输入（<strong>要在项目文件夹</strong>）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-volantis</span><br></pre></td></tr></table></figure>
 
-<p>启用HSTS:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>;</span><br></pre></td></tr></table></figure>
+<p>编辑<code>_config.yml</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@gitee.com:himmi&#x2F;himmi.git #或者https等等</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>; </span><br><span class="line"><span class="attribute">server_name</span> yoursite;</span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>安装插件,要在<strong>站点目录</strong>下执行以上安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
+<p>如果已经在其他目录安装了<code>hexo-deployer-git</code>插件，可以使用以下命令卸载该插件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo deploy</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>  其他的安全配置</p>
-</blockquote>
-<p>缓存连接凭据:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">20m</span>;</span><br><span class="line"><span class="attribute">ssl_session_timeout</span> <span class="number">60m</span>;</span><br></pre></td></tr></table></figure>
-
-<p>配置赫尔曼密钥:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">openssl</span> dhparam -out dhparam.pem <span class="number">2048</span> <span class="comment">#在 ssh 运行， openssl 生成 2048 位的密钥而不是当作参数写入 nginx.conf 文件</span></span><br><span class="line">ssl_dhparam /path/to/dhparam.pem; <span class="comment">#在 .conf 中配置</span></span><br></pre></td></tr></table></figure>
-
-<p>OCSP 缝合</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_stapling</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">ssl_stapling_verify</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">ssl_trusted_certificate</span> /etc/nginx/cert/trustchain.crt; </span><br><span class="line"><span class="attribute">resolver</span> <span class="number">233.5.5.5</span> <span class="number">233.6.6.6</span> valid=<span class="number">300s</span>;</span><br></pre></td></tr></table></figure>
-
+<p>至此，部署完毕。</p>
+<p>剩下的配置请参考hexo的doc，主题的配置参考各自的doc（其实配置才是折腾的地方）</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.simon96.online/2018/10/12/hexo-tutorial/">https://www.simon96.online/2018/10/12/hexo-tutorial/</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4136#article-header3">https://gitee.com/help/articles/4136#article-header3</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/95781368">https://blog.csdn.net/mqdxiaoxiao/article/details/95781368</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000011203711">https://segmentfault.com/a/1190000011203711</a></p>
 
   
   
@@ -529,7 +542,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://ryaoknw.site/CS/2020/11/ckmk72e230005f0z30k00cxl0/>https://ryaoknw.site/CS/2020/11/ckmk72e230005f0z30k00cxl0/</a></p>
+                <p>本文永久链接是：<a href=https://ryaoknw.site/CS/2020/12/ckmk74y6c000byqz3ercr2wul/>https://ryaoknw.site/CS/2020/12/ckmk74y6c000byqz3ercr2wul/</a></p>
               
             
           </blockquote>
@@ -546,10 +559,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T15:06:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T02:31:44+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月15日</p>
+    <p>更新于：2020年12月23日</p>
   </a>
 </div>
 
@@ -558,7 +571,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div>
 
 
         
@@ -571,7 +584,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/CS/2020/11/ckmk72e230005f0z30k00cxl0/&title=为网站配置https/http2 - Ryao's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/CS/2020/12/ckmk74y6c000byqz3ercr2wul/&title=用hexo搭建个人网站 - Ryao's Blog&summary="
           
           >
           
@@ -583,7 +596,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/CS/2020/11/ckmk72e230005f0z30k00cxl0/&title=为网站配置https/http2 - Ryao's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/CS/2020/12/ckmk74y6c000byqz3ercr2wul/&title=用hexo搭建个人网站 - Ryao's Blog&summary="
           
           >
           
@@ -595,7 +608,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/CS/2020/11/ckmk72e230005f0z30k00cxl0/&title=为网站配置https/http2 - Ryao's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/CS/2020/12/ckmk74y6c000byqz3ercr2wul/&title=用hexo搭建个人网站 - Ryao's Blog&summary="
           
           >
           
@@ -625,19 +638,18 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/CS/2020/12/ckmk72e27000bf0z3byhqb5vu/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用hexo搭建个人网站</p>
-          <p class='content'>用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
-来了，网站却用不了
-虽然我启用了81端口，nginx也监听了相应端口，然而Wo...</p>
+        <a class='prev' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6d000dyqz32hlh6dnr/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>算法题解(1)-排序</p>
+          <p class='content'>排序（c++）虽然是c++，其实是c语法
+洛谷P1271 选举学生会已经得知了数据范围，使用桶排序
+123456789101112131415161718192021#include &lt;c...</p>
         </a>
       
       
-        <a class='next' href='/CS/2020/11/ckmk72e220003f0z35ooxc69h/'>
-          <p class='title'>note:图解HTTP(1)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
-报文要么是一个请求报文，要么就是一个响应报文。
-一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
+        <a class='next' href='/CS/2020/11/ckmk74y690005yqz35xhk4lti/'>
+          <p class='title'>为网站配置https/http2<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下
+https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2...</p>
         </a>
       
     </div>
@@ -680,7 +692,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttp2"><span class="toc-text">配置http2</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%99"><span class="toc-text">建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
     </div>
   </section>
 
@@ -700,7 +712,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="为网站配置https/http2";
+  pdata.postTitle="用hexo搭建个人网站";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

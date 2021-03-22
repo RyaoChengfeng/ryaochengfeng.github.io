@@ -19,14 +19,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>算法题解(2)-二分 - Ryao&#39;s Blog</title>
-  
-    <meta name="keywords" content="算法,二分查找">
+  <title>Hello, World! - Ryao&#39;s Blog</title>
   
 
   
     <meta name="description" content="
-洛谷P1873 砍树">
+历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
+之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了...">
   
 
   <!-- feed -->
@@ -416,7 +415,7 @@
     
     
       <h1 class="title">
-        算法题解(2)-二分
+        Hello, World!
       </h1>
       <div class='new-meta-box'>
         
@@ -433,21 +432,11 @@
         
           
             
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/CS/">CS</a><span class="sep"></span><a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
-    </a>
-  </div>
-
 
           
         
           
             
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分查找</p></a></div>
-
 
           
         
@@ -455,7 +444,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月12日</p>
+    <p>发布于：2020年11月5日</p>
   </a>
 </div>
 
@@ -472,25 +461,17 @@
 
 
   
-  <p><img src="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" srcset="data:image/png;base64,666"></p>
-<h4 id="洛谷P1873-砍树"><a href="#洛谷P1873-砍树" class="headerlink" title="洛谷P1873 砍树"></a>洛谷P1873 砍树</h4><a id="more"></a>
+  <p><img src="https://pic.downk.cc/item/5fcd0730394ac52378a4cb3b.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fcd0730394ac52378a4cb3b.jpg" srcset="data:image/png;base64,666"></p>
+<p>历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃</p>
+<p>之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和</p>
+<a id="more"></a>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(a, b) a&gt;b?a:b</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN(a, b) a&gt;b?b:a</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> N, M, mid, length;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> l = <span class="number">0</span>, s = <span class="number">1000000000</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> height[N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;height[i]);</span><br><span class="line">        l = MAX(height[i], l);</span><br><span class="line">        s = MIN(height[i], s);</span><br><span class="line">    &#125;</span><br><span class="line">    mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (s + <span class="number">1</span> &lt; l) &#123;</span><br><span class="line">        length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mid &lt; height[i]) length += height[i] - mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (length &gt;= M) &#123;</span><br><span class="line">            s = mid;</span><br><span class="line">            mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            l = mid;</span><br><span class="line">            mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, mid);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>域名解析。期间域名解析配错了，又折腾了好久（还有v2ray开全局代理访问会爆500啊！）收获就是之后重装都异常熟练</p>
+<p><img src="https://pic.downk.cc/item/5fce09ee3ffa7d37b3da8877.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fce09ee3ffa7d37b3da8877.jpg" srcset="data:image/png;base64,666"></p>
+<p>再就是欢乐地选主题，换了三个siren，sakura和krato，而且最终也没有和ks和zcy一样用kale。还是用了krato，然后稍微折腾一下就成功了</p>
+<p>算是完成了自己的一个浪漫。不过还是想之后有时间写静态页面的博客，但是最近ddl太！多！了！从开学到现在作息非常极客！急需时间管理大法。</p>
+<p>之后有时间要陆陆续续地把自己的东西整理一下，搬到博客上来</p>
 
-<h4 id="洛谷P2249-【深基13-例1】查找"><a href="#洛谷P2249-【深基13-例1】查找" class="headerlink" title="洛谷P2249 【深基13.例1】查找"></a>洛谷P2249 【深基13.例1】查找</h4><p>就是写二分，但是要注意输出最左边，也就是最小的，怎么找出左边界需要想一下（于是我一直wa</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = len;</span><br><span class="line">    <span class="keyword">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (l&lt;r) &#123;</span><br><span class="line">        mid =l + (r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] &lt; value)</span><br><span class="line">            l = mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (arr[l]==value)</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">int</span> number[n+<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;number[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;value);</span><br><span class="line">        index=find(number,n,value);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="洛谷P1678-烦恼的高考志愿"><a href="#洛谷P1678-烦恼的高考志愿" class="headerlink" title="洛谷P1678 烦恼的高考志愿"></a>洛谷P1678 烦恼的高考志愿</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min;</span><br><span class="line">    <span class="keyword">if</span> (a&lt;b)min=a;</span><br><span class="line">    <span class="keyword">else</span> min=b;</span><br><span class="line">    <span class="keyword">return</span> min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">int</span> school[n+<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;school[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::sort(school,school+n);</span><br><span class="line">    <span class="keyword">int</span> stu[m+<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;stu[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(school[mid]&lt;=stu[i])&#123;</span><br><span class="line">                l=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                r=mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(stu[i]&lt;=school[<span class="number">0</span>])&#123;</span><br><span class="line">            sum+=school[<span class="number">0</span>]-stu[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            sum+=min(<span class="built_in">abs</span>(school[l<span class="number">-1</span>]-stu[i]),<span class="built_in">abs</span>(school[l]-stu[i]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="P2440-木材加工"><a href="#P2440-木材加工" class="headerlink" title="P2440 木材加工"></a>P2440 木材加工</h4><p>和砍树问题的思路一样，另写一个函数来判断是否符合要求，然后用二分法确定最大的值即可</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, k;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">jd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        sum += a[i] / x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum&gt;=k)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> l = <span class="number">0</span>, r = <span class="number">100000001</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> mid;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</span><br><span class="line">        mid = l+(r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (jd(mid)) &#123;</span><br><span class="line">            l = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,l);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="P2678-跳石头"><a href="#P2678-跳石头" class="headerlink" title="P2678 跳石头"></a>P2678 跳石头</h4><p>同样的二分套路，这里定义了所在石头和下一个石头，mid大于间距时，将石头搬走，同时计数，mid小与或等于间距时，进入下一个石头。当搬走的总数要小于预计的数目时，证明mid偏小，将left右移，否则right左移，最终得到正确的mid。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> num[<span class="number">100000</span>];</span><br><span class="line"><span class="keyword">long</span> l,n,m,dis=<span class="number">0</span>,first=<span class="number">0</span>,end;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">jd</span><span class="params">(<span class="keyword">long</span> mid)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= n)&#123;</span><br><span class="line">        first=num[temp];</span><br><span class="line">        end=num[i];</span><br><span class="line">        dis=end-first;</span><br><span class="line">        <span class="keyword">if</span> (dis&lt;mid)&#123;</span><br><span class="line">            sum++;</span><br><span class="line">        &#125; <span class="keyword">else</span> temp=i;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum&lt;=m)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld%ld%ld&quot;</span>,&amp;l,&amp;n,&amp;m);</span><br><span class="line">    num[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> left=<span class="number">0</span>,right=l,mid,rst;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right)&#123;</span><br><span class="line">        mid=left+(right-left)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (jd(mid))&#123;</span><br><span class="line">            rst=mid;</span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> right=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%ld&quot;</span>,rst);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
   
   
     
@@ -507,7 +488,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e2a000gf0z3e8nq2qbg/>https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e2a000gf0z3e8nq2qbg/</a></p>
+                <p>本文永久链接是：<a href=https://ryaoknw.site/uncategorized/2020/11/ckmk74y650001yqz3gjqbbfsm/>https://ryaoknw.site/uncategorized/2020/11/ckmk74y650001yqz3gjqbbfsm/</a></p>
               
             
           </blockquote>
@@ -524,10 +505,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T02:32:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-05T16:59:07+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月23日</p>
+    <p>更新于：2020年11月5日</p>
   </a>
 </div>
 
@@ -535,9 +516,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分查找</p></a></div>
-
 
         
       
@@ -549,8 +527,9 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e2a000gf0z3e8nq2qbg/&title=算法题解(2)-二分 - Ryao's Blog&summary=
-洛谷P1873 砍树"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/uncategorized/2020/11/ckmk74y650001yqz3gjqbbfsm/&title=Hello, World! - Ryao's Blog&summary=
+历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
+之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和"
           
           >
           
@@ -562,8 +541,9 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e2a000gf0z3e8nq2qbg/&title=算法题解(2)-二分 - Ryao's Blog&summary=
-洛谷P1873 砍树"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/uncategorized/2020/11/ckmk74y650001yqz3gjqbbfsm/&title=Hello, World! - Ryao's Blog&summary=
+历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
+之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和"
           
           >
           
@@ -575,8 +555,9 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e2a000gf0z3e8nq2qbg/&title=算法题解(2)-二分 - Ryao's Blog&summary=
-洛谷P1873 砍树"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/uncategorized/2020/11/ckmk74y650001yqz3gjqbbfsm/&title=Hello, World! - Ryao's Blog&summary=
+历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
+之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和"
           
           >
           
@@ -606,19 +587,13 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e2a000hf0z3azk239cz/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>算法题解(3)-贪心</p>
-          <p class='content'>P2240 【深基12.例1】部分背包问题好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了
-123456789101112131415161718192021222324252...</p>
+        <a class='prev' href='/%E6%8A%A5%E9%94%99/2020/11/ckmk74y6h000lyqz367skdllz/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>解决网站配置完https后访问http失败</p>
+          <p class='content'>报错如下： 
+解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦
+12345server &#123; listen 80;server_name ryaoknw.si...</p>
         </a>
       
-      
-        <a class='next' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk72e28000df0z3fzht3jkv/'>
-          <p class='title'>算法题解(1)-排序<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>排序（c++）虽然是c++，其实是c语法
-洛谷P1271 选举学生会已经得知了数据范围，使用桶排序
-123456789101112131415161718192021#include &lt;c...</p>
-        </a>
       
     </div>
   
@@ -650,20 +625,6 @@
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E8%B0%B7P1873-%E7%A0%8D%E6%A0%91"><span class="toc-text">洛谷P1873 砍树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E8%B0%B7P2249-%E3%80%90%E6%B7%B1%E5%9F%BA13-%E4%BE%8B1%E3%80%91%E6%9F%A5%E6%89%BE"><span class="toc-text">洛谷P2249 【深基13.例1】查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E8%B0%B7P1678-%E7%83%A6%E6%81%BC%E7%9A%84%E9%AB%98%E8%80%83%E5%BF%97%E6%84%BF"><span class="toc-text">洛谷P1678 烦恼的高考志愿</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P2440-%E6%9C%A8%E6%9D%90%E5%8A%A0%E5%B7%A5"><span class="toc-text">P2440 木材加工</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P2678-%E8%B7%B3%E7%9F%B3%E5%A4%B4"><span class="toc-text">P2678 跳石头</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a>
-    </div>
-  </section>
-
 
   
 
@@ -680,7 +641,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="算法题解(2)-二分";
+  pdata.postTitle="Hello, World!";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

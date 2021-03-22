@@ -4223,9 +4223,11 @@ img.lazyload:not(.placeholder).loaded {
   border-radius: 100%;
   width: 128px;
   height: 128px;
-  margin-top: 32px;
-  margin-bottom: 1em;
+  transition: 1s all;
 }
+.widget.blogger .content >.avatar.circle #旋转动画时间,
+.widget.blogger .content >.avatar.circle margin-top: $gap * 2,
+.widget.blogger .content >.avatar.circle margin-bottom: $gap-p,
 .widget.blogger .content >.avatar.circle img {
   display: block;
   position: absolute;

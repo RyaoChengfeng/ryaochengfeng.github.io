@@ -19,14 +19,16 @@
 
   <!-- 页面元数据 -->
   
-  <title>用hexo搭建个人网站 - Ryao&#39;s Blog</title>
+  <title>数据结构-1-链表 - Ryao&#39;s Blog</title>
   
-    <meta name="keywords" content="hexo">
+    <meta name="keywords" content="线性表,数据结构">
   
 
   
 
   <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Ryao's Blog" type="application/atom+xml">
   
 
   <!-- import meta -->
@@ -411,7 +413,7 @@
     
     
       <h1 class="title">
-        用hexo搭建个人网站
+        数据结构-1-链表
       </h1>
       <div class='new-meta-box'>
         
@@ -431,7 +433,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/CS/">CS</a>
+      <a class="category-link" href="/categories/CS/">CS</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
     </a>
   </div>
 
@@ -441,7 +443,7 @@
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>线性表</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
 
 
           
@@ -450,7 +452,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月7日</p>
+    <p>发布于：2020年12月23日</p>
   </a>
 </div>
 
@@ -467,62 +469,29 @@
 
 
   
-  <h1 id="用hexo搭建个人网站"><a href="#用hexo搭建个人网站" class="headerlink" title="用hexo搭建个人网站"></a>用hexo搭建个人网站</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl</p>
-<p>来了，网站却用不了</p>
-<p>虽然我启用了81端口，nginx也监听了相应端口，然而WordPress却没有改配置（踩坑）。于是进去后就只是一个html。。WordPress管理端是默认端口，于是也没办法管了，只好迅速配一个hexo，刚好自己也准备做一个，只不过太忙了（所以现在更忙了，淦）</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>你需要github或者gitee的账号，以及git的基本操作知识</p>
-<p>我的环境是Ubuntu。</p>
-<p>要求：最新版本的nodejs、npm、git。具体安装 or 更新方法不在此赘述。</p>
-<p><strong>请在自己的电脑上！而不是云服务器！</strong></p>
-<p>使用npm安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo -cil</span><br></pre></td></tr></table></figure>
+  <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>指针大法好</p>
+<p>真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久</p>
+<hr>
 
-<h2 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h2><p><strong>请全部用sudo（不然会出现权限问题）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  核心</p>
+</blockquote>
+<p>增</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">p-&gt;data=*data++; <span class="comment">//data为数据集合</span></span><br><span class="line">p-&gt;next=L-&gt;next;</span><br><span class="line">L-&gt;next=p;</span><br></pre></td></tr></table></figure>
 
-<p>若报错:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.js:39</span><br><span class="line">throw new ERR_CONSOLE_WRITABLE_STREAM(&#39;stdout&#39;);</span><br><span class="line">^</span><br><span class="line"></span><br><span class="line">TypeError [ERR_CONSOLE_WRITABLE_STREAM]: Console expects a writable stream instance for stdout</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>删</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Link *q;</span><br><span class="line">q=p-&gt;next;</span><br><span class="line">p-&gt;next=q-&gt;next;</span><br><span class="line"><span class="built_in">free</span>(q);</span><br></pre></td></tr></table></figure>
 
-<p>请更新npm和nodejs</p>
-<p><strong>同时请保证文件夹内是空的！</strong></p>
-<p>新建完成后，指定文件夹的目录如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>查</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e=p-&gt;data; <span class="comment">//e为节点data</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>_config.yml</strong>：网站的 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置</a> 信息，您可以在此配置大部分的参数</p>
-<p>启动服务器。在路径下，命令行（即Git Bash）输入以下命令，运行即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>插</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Link *s;</span><br><span class="line">s=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Link));</span><br><span class="line">s-&gt;data=e; <span class="comment">//e为节点data</span></span><br><span class="line">s-&gt;next=p-&gt;next;</span><br><span class="line">p-&gt;next=s;</span><br></pre></td></tr></table></figure>
 
-<p>浏览器访问网址： <code>http://localhost:4000/</code></p>
-<p>至此，您的Hexo博客已经搭建在本地。</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>gitee新建仓库，名为自己的用户名</p>
-<p>进入项目文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim _config.yml </span><br></pre></td></tr></table></figure>
-
-<p>编辑theme来修改主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: volantis</span><br></pre></td></tr></table></figure>
-
-<p>终端输入（<strong>要在项目文件夹</strong>）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-volantis</span><br></pre></td></tr></table></figure>
-
-<p>编辑<code>_config.yml</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@gitee.com:himmi&#x2F;himmi.git #或者https等等</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>安装插件,要在<strong>站点目录</strong>下执行以上安装:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>如果已经在其他目录安装了<code>hexo-deployer-git</code>插件，可以使用以下命令卸载该插件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>然后</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>至此，部署完毕。</p>
-<p>剩下的配置请参考hexo的doc，主题的配置参考各自的doc（其实配置才是折腾的地方）</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.simon96.online/2018/10/12/hexo-tutorial/">https://www.simon96.online/2018/10/12/hexo-tutorial/</a></p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4136#article-header3">https://gitee.com/help/articles/4136#article-header3</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/95781368">https://blog.csdn.net/mqdxiaoxiao/article/details/95781368</a></p>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000011203711">https://segmentfault.com/a/1190000011203711</a></p>
+<blockquote>
+<p>  实现</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> Elemtype;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    Elemtype data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">Link</span>;</span></span><br><span class="line"></span><br><span class="line">Link **head;</span><br><span class="line">Link **tail;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先进后出link</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">d_CreateLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    Link *p;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    (*L)-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        p-&gt;next=(*L)-&gt;next;</span><br><span class="line">        (*L)-&gt;next=p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先进先出link</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    Link *p,*r;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    r=*L;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        r-&gt;next=p;</span><br><span class="line">        r=p;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增量式单链表（正序）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    Link *p,*r;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span> (tail!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        r=*tail;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        r=*L;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        r-&gt;next=p;</span><br><span class="line">        r=p;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    *tail=r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到第i个节点的data</span></span><br><span class="line"><span class="function">Elemtype <span class="title">GetElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在第i个节点之前插入新的node，L长度+1</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span>  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*s;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Link));</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Elemtype <span class="title">DeleteElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*q;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p-&gt;next&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(p-&gt;next)||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q=p-&gt;next;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
   
   
@@ -540,7 +509,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://ryaoknw.site/CS/2020/12/ckiehrcop000764z39bty4dyo/>https://ryaoknw.site/CS/2020/12/ckiehrcop000764z39bty4dyo/</a></p>
+                <p>本文永久链接是：<a href=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk68m2o0009a6z3aeuf4baj/>https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk68m2o0009a6z3aeuf4baj/</a></p>
               
             
           </blockquote>
@@ -557,7 +526,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T02:31:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T16:21:56+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月23日</p>
@@ -569,7 +538,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>线性表</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
 
 
         
@@ -582,7 +551,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/CS/2020/12/ckiehrcop000764z39bty4dyo/&title=用hexo搭建个人网站 - Ryao's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk68m2o0009a6z3aeuf4baj/&title=数据结构-1-链表 - Ryao's Blog&summary="
           
           >
           
@@ -594,7 +563,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/CS/2020/12/ckiehrcop000764z39bty4dyo/&title=用hexo搭建个人网站 - Ryao's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk68m2o0009a6z3aeuf4baj/&title=数据结构-1-链表 - Ryao's Blog&summary="
           
           >
           
@@ -606,7 +575,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/CS/2020/12/ckiehrcop000764z39bty4dyo/&title=用hexo搭建个人网站 - Ryao's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk68m2o0009a6z3aeuf4baj/&title=数据结构-1-链表 - Ryao's Blog&summary="
           
           >
           
@@ -636,18 +605,11 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E9%A2%98%E8%A7%A3/2020/12/ckixxapv90000maz3a23sa574/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>算法题解(1)-排序</p>
-          <p class='content'>排序（c++）虽然是c++，其实是c语法
-洛谷P1271 选举学生会已经得知了数据范围，使用桶排序
-123456789101112131415161718192021#include &lt;c...</p>
-        </a>
       
-      
-        <a class='next' href='/CS/2020/11/ckiehrcom000464z3eiii7mh8/'>
-          <p class='title'>为网站配置https/http2<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下
-https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2...</p>
+        <a class='next' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk68m2t000ha6z32zwt24mh/'>
+          <p class='title'>算法题解(3)-贪心<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2240 【深基12.例1】部分背包问题好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了
+123456789101112131415161718192021222324252...</p>
         </a>
       
     </div>
@@ -690,7 +652,7 @@ https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E7%AB%99"><span class="toc-text">建站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8"><span class="toc-text">单链表</span></a></li></ol>
     </div>
   </section>
 
@@ -710,7 +672,7 @@ https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="用hexo搭建个人网站";
+  pdata.postTitle="数据结构-1-链表";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

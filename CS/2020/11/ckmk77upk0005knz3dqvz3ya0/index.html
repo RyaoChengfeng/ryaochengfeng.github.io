@@ -19,14 +19,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>算法题解(2)-二分 - Ryao&#39;s Blog</title>
+  <title>为网站配置https/http2 - Ryao&#39;s Blog</title>
   
-    <meta name="keywords" content="算法,二分查找">
+    <meta name="keywords" content="http,nginx">
   
 
-  
-    <meta name="description" content="
-洛谷P1873 砍树">
   
 
   <!-- feed -->
@@ -416,7 +413,7 @@
     
     
       <h1 class="title">
-        算法题解(2)-二分
+        为网站配置https/http2
       </h1>
       <div class='new-meta-box'>
         
@@ -436,7 +433,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/CS/">CS</a><span class="sep"></span><a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+      <a class="category-link" href="/categories/CS/">CS</a>
     </a>
   </div>
 
@@ -446,7 +443,7 @@
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分查找</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
 
 
           
@@ -455,7 +452,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月12日</p>
+    <p>发布于：2020年11月15日</p>
   </a>
 </div>
 
@@ -472,25 +469,50 @@
 
 
   
-  <p><img src="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" srcset="data:image/png;base64,666"></p>
-<h4 id="洛谷P1873-砍树"><a href="#洛谷P1873-砍树" class="headerlink" title="洛谷P1873 砍树"></a>洛谷P1873 砍树</h4><a id="more"></a>
+  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
+<p>https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2相比于https有了一些新特性。于是这里配置http2. </p>
+<h2 id="配置http2"><a href="#配置http2" class="headerlink" title="配置http2"></a>配置http2</h2><p>使用免费的<a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a>，在官网中会告诉你用 <a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a> ACME 客户端自动配置，进去选择自己的nginx版本和系统版本就好了。页面上会出现操作步骤。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install core;</span><br><span class="line">sudo snap refresh core</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(a, b) a&gt;b?a:b</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN(a, b) a&gt;b?b:a</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> N, M, mid, length;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> l = <span class="number">0</span>, s = <span class="number">1000000000</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> height[N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;height[i]);</span><br><span class="line">        l = MAX(height[i], l);</span><br><span class="line">        s = MIN(height[i], s);</span><br><span class="line">    &#125;</span><br><span class="line">    mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (s + <span class="number">1</span> &lt; l) &#123;</span><br><span class="line">        length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mid &lt; height[i]) length += height[i] - mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (length &gt;= M) &#123;</span><br><span class="line">            s = mid;</span><br><span class="line">            mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            l = mid;</span><br><span class="line">            mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, mid);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install --classic certbot </span><br></pre></td></tr></table></figure>
 
-<h4 id="洛谷P2249-【深基13-例1】查找"><a href="#洛谷P2249-【深基13-例1】查找" class="headerlink" title="洛谷P2249 【深基13.例1】查找"></a>洛谷P2249 【深基13.例1】查找</h4><p>就是写二分，但是要注意输出最左边，也就是最小的，怎么找出左边界需要想一下（于是我一直wa</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> len, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = len;</span><br><span class="line">    <span class="keyword">int</span> mid;</span><br><span class="line">    <span class="keyword">while</span> (l&lt;r) &#123;</span><br><span class="line">        mid =l + (r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[mid] &lt; value)</span><br><span class="line">            l = mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (arr[l]==value)</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">int</span> number[n+<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;number[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;value);</span><br><span class="line">        index=find(number,n,value);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
 
-<h4 id="洛谷P1678-烦恼的高考志愿"><a href="#洛谷P1678-烦恼的高考志愿" class="headerlink" title="洛谷P1678 烦恼的高考志愿"></a>洛谷P1678 烦恼的高考志愿</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min;</span><br><span class="line">    <span class="keyword">if</span> (a&lt;b)min=a;</span><br><span class="line">    <span class="keyword">else</span> min=b;</span><br><span class="line">    <span class="keyword">return</span> min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">int</span> school[n+<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;school[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">std</span>::sort(school,school+n);</span><br><span class="line">    <span class="keyword">int</span> stu[m+<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;stu[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(school[mid]&lt;=stu[i])&#123;</span><br><span class="line">                l=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                r=mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(stu[i]&lt;=school[<span class="number">0</span>])&#123;</span><br><span class="line">            sum+=school[<span class="number">0</span>]-stu[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            sum+=min(<span class="built_in">abs</span>(school[l<span class="number">-1</span>]-stu[i]),<span class="built_in">abs</span>(school[l]-stu[i]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
 
-<h4 id="P2440-木材加工"><a href="#P2440-木材加工" class="headerlink" title="P2440 木材加工"></a>P2440 木材加工</h4><p>和砍树问题的思路一样，另写一个函数来判断是否符合要求，然后用二分法确定最大的值即可</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n, k;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">jd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        sum += a[i] / x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum&gt;=k)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;a[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> l = <span class="number">0</span>, r = <span class="number">100000001</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> mid;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (l + <span class="number">1</span> &lt; r) &#123;</span><br><span class="line">        mid = l+(r-l)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (jd(mid)) &#123;</span><br><span class="line">            l = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,l);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>于是certbot就自动配置好nginx </p>
+<p>使用这个来自动续订：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
 
-<h4 id="P2678-跳石头"><a href="#P2678-跳石头" class="headerlink" title="P2678 跳石头"></a>P2678 跳石头</h4><p>同样的二分套路，这里定义了所在石头和下一个石头，mid大于间距时，将石头搬走，同时计数，mid小与或等于间距时，进入下一个石头。当搬走的总数要小于预计的数目时，证明mid偏小，将left右移，否则right左移，最终得到正确的mid。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> num[<span class="number">100000</span>];</span><br><span class="line"><span class="keyword">long</span> l,n,m,dis=<span class="number">0</span>,first=<span class="number">0</span>,end;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">jd</span><span class="params">(<span class="keyword">long</span> mid)</span></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= n)&#123;</span><br><span class="line">        first=num[temp];</span><br><span class="line">        end=num[i];</span><br><span class="line">        dis=end-first;</span><br><span class="line">        <span class="keyword">if</span> (dis&lt;mid)&#123;</span><br><span class="line">            sum++;</span><br><span class="line">        &#125; <span class="keyword">else</span> temp=i;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum&lt;=m)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%ld%ld%ld&quot;</span>,&amp;l,&amp;n,&amp;m);</span><br><span class="line">    num[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>,&amp;num[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> left=<span class="number">0</span>,right=l,mid,rst;</span><br><span class="line">    <span class="keyword">while</span> (left&lt;=right)&#123;</span><br><span class="line">        mid=left+(right-left)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (jd(mid))&#123;</span><br><span class="line">            rst=mid;</span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> right=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%ld&quot;</span>,rst);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+
+<p>我们也可以手动折腾一下。</p>
+<p>基本配置:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="comment">#listen 443 ssl http2 default_server; </span></span><br><span class="line"><span class="attribute">listen</span> <span class="number">443</span> ssl http2; </span><br><span class="line"><span class="attribute">server_name</span> www.yoursite.com; </span><br><span class="line"><span class="attribute">ssl_certificate</span> /path/to/public.crt; </span><br><span class="line"><span class="attribute">ssl_certificate_key</span> /path/to/private.key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>禁止不安全的协议:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_ciphers</span> <span class="string">&#x27;ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4&#x27;</span>; </span><br></pre></td></tr></table></figure>
+
+<p>启用HSTS:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>; </span><br><span class="line"><span class="attribute">server_name</span> yoursite;</span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+<blockquote>
+<p>  其他的安全配置</p>
+</blockquote>
+<p>缓存连接凭据:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">20m</span>;</span><br><span class="line"><span class="attribute">ssl_session_timeout</span> <span class="number">60m</span>;</span><br></pre></td></tr></table></figure>
+
+<p>配置赫尔曼密钥:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">openssl</span> dhparam -out dhparam.pem <span class="number">2048</span> <span class="comment">#在 ssh 运行， openssl 生成 2048 位的密钥而不是当作参数写入 nginx.conf 文件</span></span><br><span class="line">ssl_dhparam /path/to/dhparam.pem; <span class="comment">#在 .conf 中配置</span></span><br></pre></td></tr></table></figure>
+
+<p>OCSP 缝合</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_stapling</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">ssl_stapling_verify</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">ssl_trusted_certificate</span> /etc/nginx/cert/trustchain.crt; </span><br><span class="line"><span class="attribute">resolver</span> <span class="number">233.5.5.5</span> <span class="number">233.6.6.6</span> valid=<span class="number">300s</span>;</span><br></pre></td></tr></table></figure>
+
+
   
   
     
@@ -507,7 +529,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6f000gyqz3999xhjbm/>https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6f000gyqz3999xhjbm/</a></p>
+                <p>本文永久链接是：<a href=https://ryaoknw.site/CS/2020/11/ckmk77upk0005knz3dqvz3ya0/>https://ryaoknw.site/CS/2020/11/ckmk77upk0005knz3dqvz3ya0/</a></p>
               
             
           </blockquote>
@@ -524,10 +546,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T02:32:00+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T15:06:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月23日</p>
+    <p>更新于：2020年11月15日</p>
   </a>
 </div>
 
@@ -536,7 +558,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分查找</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
 
 
         
@@ -549,8 +571,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6f000gyqz3999xhjbm/&title=算法题解(2)-二分 - Ryao's Blog&summary=
-洛谷P1873 砍树"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/CS/2020/11/ckmk77upk0005knz3dqvz3ya0/&title=为网站配置https/http2 - Ryao's Blog&summary="
           
           >
           
@@ -562,8 +583,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6f000gyqz3999xhjbm/&title=算法题解(2)-二分 - Ryao's Blog&summary=
-洛谷P1873 砍树"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/CS/2020/11/ckmk77upk0005knz3dqvz3ya0/&title=为网站配置https/http2 - Ryao's Blog&summary="
           
           >
           
@@ -575,8 +595,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6f000gyqz3999xhjbm/&title=算法题解(2)-二分 - Ryao's Blog&summary=
-洛谷P1873 砍树"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/CS/2020/11/ckmk77upk0005knz3dqvz3ya0/&title=为网站配置https/http2 - Ryao's Blog&summary="
           
           >
           
@@ -606,18 +625,19 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6g000hyqz3aovi67t1/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>算法题解(3)-贪心</p>
-          <p class='content'>P2240 【深基12.例1】部分背包问题好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了
-123456789101112131415161718192021222324252...</p>
+        <a class='prev' href='/CS/2020/12/ckmk77upo000bknz3f52bcjqp/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用hexo搭建个人网站</p>
+          <p class='content'>用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
+来了，网站却用不了
+虽然我启用了81端口，nginx也监听了相应端口，然而Wo...</p>
         </a>
       
       
-        <a class='next' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk74y6d000dyqz32hlh6dnr/'>
-          <p class='title'>算法题解(1)-排序<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>排序（c++）虽然是c++，其实是c语法
-洛谷P1271 选举学生会已经得知了数据范围，使用桶排序
-123456789101112131415161718192021#include &lt;c...</p>
+        <a class='next' href='/CS/2020/11/ckmk77upj0003knz30jwqd4xk/'>
+          <p class='title'>note:图解HTTP(1)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
+报文要么是一个请求报文，要么就是一个响应报文。
+一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
         </a>
       
     </div>
@@ -660,7 +680,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E8%B0%B7P1873-%E7%A0%8D%E6%A0%91"><span class="toc-text">洛谷P1873 砍树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E8%B0%B7P2249-%E3%80%90%E6%B7%B1%E5%9F%BA13-%E4%BE%8B1%E3%80%91%E6%9F%A5%E6%89%BE"><span class="toc-text">洛谷P2249 【深基13.例1】查找</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E8%B0%B7P1678-%E7%83%A6%E6%81%BC%E7%9A%84%E9%AB%98%E8%80%83%E5%BF%97%E6%84%BF"><span class="toc-text">洛谷P1678 烦恼的高考志愿</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P2440-%E6%9C%A8%E6%9D%90%E5%8A%A0%E5%B7%A5"><span class="toc-text">P2440 木材加工</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P2678-%E8%B7%B3%E7%9F%B3%E5%A4%B4"><span class="toc-text">P2678 跳石头</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttp2"><span class="toc-text">配置http2</span></a></li></ol>
     </div>
   </section>
 
@@ -680,7 +700,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="算法题解(2)-二分";
+  pdata.postTitle="为网站配置https/http2";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

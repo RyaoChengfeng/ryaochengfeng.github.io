@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>为网站配置https/http2 - Ryao&#39;s Blog</title>
+  <title>数据结构-1-链表 - Ryao&#39;s Blog</title>
   
-    <meta name="keywords" content="http,nginx">
+    <meta name="keywords" content="线性表,数据结构">
   
 
   
@@ -413,7 +413,7 @@
     
     
       <h1 class="title">
-        为网站配置https/http2
+        数据结构-1-链表
       </h1>
       <div class='new-meta-box'>
         
@@ -433,7 +433,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/CS/">CS</a>
+      <a class="category-link" href="/categories/CS/">CS</a><span class="sep"></span><a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
     </a>
   </div>
 
@@ -443,7 +443,7 @@
           
             
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>线性表</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
 
 
           
@@ -452,7 +452,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月15日</p>
+    <p>发布于：2020年12月23日</p>
   </a>
 </div>
 
@@ -469,49 +469,29 @@
 
 
   
-  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
-<p>https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2相比于https有了一些新特性。于是这里配置http2. </p>
-<h2 id="配置http2"><a href="#配置http2" class="headerlink" title="配置http2"></a>配置http2</h2><p>使用免费的<a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a>，在官网中会告诉你用 <a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a> ACME 客户端自动配置，进去选择自己的nginx版本和系统版本就好了。页面上会出现操作步骤。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install core;</span><br><span class="line">sudo snap refresh core</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install --classic certbot </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /snap/bin/certbot /usr/bin/certbot</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
-
-<p>于是certbot就自动配置好nginx </p>
-<p>使用这个来自动续订：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br></pre></td></tr></table></figure>
-
+  <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>指针大法好</p>
+<p>真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久</p>
 <hr>
 
-<p>我们也可以手动折腾一下。</p>
-<p>基本配置:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="comment">#listen 443 ssl http2 default_server; </span></span><br><span class="line"><span class="attribute">listen</span> <span class="number">443</span> ssl http2; </span><br><span class="line"><span class="attribute">server_name</span> www.yoursite.com; </span><br><span class="line"><span class="attribute">ssl_certificate</span> /path/to/public.crt; </span><br><span class="line"><span class="attribute">ssl_certificate_key</span> /path/to/private.key;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>  核心</p>
+</blockquote>
+<p>增</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">p-&gt;data=*data++; <span class="comment">//data为数据集合</span></span><br><span class="line">p-&gt;next=L-&gt;next;</span><br><span class="line">L-&gt;next=p;</span><br></pre></td></tr></table></figure>
 
-<p>禁止不安全的协议:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_ciphers</span> <span class="string">&#x27;ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES128-SHA256:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:DES-CBC3-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4&#x27;</span>; </span><br></pre></td></tr></table></figure>
+<p>删</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Link *q;</span><br><span class="line">q=p-&gt;next;</span><br><span class="line">p-&gt;next=q-&gt;next;</span><br><span class="line"><span class="built_in">free</span>(q);</span><br></pre></td></tr></table></figure>
 
-<p>启用HSTS:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>;</span><br></pre></td></tr></table></figure>
+<p>查</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e=p-&gt;data; <span class="comment">//e为节点data</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>; </span><br><span class="line"><span class="attribute">server_name</span> yoursite;</span><br><span class="line"><span class="attribute">add_header</span> Strict-Transport-Security max-age=<span class="number">15768000</span>; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-
-
+<p>插</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Link *s;</span><br><span class="line">s=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Link));</span><br><span class="line">s-&gt;data=e; <span class="comment">//e为节点data</span></span><br><span class="line">s-&gt;next=p-&gt;next;</span><br><span class="line">p-&gt;next=s;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>  其他的安全配置</p>
+<p>  实现</p>
 </blockquote>
-<p>缓存连接凭据:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_session_cache</span> shared:SSL:<span class="number">20m</span>;</span><br><span class="line"><span class="attribute">ssl_session_timeout</span> <span class="number">60m</span>;</span><br></pre></td></tr></table></figure>
-
-<p>配置赫尔曼密钥:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">openssl</span> dhparam -out dhparam.pem <span class="number">2048</span> <span class="comment">#在 ssh 运行， openssl 生成 2048 位的密钥而不是当作参数写入 nginx.conf 文件</span></span><br><span class="line">ssl_dhparam /path/to/dhparam.pem; <span class="comment">#在 .conf 中配置</span></span><br></pre></td></tr></table></figure>
-
-<p>OCSP 缝合</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_stapling</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">ssl_stapling_verify</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">ssl_trusted_certificate</span> /etc/nginx/cert/trustchain.crt; </span><br><span class="line"><span class="attribute">resolver</span> <span class="number">233.5.5.5</span> <span class="number">233.6.6.6</span> valid=<span class="number">300s</span>;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> Elemtype;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    Elemtype data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">Link</span>;</span></span><br><span class="line"></span><br><span class="line">Link **head;</span><br><span class="line">Link **tail;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先进后出link</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">d_CreateLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    Link *p;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    (*L)-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        p-&gt;next=(*L)-&gt;next;</span><br><span class="line">        (*L)-&gt;next=p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先进先出link</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    Link *p,*r;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    r=*L;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        r-&gt;next=p;</span><br><span class="line">        r=p;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增量式单链表（正序）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    Link *p,*r;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span> (tail!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        r=*tail;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        r=*L;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        r-&gt;next=p;</span><br><span class="line">        r=p;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    *tail=r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到第i个节点的data</span></span><br><span class="line"><span class="function">Elemtype <span class="title">GetElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在第i个节点之前插入新的node，L长度+1</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span>  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*s;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Link));</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Elemtype <span class="title">DeleteElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*q;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p-&gt;next&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(p-&gt;next)||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q=p-&gt;next;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
   
   
@@ -529,7 +509,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://ryaoknw.site/CS/2020/11/ckmk74y690005yqz35xhk4lti/>https://ryaoknw.site/CS/2020/11/ckmk74y690005yqz35xhk4lti/</a></p>
+                <p>本文永久链接是：<a href=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk77upn0009knz3dlel8div/>https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk77upn0009knz3dlel8div/</a></p>
               
             
           </blockquote>
@@ -546,10 +526,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T15:06:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T16:21:56+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月15日</p>
+    <p>更新于：2020年12月23日</p>
   </a>
 </div>
 
@@ -558,7 +538,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/http/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>http</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/nginx/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>nginx</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>线性表</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
 
 
         
@@ -571,7 +551,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/CS/2020/11/ckmk74y690005yqz35xhk4lti/&title=为网站配置https/http2 - Ryao's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk77upn0009knz3dlel8div/&title=数据结构-1-链表 - Ryao's Blog&summary="
           
           >
           
@@ -583,7 +563,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/CS/2020/11/ckmk74y690005yqz35xhk4lti/&title=为网站配置https/http2 - Ryao's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk77upn0009knz3dlel8div/&title=数据结构-1-链表 - Ryao's Blog&summary="
           
           >
           
@@ -595,7 +575,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/CS/2020/11/ckmk74y690005yqz35xhk4lti/&title=为网站配置https/http2 - Ryao's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E7%AC%94%E8%AE%B0/2020/12/ckmk77upn0009knz3dlel8div/&title=数据结构-1-链表 - Ryao's Blog&summary="
           
           >
           
@@ -625,19 +605,11 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/CS/2020/12/ckmk74y6c000byqz3ercr2wul/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>用hexo搭建个人网站</p>
-          <p class='content'>用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
-来了，网站却用不了
-虽然我启用了81端口，nginx也监听了相应端口，然而Wo...</p>
-        </a>
       
-      
-        <a class='next' href='/CS/2020/11/ckmk74y680003yqz397ll0auj/'>
-          <p class='title'>note:图解HTTP(1)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
-报文要么是一个请求报文，要么就是一个响应报文。
-一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
+        <a class='next' href='/%E9%A2%98%E8%A7%A3/2020/12/ckmk77ups000iknz30yrffm2x/'>
+          <p class='title'>算法题解(3)-贪心<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>P2240 【深基12.例1】部分背包问题好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了
+123456789101112131415161718192021222324252...</p>
         </a>
       
     </div>
@@ -680,7 +652,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEhttp2"><span class="toc-text">配置http2</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8"><span class="toc-text">单链表</span></a></li></ol>
     </div>
   </section>
 
@@ -700,7 +672,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="为网站配置https/http2";
+  pdata.postTitle="数据结构-1-链表";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

@@ -19,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Ryao&#39;s Blog</title>
+  <title>算法题解(3)-贪心 - Ryao&#39;s Blog</title>
+  
+    <meta name="keywords" content="算法,贪心">
   
 
   
@@ -53,7 +55,33 @@
 
   <script id="loadcss"></script>
 
+  <!--百度收录-->
+  <meta name="baidu-site-verification" content="code-iHWqCfvGKU" />
+  
+  <!--百度统计-->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d1449d8cfe8520a49a8da40d5cdfbaf5";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R0B5LNCWV7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-R0B5LNCWV7');
+  </script>
+
+
 </head>
+
 
 <body>
   
@@ -329,7 +357,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper page dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://pic.downk.cc/item/5fcd9c193ffa7d37b3859a48.jpg"></div>
           
@@ -401,7 +429,7 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
 
 
@@ -410,12 +438,101 @@
     
     
     
+      <h1 class="title">
+        算法题解(3)-贪心
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://pic.downk.cc/item/5fcd091c394ac52378a607e9.jpg">
+    <p>Ryao</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/CS/">CS</a><span class="sep"></span><a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B4%AA%E5%BF%83/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>贪心</p></a></div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月21日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+    
   </div>
 
 
   
-  1e01b534e722f9fbcbc316197bccc532
+  <h4 id="P2240-【深基12-例1】部分背包问题"><a href="#P2240-【深基12-例1】部分背包问题" class="headerlink" title="P2240 【深基12.例1】部分背包问题"></a>P2240 【深基12.例1】部分背包问题</h4><p>好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mon</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> w,v;</span><br><span class="line">    <span class="keyword">double</span> bili;</span><br><span class="line">&#125;money[<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(mon *a,mon *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> t=a-&gt;bili;</span><br><span class="line">    a-&gt;bili=b-&gt;bili;</span><br><span class="line">    b-&gt;bili=t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> d=a-&gt;w;</span><br><span class="line">    a-&gt;w=b-&gt;w;</span><br><span class="line">    b-&gt;w=d;</span><br><span class="line"></span><br><span class="line">    d=a-&gt;v;</span><br><span class="line">    a-&gt;v=b-&gt;v;</span><br><span class="line">    b-&gt;v=d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(mon arr[],<span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">nullptr</span>));</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">double</span> pivot = arr[rand() % len].bili;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].bili &gt; pivot)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &gt; arr[i].bili)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(arr, j);</span><br><span class="line">    quick_sort(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,bag;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;bag);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;money[i].w,&amp;money[i].v);</span><br><span class="line">        <span class="keyword">if</span> (money[i].w==<span class="number">0</span>) money[i].bili=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> money[i].bili=<span class="number">1.0</span>*money[i].v/money[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(money,n);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (bag&gt;=money[i].w)&#123;</span><br><span class="line">        bag-=money[i].w;</span><br><span class="line">        sum+=money[i].v;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    sum+=bag*money[i].bili;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="P1090合并果子"><a href="#P1090合并果子" class="headerlink" title="P1090合并果子"></a>P1090合并果子</h4><p>刚看到题目心想，这不就是个数学题嘛，排完序一个个加起来就好了，然后配合官方巨水的样例测一下后，一下就提交了。</p>
+<p>之后陷入了疯狂tl和wa的窘境。</p>
+<p>思路如下，要得到最小的花费体力值，先将原数据排序，再将其放到for中进行循环过程来加出sum的值，每次将父列的第一个加到第二个后都要再排一次序来得到新子列，这样才能保证最小</p>
+<p>所以在里面用一个时间复杂度低的插入排序就可以解决问题</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a,<span class="keyword">int</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t=*a;</span><br><span class="line">    *a=*b;</span><br><span class="line">    *b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> pivot = arr[rand() % len];</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; pivot)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &lt; arr[i])&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(arr, j);</span><br><span class="line">    quick_sort(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shell_sort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (h &lt; length / <span class="number">3</span>) &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = h; i &lt; length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= h &amp;&amp; arr[j] &lt; arr[j - h]; j -= h) &#123;</span><br><span class="line">                swap(&amp;arr[j], &amp;arr[j - h]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        h = h / <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">int</span> guo[n+<span class="number">5</span>];</span><br><span class="line">    guo[n]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;guo[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> tili;</span><br><span class="line">    quick_sort(guo,n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i) &#123;</span><br><span class="line">        shell_sort((guo+i),n-i);</span><br><span class="line">        tili=<span class="number">0</span>;</span><br><span class="line">        tili+=(guo[i+<span class="number">1</span>]+guo[i]);</span><br><span class="line">        guo[i+<span class="number">1</span>]+=guo[i];</span><br><span class="line">        sum+=tili;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="P1223-排队接水"><a href="#P1223-排队接水" class="headerlink" title="P1223 排队接水"></a>P1223 排队接水</h4><p>本是是很简单问题，莫名出了错</p>
+<p>思路是先排序，再把时间加起来，再求平均就可以了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">per</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    <span class="keyword">int</span> time;</span><br><span class="line">&#125;person[<span class="number">2000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(per *a,per *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t=a-&gt;time;</span><br><span class="line">    a-&gt;time=b-&gt;time;</span><br><span class="line">    b-&gt;time=t;</span><br><span class="line"></span><br><span class="line">    t=a-&gt;index;</span><br><span class="line">    a-&gt;index=b-&gt;index;</span><br><span class="line">    b-&gt;index=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(per arr[],<span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> pivot = arr[rand() % len].time;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].time &lt; pivot)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &lt; arr[i].time)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(arr, j);</span><br><span class="line">    quick_sort(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        person[i].index=i+<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;person[i].time);</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(person,n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,person[i].index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> shijian=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i) &#123;</span><br><span class="line">        shijian+=person[i].time;</span><br><span class="line">        sum+=shijian;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf\n&quot;</span>,<span class="number">1.0</span>*sum/n);</span><br><span class="line">    <span class="comment">//?????我卡了半天,后面的1.0*sum/n是原本就有的,sum是int类型。</span></span><br><span class="line">    <span class="comment">//然后本是int的sum变成double,去掉了1.0,就又过了两个，但是第一个却过不了。</span></span><br><span class="line">    <span class="comment">//把1.0加上，就全部过了。离谱</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
   
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-3-%E8%B4%AA%E5%BF%83/>https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-3-%E8%B4%AA%E5%BF%83/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
   
   
     
@@ -425,10 +542,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-22T14:24:59+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-23T02:38:04+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月22日</p>
+    <p>更新于：2020年12月23日</p>
   </a>
 </div>
 
@@ -436,6 +553,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%B4%AA%E5%BF%83/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>贪心</p></a></div>
+
 
         
       
@@ -447,7 +567,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/baidu_verify_code-iHWqCfvGKU.html&title= - Ryao's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-3-%E8%B4%AA%E5%BF%83/&title=算法题解(3)-贪心 - Ryao's Blog&summary="
           
           >
           
@@ -459,7 +579,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/baidu_verify_code-iHWqCfvGKU.html&title= - Ryao's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-3-%E8%B4%AA%E5%BF%83/&title=算法题解(3)-贪心 - Ryao's Blog&summary="
           
           >
           
@@ -471,7 +591,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/baidu_verify_code-iHWqCfvGKU.html&title= - Ryao's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-3-%E8%B4%AA%E5%BF%83/&title=算法题解(3)-贪心 - Ryao's Blog&summary="
           
           >
           
@@ -480,6 +600,14 @@
         </a>
       
     
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFHUlEQVR42u3cQW7cMBAEwP3/p5MHGIY4PU05Doo3Z70SVdSl3YN8/lg/sj4IwIO3wIO3wIO3CvCfcH254Df/3vo8ftCH/U/3tfUCDx48ePDgwYMHD74JP32Q6e89HVz7Ping9Drj/YEHDx48ePDgwYMHfwF+uqFpwHg6iOl90/tM71fzAg8ePHjw4MGDBw/+H4SfBqhWsEnv07oOePDgwYMHDx48ePC/EX56ANuBpNNBq+31wIMHDx48ePDgwYP/DfDtQaUt3GnQaRcY20Er8ODBgwcPHjx48ODfgG8Hiv/959gLPHjw4MGDBw8ePPgC/HalAWcavNLBo9MXJw1wYy/w4MGDBw8ePHjw4AvwaUA4LTymn7eLlLSwafuABw8ePHjw4MGDB9+EnwaOdAPb4DQNONOg1Apw4yIEPHjw4MGDBw8ePPgA/jQwtAC2BUS6v+n3r71Y4MGDBw8ePHjw4MEX4LeFQDpglAar7f3SgavtCwgePHjw4MGDBw8e/A34dCBoG1hSyO3np/utBz7w4MGDBw8ePHjw4Avw7cAwDU6nB9IORtsiJy5awIMHDx48ePDgwYMvwr8VRJ4g00GiabGSHuz2gMCDBw8ePHjw4MGDb8BPQbcbacOcQqUvUjqgBR48ePDgwYMHDx78TfhpIJpuIC1WpsXJ9ue04Bm/kODBgwcPHjx48ODBX4RPC4dWcGoFuTSApft9vC548ODBgwcPHjx48D8APx04mgaO20XMaVBqD0KBBw8ePHjw4MGDB38DfnqhVoHSCizTfU8PbjswBR48ePDgwYMHDx58E34aKNLA9Lm8tgFnWohMB7XAgwcPHjx48ODBg2/CnwaVdQFQDi5pcXG7wAEPHjx48ODBgwcP/g349R/2l4XBtBBJC5QUMH3+b/cBHjx48ODBgwcPHvwF+HTDrQfYBqhWAdM+MPDgwYMHDx48ePDgb8DfHujZFibbAad2YRI7gAcPHjx48ODBgwdfgG89UDqQ1CpApoEw/V76XODBgwcPHjx48ODBN+HTIJVu7PRA0+9tg1UKvB5oAg8ePHjw4MGDBw8+gG8XHtNio1VYbAue1OP0oMCDBw8ePHjw4MGDb8CnN24VGduAlhYbaUGSvoDgwYMHDx48ePDgwd+Ev1U43Dqg9L5vFTxfvg8ePHjw4MGDBw8efBF+W4xMg0r6e9ugdDtIjYsQ8ODBgwcPHjx48OAD+PgP+uUANAW4FXxuBy7w4MGDBw8ePHjw4Bvw00Az3WAakFoH2ApArfuDBw8ePHjw4MGDB9+AT4uAbfGxBU6ht4Nb26IGPHjw4MGDBw8ePPgb8GnQ2A4qpcGmHYBa9/92H+DBgwcPHjx48ODBF+G3QSUNJGlhsi1obg1MgQcPHjx48ODBgwf/BvztouL0+63rTwNdu0ABDx48ePDgwYMHD/4N+PbGpoFp+nMr6NwqYB6fBzx48ODBgwcPHjz4AvwnXKeBJR2Aagew06Ll+osCHjx48ODBgwcPHnwRfhqYTg9uG1TaA01T4G2AAg8ePHjw4MGDBw/+Dfg0QGwDxxRo+sDTF+1WsAQPHjx48ODBgwcP/l+GbwGlB7odVEqLnsd9gwcPHjx48ODBgwf/C+C3B7YFSQuddLDqMVCBBw8ePHjw4MGDB3/x/53cFgnToNMakGoFu23guz5JBh48ePDgwYMHDx78hQ22glZalGwD160DAw8ePHjw4MGDBw++AW+9u8CDB2+BB2+BB28t1l/OGSvdt/jfvgAAAABJRU5ErkJggg==">
+          </div>
+        </div>
       
     
       
@@ -498,6 +626,32 @@
   
   
 
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/%E7%AC%94%E8%AE%B0/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E9%93%BE%E8%A1%A8/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>数据结构-1-链表</p>
+          <p class='content'>单链表指针大法好
+真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久
+
+
+
+  核心
+
+增
+1234p=(Link*)malloc(sizeof (Lin...</p>
+        </a>
+      
+      
+        <a class='next' href='/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-2-%E4%BA%8C%E5%88%86/'>
+          <p class='title'>算法题解(2)-二分<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+洛谷P1873 砍树
+
+123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;#de...</p>
+        </a>
+      
+    </div>
   
 </article>
 
@@ -527,6 +681,20 @@
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#P2240-%E3%80%90%E6%B7%B1%E5%9F%BA12-%E4%BE%8B1%E3%80%91%E9%83%A8%E5%88%86%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98"><span class="toc-text">P2240 【深基12.例1】部分背包问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P1090%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90"><span class="toc-text">P1090合并果子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#P1223-%E6%8E%92%E9%98%9F%E6%8E%A5%E6%B0%B4"><span class="toc-text">P1223 排队接水</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -542,8 +710,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="算法题解(3)-贪心";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
@@ -807,7 +975,7 @@ var loadCSS = function( href, before, media, attributes ){
 
   
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@4.1.6/source/js/valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
 
 
 <script>
@@ -858,8 +1026,8 @@ var loadCSS = function( href, before, media, attributes ){
       meta: meta,
       placeholder: pagePlaceholder,
       path: path,
-      appId: "",
-      appKey: "",
+      appId: "I8VDReGY1W0OPMWlNsbDGuqA-MdYXbMMI",
+      appKey: "g8GS53CCCO6fcBV1rX2YvMF1",
       pageSize: '10',
       avatar: 'robohash',
       lang: 'zh-cn',
@@ -1330,6 +1498,18 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
     
   </div>
+
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>
+
+  <!--动态线条背景-->
+  <!-- <script type="text/javascript"
+  color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script> -->
+  <!-- 樱花特效 -->
+  
+    <script async src="/js/src/sakura.js"></script>
+  
+
+
 </body>
 </html>

@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hello, World!</title>
-    <url>/uncategorized/2020/11/ckmk77uph0001knz316gn0yr1/</url>
+    <url>/uncategorized/2020/11/hello-world/</url>
     <content><![CDATA[<p><img src="https://pic.downk.cc/item/5fcd0730394ac52378a4cb3b.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fcd0730394ac52378a4cb3b.jpg" srcset="data:image/png;base64,666"></p>
 <p>历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃</p>
 <p>之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和</p>
@@ -17,7 +17,7 @@
   </entry>
   <entry>
     <title>note:图解HTTP(1)</title>
-    <url>/CS/2020/11/ckmk77upj0003knz30jwqd4xk/</url>
+    <url>/CS/2020/11/note-%E5%9B%BE%E8%A7%A3HTTP-1/</url>
     <content><![CDATA[<h2 id="报文和实体的差别"><a href="#报文和实体的差别" class="headerlink" title="报文和实体的差别"></a>报文和实体的差别</h2><p>关于第三章中报文和实体的差别，书中讲得太简洁。</p>
 <p><strong>报文</strong>要么是一个请求报文，要么就是一个响应报文。</p>
 <p>一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报文”，服务器响应客户端，则发送“响应报文”），即为书中说的：</p>
@@ -57,7 +57,7 @@
   </entry>
   <entry>
     <title>为网站配置https/http2</title>
-    <url>/CS/2020/11/ckmk77upk0005knz3dqvz3ya0/</url>
+    <url>/CS/2020/11/%E4%B8%BA%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AEhttps-http2/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
 <p>https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2相比于https有了一些新特性。于是这里配置http2. </p>
 <h2 id="配置http2"><a href="#配置http2" class="headerlink" title="配置http2"></a>配置http2</h2><p>使用免费的<a class="wp-editor-md-post-content-link" href="https://letsencrypt.org/">Let’s Encrypt</a>，在官网中会告诉你用 <a class="wp-editor-md-post-content-link" href="https://certbot.eff.org/">Certbot</a> ACME 客户端自动配置，进去选择自己的nginx版本和系统版本就好了。页面上会出现操作步骤。</p>
@@ -112,7 +112,7 @@
   </entry>
   <entry>
     <title>数据结构-1-链表</title>
-    <url>/%E7%AC%94%E8%AE%B0/2020/12/ckmk77upn0009knz3dlel8div/</url>
+    <url>/%E7%AC%94%E8%AE%B0/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><p>指针大法好</p>
 <p>真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久</p>
 <hr>
@@ -149,7 +149,7 @@
   </entry>
   <entry>
     <title>用hexo搭建个人网站</title>
-    <url>/CS/2020/12/ckmk77upo000bknz3f52bcjqp/</url>
+    <url>/CS/2020/12/%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</url>
     <content><![CDATA[<h1 id="用hexo搭建个人网站"><a href="#用hexo搭建个人网站" class="headerlink" title="用hexo搭建个人网站"></a>用hexo搭建个人网站</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl</p>
 <p>来了，网站却用不了</p>
 <p>虽然我启用了81端口，nginx也监听了相应端口，然而WordPress却没有改配置（踩坑）。于是进去后就只是一个html。。WordPress管理端是默认端口，于是也没办法管了，只好迅速配一个hexo，刚好自己也准备做一个，只不过太忙了（所以现在更忙了，淦）</p>
@@ -216,7 +216,7 @@
   </entry>
   <entry>
     <title>算法题解(1)-排序</title>
-    <url>/%E9%A2%98%E8%A7%A3/2020/12/ckmk77upp000dknz36xjnay1f/</url>
+    <url>/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-1-%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h3 id="排序（c-）"><a href="#排序（c-）" class="headerlink" title="排序（c++）"></a>排序（c++）</h3><p>虽然是c++，其实是c语法</p>
 <h4 id="洛谷P1271-选举学生会"><a href="#洛谷P1271-选举学生会" class="headerlink" title="洛谷P1271 选举学生会"></a>洛谷P1271 选举学生会</h4><p>已经得知了数据范围，使用桶排序</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">int</span> bucket[n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; ++i) &#123;</span><br><span class="line">        bucket[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">        bucket[num] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; bucket[i]; ++j) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -276,7 +276,7 @@ P1059重新想了一下，也可以用快排
   </entry>
   <entry>
     <title>算法题解(2)-二分</title>
-    <url>/%E9%A2%98%E8%A7%A3/2020/12/ckmk77upr000hknz3bxvpb7u6/</url>
+    <url>/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-2-%E4%BA%8C%E5%88%86/</url>
     <content><![CDATA[<p><img src="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" srcset="data:image/png;base64,666"></p>
 <h4 id="洛谷P1873-砍树"><a href="#洛谷P1873-砍树" class="headerlink" title="洛谷P1873 砍树"></a>洛谷P1873 砍树</h4><a id="more"></a>
 
@@ -307,7 +307,7 @@ P1059重新想了一下，也可以用快排
   </entry>
   <entry>
     <title>算法题解(3)-贪心</title>
-    <url>/%E9%A2%98%E8%A7%A3/2020/12/ckmk77ups000iknz30yrffm2x/</url>
+    <url>/%E9%A2%98%E8%A7%A3/2020/12/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3-3-%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<h4 id="P2240-【深基12-例1】部分背包问题"><a href="#P2240-【深基12-例1】部分背包问题" class="headerlink" title="P2240 【深基12.例1】部分背包问题"></a>P2240 【深基12.例1】部分背包问题</h4><p>好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mon</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> w,v;</span><br><span class="line">    <span class="keyword">double</span> bili;</span><br><span class="line">&#125;money[<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(mon *a,mon *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> t=a-&gt;bili;</span><br><span class="line">    a-&gt;bili=b-&gt;bili;</span><br><span class="line">    b-&gt;bili=t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> d=a-&gt;w;</span><br><span class="line">    a-&gt;w=b-&gt;w;</span><br><span class="line">    b-&gt;w=d;</span><br><span class="line"></span><br><span class="line">    d=a-&gt;v;</span><br><span class="line">    a-&gt;v=b-&gt;v;</span><br><span class="line">    b-&gt;v=d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(mon arr[],<span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">nullptr</span>));</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">double</span> pivot = arr[rand() % len].bili;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].bili &gt; pivot)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &gt; arr[i].bili)&#123;</span><br><span class="line">            swap(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(arr, j);</span><br><span class="line">    quick_sort(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,bag;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;bag);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;money[i].w,&amp;money[i].v);</span><br><span class="line">        <span class="keyword">if</span> (money[i].w==<span class="number">0</span>) money[i].bili=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> money[i].bili=<span class="number">1.0</span>*money[i].v/money[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    quick_sort(money,n);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (bag&gt;=money[i].w)&#123;</span><br><span class="line">        bag-=money[i].w;</span><br><span class="line">        sum+=money[i].v;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    sum+=bag*money[i].bili;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -333,7 +333,7 @@ P1059重新想了一下，也可以用快排
   </entry>
   <entry>
     <title>解决网站配置完https后访问http失败</title>
-    <url>/%E6%8A%A5%E9%94%99/2020/11/ckmk77upt000mknz3apw9ees6/</url>
+    <url>/%E6%8A%A5%E9%94%99/2020/11/%E8%A7%A3%E5%86%B3%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE%E5%AE%8Chttps%E5%90%8E%E8%AE%BF%E9%97%AEhttp%E5%A4%B1%E8%B4%A5/</url>
     <content><![CDATA[<p>报错如下： </p>
 <p>解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦</p>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line"><span class="attribute">server_name</span> ryaoknw.site; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://$server_name$request_uri; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

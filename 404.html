@@ -77,7 +77,6 @@
     gtag('config', 'G-R0B5LNCWV7');
   </script>
 
-
 </head>
 
 
@@ -371,6 +370,15 @@
     <div class='menu navigation'>
       <div class='list-h'>
         
+          
+            <a href="/"
+              
+                rel="nofollow"
+              
+              
+              id="home">
+              <i class='fas fa-home fa-fw'></i><p>Home</p>
+            </a>
           
             <a href="/tags/"
               
@@ -1410,6 +1418,8 @@ document.addEventListener("pjax:success", listennSidebarTOC);
   color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
   </script> -->
   
+    <script type="text/javascript" src="/js/src/particle.js" count="50" zindex="-2" opacity="1" color="255, 20, 147"></script>
+  
 
   <!-- 樱花特效 -->
   
@@ -1418,34 +1428,38 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 
 
   <!--预加载-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_1.css" >
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zyoushuo/Blog@latest/hexo/css/loading_style_2.css" >
   
-    <div id='loader'>
-        
-        <div class="loading-left-bg"></div>
-        <div class="loading-right-bg"></div>
-        <div class="spinner-box">
-            <div class="configure-border-1">
-                <div class="configure-core"></div>
-            </div>
-            <div class="configure-border-2">
-                <div class="configure-core"></div>
-            </div>
-            <div class="loading-word">加载中...</div>
-        </div>
-      
-    </div>
-    
-    <script>
-      var endLoading = function () {
-        document.body.style.overflow = 'auto';
-        document.getElementById('loader').classList.add("loading");
-      }
-      window.addEventListener('load',endLoading);
-    </script>
 
+  <!--loading加载界面-->
+  
+    <style>
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
 
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
 
+.pace-inactive {
+	display: none;
+}
+
+.pace .pace-progress {
+	background: #2beec7;
+	position: fixed;
+	z-index: 2000;
+	top: 0;
+	right: 100%;
+	width: 100%;
+	height: 2px;
+}
+</style>
+    <script type="text/javascript" src="/js/src/pace.js" class="pace"></script>
+  
+  <!--loading end-->
+  
+  
 </body>
 </html>

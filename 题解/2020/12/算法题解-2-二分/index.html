@@ -105,7 +105,7 @@
         
         <a class="title flat-box" target="_self" href='/'>
           
-            <img no-lazy class='logo' src='https://pic.downk.cc/item/5fcda8f63ffa7d37b38eea8e.png'/>
+            <img no-lazy class='logo' src='https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/605ac6483ab74_605ac6485a313.png'/>
           
           
           
@@ -361,7 +361,7 @@
     
         <div id="full" class='cover-wrapper post dock' style="display: none;">
           
-            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ev0015a-O.jpg"></div>
+            <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ev0015a.jpg"></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -506,7 +506,7 @@
 
 
   
-  <p><img src="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fd752c13ffa7d37b3b49a45.jpg" srcset="data:image/png;base64,666"></p>
+  <p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ffb400021be57c253efb.jpeg" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ffb400021be57c253efb.jpeg" srcset="data:image/png;base64,666"></p>
 <h4 id="洛谷P1873-砍树"><a href="#洛谷P1873-砍树" class="headerlink" title="洛谷P1873 砍树"></a>洛谷P1873 砍树</h4><a id="more"></a>
 
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(a, b) a&gt;b?a:b</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN(a, b) a&gt;b?b:a</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> N, M, mid, length;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld %lld&quot;</span>, &amp;N, &amp;M);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> l = <span class="number">0</span>, s = <span class="number">1000000000</span>;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> height[N];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;height[i]);</span><br><span class="line">        l = MAX(height[i], l);</span><br><span class="line">        s = MIN(height[i], s);</span><br><span class="line">    &#125;</span><br><span class="line">    mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (s + <span class="number">1</span> &lt; l) &#123;</span><br><span class="line">        length = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mid &lt; height[i]) length += height[i] - mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (length &gt;= M) &#123;</span><br><span class="line">            s = mid;</span><br><span class="line">            mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            l = mid;</span><br><span class="line">            mid = s + ((l - s) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, mid);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -558,10 +558,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-22T18:26:22+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-24T12:47:36+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月22日</p>
+    <p>更新于：2021年3月24日</p>
   </a>
 </div>
 

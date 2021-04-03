@@ -19,13 +19,14 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello, World! - Ryao&#39;s Blog</title>
+  <title>用go-cqhttp搭建qqbot - Ryao&#39;s Blog</title>
+  
+    <meta name="keywords" content="go,qqbot,教程">
   
 
   
-    <meta name="description" content="
-历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了...">
+    <meta name="description" content="用go-cqhttp搭建qqbot
+前言好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么">
   
 
   <!-- feed -->
@@ -449,7 +450,7 @@
     
     
       <h1 class="title">
-        Hello, World!
+        用go-cqhttp搭建qqbot
       </h1>
       <div class='new-meta-box'>
         
@@ -466,11 +467,21 @@
         
           
             
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/CS/">CS</a>
+    </a>
+  </div>
+
 
           
         
           
             
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/go/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>go</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/qqbot/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>qqbot</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div>
+
 
           
         
@@ -478,7 +489,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年11月5日</p>
+    <p>发布于：2021年4月4日</p>
   </a>
 </div>
 
@@ -495,16 +506,47 @@
 
 
   
-  <p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/1000600035f02b5989ae5.jpeg" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/1000600035f02b5989ae5.jpeg" srcset="data:image/png;base64,666"></p>
-<p>历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃</p>
-<p>之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和</p>
+  <h1 id="用go-cqhttp搭建qqbot"><a href="#用go-cqhttp搭建qqbot" class="headerlink" title="用go-cqhttp搭建qqbot"></a>用go-cqhttp搭建qqbot</h1><p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/QQ%E5%9B%BE%E7%89%8720210404014541.jpg" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/QQ%E5%9B%BE%E7%89%8720210404014541.jpg" srcset="data:image/png;base64,666"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么</p>
 <a id="more"></a>
 
-<p>域名解析。期间域名解析配错了，又折腾了好久（还有v2ray开全局代理访问会爆500啊！）收获就是之后重装都异常熟练</p>
-<p><img src="https://pic.downk.cc/item/5fce09ee3ffa7d37b3da8877.jpg" class="lazyload" data-srcset="https://pic.downk.cc/item/5fce09ee3ffa7d37b3da8877.jpg" srcset="data:image/png;base64,666"></p>
-<p>再就是欢乐地选主题，换了三个siren，sakura和krato，而且最终也没有和ks和zcy一样用kale。还是用了krato，然后稍微折腾一下就成功了</p>
-<p>算是完成了自己的一个浪漫。不过还是想之后有时间写静态页面的博客，但是最近ddl太！多！了！从开学到现在作息非常极客！急需时间管理大法。</p>
-<p>之后有时间要陆陆续续地把自己的东西整理一下，搬到博客上来</p>
+<p>事，本来想实践一下微信小程序和微信公众号的开发，奈何没有成年，申请不了，于是被打回来写qqbot，本着好玩的目的，但是实践的过程中还是遇到了一些困难，由于缺乏基本认识而踩了一堆坑</p>
+<h2 id="QQ-协议端搭建"><a href="#QQ-协议端搭建" class="headerlink" title="QQ 协议端搭建"></a>QQ 协议端搭建</h2><p>没错，这个东西叫协议端！</p>
+<p>目前比较常见的有：</p>
+<ul>
+<li>  <a href="https://link.zhihu.com/?target=https://github.com/Mrs4s/go-cqhttp">go-cqhttp</a> (基于 <a href="https://link.zhihu.com/?target=https://github.com/Mrs4s/MiraiGo">MiraiGo</a>)</li>
+<li>  <a href="https://link.zhihu.com/?target=https://github.com/yyuueexxiinngg/cqhttp-mirai/tree/embedded">cqhttp-mirai-embedded</a></li>
+<li>  <a href="https://link.zhihu.com/?target=https://github.com/mamoe/mirai">Mirai</a> + <a href="https://link.zhihu.com/?target=https://github.com/yyuueexxiinngg/cqhttp-mirai">cqhttp-mirai</a></li>
+<li>  <a href="https://link.zhihu.com/?target=https://github.com/mamoe/mirai">Mirai</a> + <a href="https://link.zhihu.com/?target=https://github.com/iTXTech/mirai-native">Mirai Native</a> + <a href="https://link.zhihu.com/?target=https://github.com/richardchien/coolq-http-api">CQHTTP</a></li>
+<li>  <a href="https://link.zhihu.com/?target=https://github.com/takayama-lily/onebot">OICQ-http-api</a> (基于 <a href="https://link.zhihu.com/?target=https://github.com/takayama-lily/oicq">OICQ</a>)</li>
+<li>  <em>酷Q (已停止开发)</em></li>
+</ul>
+<p>（来自知乎）</p>
+<p>我这里采用go-cqhttp，采用其他的基本也相同，最重要的是要基于onebot标准</p>
+<p>关于如何搭建可以看<a target="_blank" rel="noopener" href="https://docs.go-cqhttp.org/guide/">文档</a></p>
+<p>首先编写<code>config.hjson</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">    go-cqhttp 默认配置文件</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; QQ号</span><br><span class="line">    uin: 0</span><br><span class="line">    &#x2F;&#x2F; QQ密码</span><br><span class="line">    password: &quot;&quot;</span><br><span class="line">    &#x2F;&#x2F; 是否启用密码加密</span><br><span class="line">    encrypt_password: false</span><br><span class="line">    &#x2F;&#x2F; 加密后的密码, 如未启用密码加密将为空, 请勿随意修改.</span><br><span class="line">    password_encrypted: &quot;&quot;</span><br><span class="line">    &#x2F;&#x2F; 是否启用内置数据库</span><br><span class="line">    &#x2F;&#x2F; 启用将会增加10-20MB的内存占用和一定的磁盘空间</span><br><span class="line">    &#x2F;&#x2F; 关闭将无法使用 撤回 回复 get_msg 等上下文相关功能</span><br><span class="line">    enable_db: true</span><br><span class="line">    &#x2F;&#x2F; 访问密钥, 强烈推荐在公网的服务器设置</span><br><span class="line">    access_token: &quot;&quot;</span><br><span class="line">    &#x2F;&#x2F; 重连设置</span><br><span class="line">    relogin: &#123;</span><br><span class="line">        &#x2F;&#x2F; 是否启用自动重连</span><br><span class="line">        &#x2F;&#x2F; 如不启用掉线后将不会自动重连</span><br><span class="line">        enabled: true</span><br><span class="line">        &#x2F;&#x2F; 重连延迟, 单位秒</span><br><span class="line">        relogin_delay: 3</span><br><span class="line">        &#x2F;&#x2F; 最大重连次数, 0为无限制</span><br><span class="line">        max_relogin_times: 0</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; API限速设置</span><br><span class="line">    &#x2F;&#x2F; 该设置为全局生效</span><br><span class="line">    &#x2F;&#x2F; 原 cqhttp 虽然启用了 rate_limit 后缀, 但是基本没插件适配</span><br><span class="line">    &#x2F;&#x2F; 目前该限速设置为令牌桶算法, 请参考: </span><br><span class="line">    &#x2F;&#x2F; https:&#x2F;&#x2F;baike.baidu.com&#x2F;item&#x2F;%E4%BB%A4%E7%89%8C%E6%A1%B6%E7%AE%97%E6%B3%95&#x2F;6597000?fr&#x3D;aladdin</span><br><span class="line">    _rate_limit: &#123;</span><br><span class="line">        &#x2F;&#x2F; 是否启用限速</span><br><span class="line">        enabled: false</span><br><span class="line">        &#x2F;&#x2F; 令牌回复频率, 单位秒</span><br><span class="line">        frequency: 1</span><br><span class="line">        &#x2F;&#x2F; 令牌桶大小</span><br><span class="line">        bucket_size: 1</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 是否忽略无效的CQ码</span><br><span class="line">    &#x2F;&#x2F; 如果为假将原样发送</span><br><span class="line">    ignore_invalid_cqcode: false</span><br><span class="line">    &#x2F;&#x2F; 是否强制分片发送消息</span><br><span class="line">    &#x2F;&#x2F; 分片发送将会带来更快的速度</span><br><span class="line">    &#x2F;&#x2F; 但是兼容性会有些问题</span><br><span class="line">    force_fragmented: false</span><br><span class="line">    &#x2F;&#x2F; 心跳频率, 单位秒</span><br><span class="line">    &#x2F;&#x2F; -1 为关闭心跳</span><br><span class="line">    heartbeat_interval: 0</span><br><span class="line">    &#x2F;&#x2F; HTTP设置</span><br><span class="line">    http_config: &#123;</span><br><span class="line">        &#x2F;&#x2F; 是否启用正向HTTP服务器</span><br><span class="line">        enabled: true</span><br><span class="line">        &#x2F;&#x2F; 服务端监听地址</span><br><span class="line">        host: 127.0.0.1</span><br><span class="line">        &#x2F;&#x2F; 服务端监听端口</span><br><span class="line">        port: 22333</span><br><span class="line">        &#x2F;&#x2F; 反向HTTP超时时间, 单位秒</span><br><span class="line">        &#x2F;&#x2F; 最小值为5，小于5将会忽略本项设置</span><br><span class="line">        timeout: 0</span><br><span class="line">        &#x2F;&#x2F; 反向HTTP POST地址列表</span><br><span class="line">        &#x2F;&#x2F; 格式: </span><br><span class="line">        &#x2F;&#x2F; &#123;</span><br><span class="line">        &#x2F;&#x2F;    地址: secret</span><br><span class="line">        &#x2F;&#x2F; &#125;</span><br><span class="line">        post_urls:&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 正向WS设置</span><br><span class="line">    ws_config: &#123;</span><br><span class="line">        &#x2F;&#x2F; 是否启用正向WS服务器</span><br><span class="line">        enabled: false</span><br><span class="line">        &#x2F;&#x2F; 正向WS服务器监听地址</span><br><span class="line">        host: 127.0.0.1</span><br><span class="line">        &#x2F;&#x2F; 正向WS服务器监听端口</span><br><span class="line">        port: 6700</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F; 反向WS设置</span><br><span class="line">    ws_reverse_servers: [</span><br><span class="line">        &#x2F;&#x2F; 可以添加多个反向WS推送</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F; 是否启用该推送</span><br><span class="line">            enabled: true</span><br><span class="line">            &#x2F;&#x2F; 反向WS Universal 地址</span><br><span class="line">            &#x2F;&#x2F; 注意 设置了此项地址后下面两项将会被忽略</span><br><span class="line">            &#x2F;&#x2F; 留空请使用 &quot;&quot;</span><br><span class="line">            reverse_url: ws:&#x2F;&#x2F;127.0.0.1:22334&#x2F;</span><br><span class="line">            &#x2F;&#x2F; 反向WS API 地址</span><br><span class="line">            reverse_api_url: ws:&#x2F;&#x2F;you_websocket_api.server</span><br><span class="line">            &#x2F;&#x2F; 反向WS Event 地址</span><br><span class="line">            reverse_event_url: ws:&#x2F;&#x2F;you_websocket_event.server</span><br><span class="line">            &#x2F;&#x2F; 重连间隔 单位毫秒</span><br><span class="line">            reverse_reconnect_interval: 3000</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">    &#x2F;&#x2F; 上报数据类型</span><br><span class="line">    &#x2F;&#x2F; 可选: string array</span><br><span class="line">    post_message_format: string</span><br><span class="line">    &#x2F;&#x2F; 是否使用服务器下发的新地址进行重连</span><br><span class="line">    &#x2F;&#x2F; 注意, 此设置可能导致在海外服务器上连接情况更差</span><br><span class="line">    use_sso_address: false</span><br><span class="line">    &#x2F;&#x2F; 是否启用 DEBUG</span><br><span class="line">    debug: false</span><br><span class="line">    &#x2F;&#x2F; 日志等级 trace,debug,info,warn,error</span><br><span class="line">    log_level: &quot;info&quot;</span><br><span class="line">    &#x2F;&#x2F; WebUi 设置</span><br><span class="line">    web_ui: &#123;</span><br><span class="line">        &#x2F;&#x2F; 是否启用 WebUi</span><br><span class="line">        enabled: false</span><br><span class="line">        &#x2F;&#x2F; 监听地址</span><br><span class="line">        host: 127.0.0.1</span><br><span class="line">        &#x2F;&#x2F; 监听端口</span><br><span class="line">        web_ui_port: 9999</span><br><span class="line">        &#x2F;&#x2F; 是否接收来自web的输入</span><br><span class="line">        web_input: false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>./go-cqhttp</code>运行后需要进行滑块认证，在浏览器抓取<code>cap_union_new_verify</code> 的返回值，然后把ticket的值输入就行了。</p>
+<p>此时协议端搭建完毕</p>
+<p><strong>注：记得iptable开放相应端口</strong></p>
+<h2 id="后端搭建"><a href="#后端搭建" class="headerlink" title="后端搭建"></a>后端搭建</h2><h3 id="一、使用机器人框架"><a href="#一、使用机器人框架" class="headerlink" title="一、使用机器人框架"></a>一、使用机器人框架</h3><p>不得不说python的nonebot和nonebot2实在是太方便了，文档也十分详细。</p>
+<p>如果你只是想要一个qqbot，推荐使用以上两个框架，大概几个小时就能实现一个bot</p>
+<p>如果你想用go来写，也可以用<a target="_blank" rel="noopener" href="https://github.com/wdvxdr1123/ZeroBot">ZeroBot</a>来作为你的框架</p>
+<h3 id="二、写后端来调用协议"><a href="#二、写后端来调用协议" class="headerlink" title="二、写后端来调用协议"></a>二、写后端来调用协议</h3><p>虽然框架很好用（单指python的库）</p>
+<p>但由于觉得好玩，我还是头铁地使用了go来开发</p>
+<p>找不到真正合适的go开发框架，于是自己写websocket来对接</p>
+<p>go websocket的使用请自行学习，这里简单描述搭建服务的过程，细节可以参考我的代码部分<a target="_blank" rel="noopener" href="https://github.com/RyaoChengfeng/rinqqbot/blob/main/controller/ws.go">https://github.com/RyaoChengfeng/rinqqbot/blob/main/controller/ws.go</a></p>
+<ul>
+<li>http监听ws反向端口<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">controller.StartWebsocket()  </span><br><span class="line">err:= http.ListenAndServe(config.Addr+<span class="string">`:`</span>+config.WsPort,<span class="literal">nil</span>)  </span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;  </span><br><span class="line"> fmt.Println(err)  </span><br><span class="line"> os.Exit(<span class="number">1</span>)  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>将http升级为ws并启动ws<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> wsConnection <span class="keyword">struct</span> &#123;  </span><br><span class="line"> wsSocket *websocket.Conn <span class="comment">// 底层websocket  </span></span><br><span class="line"> inChan   <span class="keyword">chan</span> *wsMessage <span class="comment">// 读队列  </span></span><br><span class="line"> outChan  <span class="keyword">chan</span> *wsMessage <span class="comment">// 写队列  </span></span><br><span class="line">  </span><br><span class="line"> mutex     sync.Mutex <span class="comment">// 避免重复关闭管道,加锁处理  </span></span><br><span class="line"> isClosed  <span class="keyword">bool</span>  </span><br><span class="line"> closeChan <span class="keyword">chan</span> <span class="keyword">byte</span> <span class="comment">// 关闭通知  </span></span><br><span class="line"> id        <span class="keyword">int64</span>  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> upgrader = websocket.Upgrader&#123;  </span><br><span class="line"> ReadBufferSize:  <span class="number">1024</span>,  </span><br><span class="line"> WriteBufferSize: <span class="number">1024</span>,  </span><br><span class="line"> <span class="comment">// 允许所有的CORS 跨域请求，正式环境可以关闭  </span></span><br><span class="line"> CheckOrigin: <span class="function"><span class="keyword">func</span><span class="params">(r *http.Request)</span> <span class="title">bool</span></span> &#123;  </span><br><span class="line"> <span class="keyword">return</span> <span class="literal">true</span>  </span><br><span class="line"> &#125;,  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">StartWebsocket</span><span class="params">()</span></span> &#123;  </span><br><span class="line"> WsConnAll = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">int64</span>]*wsConnection)  </span><br><span class="line"> http.HandleFunc(<span class="string">&quot;/&quot;</span>, wsHandler)  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">wsHandler</span><span class="params">(rsp http.ResponseWriter, req *http.Request)</span></span> &#123;  </span><br><span class="line"> <span class="comment">// 应答客户端告知升级连接为websocket  </span></span><br><span class="line"> wsSocket, err := upgrader.Upgrade(rsp, req, <span class="literal">nil</span>)  </span><br><span class="line"> <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;  </span><br><span class="line"> log.Logger.Error(<span class="string">&quot;升级为websocket失败&quot;</span>, err.Error())  </span><br><span class="line"> &#125; maxConnId++  </span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 连接数保持一定数量，超过的部分不提供服务  </span></span><br><span class="line"> <span class="comment">// 如果要控制连接数可以计算WsConnAll长度 len(WsConnAll) wsConn := &amp;wsConnection&#123;  </span></span><br><span class="line"> wsSocket:  wsSocket,  </span><br><span class="line"> inChan:    <span class="built_in">make</span>(<span class="keyword">chan</span> *wsMessage, <span class="number">1000</span>),  </span><br><span class="line"> outChan:   <span class="built_in">make</span>(<span class="keyword">chan</span> *wsMessage, <span class="number">1000</span>),  </span><br><span class="line"> closeChan: <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">byte</span>),  </span><br><span class="line"> isClosed:  <span class="literal">false</span>,  </span><br><span class="line"> id:        maxConnId,  </span><br><span class="line"> &#125;  </span><br><span class="line">  </span><br><span class="line"> WsConnAll[maxConnId] = wsConn  </span><br><span class="line">   <span class="comment">// 处理器,发送定时信息，避免意外关闭  </span></span><br><span class="line"> <span class="keyword">go</span> processLoop(wsConn)  </span><br><span class="line"> <span class="comment">// 读协程  </span></span><br><span class="line"> <span class="keyword">go</span> wsReadLoop(wsConn)  </span><br><span class="line"> <span class="comment">// 写协程  </span></span><br><span class="line"> <span class="keyword">go</span> wsWriteLoop(wsConn)  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>在多线程中处理协议端发来的message，并提取信息进行调用协议端api<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">err = json.Unmarshal(msg.data, &amp;msgData)  </span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;  </span><br><span class="line"> log.Logger.Error(<span class="string">&quot;json信息解析错误&quot;</span>, err.Error())  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//log.Logger.Debug(&quot;收到消息：&quot;,msgData)  </span></span><br><span class="line">HandleWsMsg(msgData)</span><br></pre></td></tr></table></figure></li>
+<li>在<code>HandleWsMsg</code>中进行bot功能实现<br>message结构请参考对应的协议文档，以及基于onebot标准的协议的onebot标准，具体参考下方链接</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.go-cqhttp.org/">go-cqhttp文档</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/howmanybots/onebot/blob/master/v11/specs/README.md">Onebot标准</a></li>
+</ul>
 
   
   
@@ -522,7 +564,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://ryaoknw.site/uncategorized/2020/11/hello-world/>https://ryaoknw.site/uncategorized/2020/11/hello-world/</a></p>
+                <p>本文永久链接是：<a href=https://ryaoknw.site/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/>https://ryaoknw.site/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/</a></p>
               
             
           </blockquote>
@@ -539,10 +581,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-05T16:59:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-04T01:50:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年11月5日</p>
+    <p>更新于：2021年4月4日</p>
   </a>
 </div>
 
@@ -550,6 +592,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/go/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>go</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/qqbot/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>qqbot</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>教程</p></a></div>
+
 
         
       
@@ -561,9 +606,8 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/uncategorized/2020/11/hello-world/&title=Hello, World! - Ryao's Blog&summary=
-历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/&title=用go-cqhttp搭建qqbot - Ryao's Blog&summary=用go-cqhttp搭建qqbot
+前言好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么"
           
           >
           
@@ -575,9 +619,8 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/uncategorized/2020/11/hello-world/&title=Hello, World! - Ryao's Blog&summary=
-历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/&title=用go-cqhttp搭建qqbot - Ryao's Blog&summary=用go-cqhttp搭建qqbot
+前言好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么"
           
           >
           
@@ -589,9 +632,8 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/uncategorized/2020/11/hello-world/&title=Hello, World! - Ryao's Blog&summary=
-历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/&title=用go-cqhttp搭建qqbot - Ryao's Blog&summary=用go-cqhttp搭建qqbot
+前言好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么"
           
           >
           
@@ -605,7 +647,7 @@
         <div class='hoverbox'>
           <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
           <div class='target'>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADpElEQVR42u3aQXLjMAwEQP//08l9q1IiBpAFe5s3J7ZEtnJAZvz6saL1QgAOHDhwFjhwS+Be4Tq+0cX7//39X6//uv/Vvk6vd3pecODAgQMHDhy4bXBTEFWw6oFPr3d63eo5wIEDBw4cOHDgtsKdDpzv/vzp9a4eTHu/4MCBAwcOHDhwXw43FSh2r5N+Hhw4cODAgQMH7n+BqwaEaSDZDSrBgQMHDhw4cOC+Fa5c0B4GiVMDdbeYXtPkgwMHDhw4cODADcFV19TBn3odnxccOHDgwIEDB24J3FTwmAaK1eDx6vPdgffyvODAgQMHDhw4cEvgpr7wN/35tKA+Lazj/YEDBw4cOHDgwC2DSwfNtPjtgqbw1f2BAwcOHDhw4MBthesGh+kB0/umRXn1gZULaXDgwIEDBw4cuIfh0oN2B+n0ft33lYNVcODAgQMHDhy4pXB3HXw60KwOwt0FDhw4cODAgQO3DS79gl06wFYH19MH9q4HDg4cOHDgwIEDtwUuPeD0wBp/0S/8eXVwBgcOHDhw4MCB2wrXHRC7A2gaSE7vq1xIgwMHDhw4cODALYFLA8cqyNR90kE8/YMBBw4cOHDgwIHbBtcFPB4gbyqm7wo6wYEDBw4cOHDgtsJNH2SqmD4uiFOAbiENDhw4cODAgQP3MFw3oOwOrilwGlh2C21w4MCBAwcOHLitcGmh3IVIB+F0H3GxDQ4cOHDgwIEDtwRuKjDsFtxpEJnuOy7YwYEDBw4cOHDglsCdbrQKlRbG1dfpYDxeSIMDBw4cOHDgwL0ZrjpgpgfvDqhTqxp8Hv/nAA4cOHDgwIEDtxyuOtBOBZ/dQjm9Hjhw4MCBAwcO3Ha4amFchal+ETANSKv7KT9YcODAgQMHDhy4ZXBpEJkW1SlQ94uMaQALDhw4cODAgQP36XDpYDr1+eqAXg1GwYEDBw4cOHDgPhVuKqhMi+r0fdXCulpQgwMHDhw4cODAbYPrrmowWA0w0+tPPzBw4MCBAwcOHLhtcN0BMQ0qu7DpwN5+DQ4cOHDgwIEDtwyuu5EpuPT3KXg5GAUHDhw4cODAgVsK1w0Qq9dNAV7Dqz0AgwMHDhw4cODAfShcN+CcKprvKrbBgQMHDhw4cOC+Fe4qIEwH2OmC+XTQfjzIBAcOHDhw4MCBu7mQPi14qwNwGnymweXxgwIHDhw4cODAgVsG1y1wp4rpqSB1ej/gwIEDBw4cOHDb4KzaAgcOHDhwFjhwD69fGIZ+tSGvkgMAAAAASUVORK5CYII=">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADo0lEQVR42u3aUXLiQAwEUO5/6d0DpCiPWnKQyZs/wMajN/noSLz+WdF6IQAHDhw4Cxy4JXCvcP34wjfvn36e7ufu7//xHHDgwIEDBw4cuGVwxwHwAu6qsNP3y8F06ICvrgcHDhw4cODAgdsKVw2apyBTgTU9yLF6wYEDBw4cOHDgvgwuDcJ3NygvAy04cODAgQMHDtwfh5tqXKbg6WAcHDhw4MCBAwfuW+DKA9qh4Jo2MtPB+Mcn+eDAgQMHDhw4cENw1VVtbG57HdcLDhw4cODAgQO3BK67pgbS1UBbHTiP1QsOHDhw4MCBA7cELg2IKezUdVMD7/JBggMHDhw4cODALYGrDoa7QbgaZNODS4P2Vb3gwIEDBw4cOHBb4E4DZNp4TIPu6X3V/XbrAAcOHDhw4MCBexpcOpjuXnc3TLkucODAgQMHDhy4ZXDTjcWpHxCmDcvpBQ4cOHDgwIEDtxWuGlzTRmja+EwH1NX9tAfS4MCBAwcOHDhwH4ZLG5HTBXUDcXoA4wNpcODAgQMHDhy4X4JLC0wD7unzTwue3hc4cODAgQMHDtxWuO7guLvh6vO7ATn9gSQ4cODAgQMHDtw2uLsHytONxvRAq0G7PZAGBw4cOHDgwIH7JbjTDaUFdBubp+uuwTo4cODAgQMHDtwWuGqjsRs872pATh3cJTA4cODAgQMHDtwyuDgQHkKfBtJqYaf3V/f59jngwIEDBw4cOHDL4KpfVH7gzfDdRujxdeDAgQMHDhw4cA+FSxudU/dPNzLLBwoOHDhw4MCBA7ccbrqw6QH33YNzcODAgQMHDhy4p8ClA+PuIHmqgTp1gJcO4MCBAwcOHDhwS+CmNjwNlgbg7sD5eCANDhw4cODAgQO3DO60UTgVlNMfJMYBtjs4BwcOHDhw4MCBexhcdSB81/3VgfJ0YAYHDhw4cODAgdsKNxVIU8C0wO46HliDAwcOHDhw4MAtgWsPaEPAauBO99X9Q3gbgMGBAwcOHDhw4D4MN904TK+vBvDTz8dfgwMHDhw4cODALYNLA2+34VgdJKf3VwNwPMkHBw4cOHDgwIH7EFx7YDu80eoBTA2kwYEDBw4cOHDg/hpcOhDuvt+FPj5gcODAgQMHDhy4L4O7G2BqoFz9XnDgwIEDBw4cuKfAVR9QDbxpQK42IquN1WNQcODAgQMHDhy4ZXBTA9y0wG5haVAv/wMADhw4cODAgQO3BM4qNlIRgAMHDpwFDtxn13/7Dv41erwkIgAAAABJRU5ErkJggg==">
           </div>
         </div>
       
@@ -629,13 +671,19 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/%E6%8A%A5%E9%94%99/2020/11/%E8%A7%A3%E5%86%B3%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE%E5%AE%8Chttps%E5%90%8E%E8%AE%BF%E9%97%AEhttp%E5%A4%B1%E8%B4%A5/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>解决网站配置完https后访问http失败</p>
-          <p class='content'>报错如下： 
-解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦
-12345server &#123; listen 80;server_name ryaoknw.si...</p>
-        </a>
       
+        <a class='next' href='/%E7%AC%94%E8%AE%B0/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E9%93%BE%E8%A1%A8/'>
+          <p class='title'>数据结构-1-链表<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>单链表指针大法好
+真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久
+
+
+
+  核心
+
+增
+1234p=(Link*)malloc(sizeof (Lin...</p>
+        </a>
       
     </div>
   
@@ -667,6 +715,20 @@
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QQ-%E5%8D%8F%E8%AE%AE%E7%AB%AF%E6%90%AD%E5%BB%BA"><span class="toc-text">QQ 协议端搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF%E6%90%AD%E5%BB%BA"><span class="toc-text">后端搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BD%BF%E7%94%A8%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A1%86%E6%9E%B6"><span class="toc-text">一、使用机器人框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%99%E5%90%8E%E7%AB%AF%E6%9D%A5%E8%B0%83%E7%94%A8%E5%8D%8F%E8%AE%AE"><span class="toc-text">二、写后端来调用协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -683,7 +745,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Hello, World!";
+  pdata.postTitle="用go-cqhttp搭建qqbot";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

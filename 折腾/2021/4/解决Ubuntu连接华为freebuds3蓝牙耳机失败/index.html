@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,9 +19,14 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：qqbot - Ryao&#39;s Blog</title>
+  <title>解决Ubuntu连接华为freebuds3蓝牙耳机失败 - Ryao&#39;s Blog</title>
+  
+    <meta name="keywords" content="ubuntu">
   
 
+  
+    <meta name="description" content="
+前言把Ubuntu18扬了后，重装Ubuntu20.04，莫名解决了在Ubuntu18上的一些问题，而耳机和brightness control的坑一直没碰，最近越发感到不能连接蓝牙耳机的不方面，终于解决，记录出来">
   
 
   <!-- feed -->
@@ -356,7 +359,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ev0015a.jpg"></div>
           
@@ -436,75 +439,271 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        解决Ubuntu连接华为freebuds3蓝牙耳机失败
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://pic.downk.cc/item/5fcd091c394ac52378a607e9.jpg">
+    <p>Ryao</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/">
-        用go-cqhttp搭建qqbot
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/QQ%E5%9B%BE%E7%89%8720210404014541.jpg" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/QQ%E5%9B%BE%E7%89%8720210404014541.jpg" srcset="data:image/png;base64,666"></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么</p>
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/CS/">CS</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+    </a>
   </div>
+
+
+          
+        
+          
+            
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ubuntu/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>ubuntu</p></a></div>
+
+
+          
         
-        <time>2021-04-04</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年4月8日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/CS/">CS</a>
+          
+            
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/QQ%E5%9B%BE%E7%89%8720210408223957.jpg" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/QQ%E5%9B%BE%E7%89%8720210408223957.jpg" srcset="data:image/png;base64,666"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>把Ubuntu18扬了后，重装Ubuntu20.04，莫名解决了在Ubuntu18上的一些问题，而耳机和brightness control的坑一直没碰，最近越发感到不能连接蓝牙耳机的不方面，终于解决，记录出来</p>
+<a id="more"></a>
+
+
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>系统：Ubuntu20.04</p>
+<hr>
+<p>在设置-蓝牙中始终连接不上蓝牙耳机</p>
+<p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5.png" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5.png" srcset="data:image/png;base64,666"></p>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>尝试安装<code>blueman</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install blueman</span><br></pre></td></tr></table></figure>
+
+<p>再打开<code>blueman</code>进行连接</p>
+<p>失败</p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>控制台重启蓝牙服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service bluetooth restart</span><br></pre></td></tr></table></figure>
+
+<p>打开蓝牙控制检查工作情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bluetoothctl</span><br><span class="line">show</span><br></pre></td></tr></table></figure>
+
+<p>将会显示类似内容：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Controller C8:B2:9B:F3:BB:<span class="number">27</span> (public)</span><br><span class="line">	Name: ryao-Lenovo-Legion-Y7000P-2020H</span><br><span class="line">	Alias: ryao-Lenovo-Legion-Y7000P-2020H</span><br><span class="line">	Class: <span class="number">0x001c010c</span></span><br><span class="line">	Powered: yes</span><br><span class="line">	Discoverable: yes</span><br><span class="line">	DiscoverableTimeout: <span class="number">0x00000000</span></span><br><span class="line">	Pairable: yes</span><br><span class="line">	UUID: Message Notification Se.. (<span class="number">00001133</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: A/V Remote Control        (0000110e-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: OBEX <span class="built_in">Object</span> Push          (<span class="number">00001105</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Message Access Server     (<span class="number">00001132</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: PnP Information           (<span class="number">00001200</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: IrMC Sync                 (<span class="number">00001104</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Vendor specific           (<span class="number">00005005</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-0002ee000001)</span><br><span class="line">	UUID: Headset AG                (<span class="number">00001112</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: A/V Remote Control Target (0000110c-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Generic Attribute Profile (<span class="number">00001801</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Phonebook Access Server   (0000112f-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Audio Sink                (0000110b-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Generic Access Profile    (<span class="number">00001800</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Headset                   (<span class="number">00001108</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: Audio Source              (0000110a-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	UUID: OBEX File Transfer        (<span class="number">00001106</span>-<span class="number">0000</span>-<span class="number">1000</span>-<span class="number">8000</span>-00805f9b34fb)</span><br><span class="line">	Modalias: usb:v1D6Bp0246d0535</span><br><span class="line">	Discovering: no</span><br><span class="line">Advertising Features:</span><br><span class="line">	ActiveInstances: <span class="number">0x00</span></span><br><span class="line">	SupportedInstances: <span class="number">0x05</span></span><br><span class="line">	SupportedIncludes: tx-power</span><br><span class="line">	SupportedIncludes: appearance</span><br><span class="line">	SupportedIncludes: local-name</span><br><span class="line">	SupportedSecondaryChannels: 1M</span><br><span class="line">	SupportedSecondaryChannels: 2M</span><br><span class="line">	SupportedSecondaryChannels: Coded</span><br></pre></td></tr></table></figure>
+
+<p>如果没有显示，那么蓝牙设备可能有问题，以下操作将不会解决问题</p>
+<p>正常显示，则执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">agent on</span><br><span class="line">default-agent</span><br><span class="line">power on</span><br><span class="line">pairable on</span><br></pre></td></tr></table></figure>
+
+<p><strong>将设备调至配对模式</strong>，扫描设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scan on</span><br></pre></td></tr></table></figure>
+
+<p>显示设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">devices</span><br></pre></td></tr></table></figure>
+
+<p>出现类似内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Device 00:0E:0E:16:20:FF 00-0E-0E-16-20-FF</span><br><span class="line">Device 00:0E:0B:16:11:9F ZK#001#104</span><br><span class="line">Device 94:17:00:46:AC:8F Redmi K30 Ultra</span><br><span class="line">Device 10:63:C8:E8:26:DC 10-63-C8-E8-26-DC</span><br><span class="line">Device EC:7E:FC:28:DD:3F Mi Smart Band 4</span><br><span class="line">Device 60:AB:67:79:3D:8D 1432412001的MI 9 SE</span><br><span class="line">Device 00:0E:0B:16:20:FF 00-0E-0B-16-20-FF</span><br><span class="line">Device 46:C9:D5:E7:84:A5 46-C9-D5-E7-84-A5</span><br><span class="line">Device 00:0E:0B:14:F3:08 00-0E-0B-14-F3-08</span><br><span class="line">Device 7C:2A:DB:54:4E:F6 7C-2A-DB-54-4E-F6</span><br><span class="line">Device 9C:6B:72:B0:FB:36 realme X2</span><br><span class="line">Device 00:00:12:44:48:34 ShanghaiTieTaWang</span><br><span class="line">Device 6C:06:D6:2F:A5:C1 FreeBuds 3</span><br></pre></td></tr></table></figure>
+
+<p>安装<code>pulseaudio-module-bluetooth</code>（如果像我一样pair failed的话）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install pulseaudio-module-bluetooth </span><br><span class="line">pulseaudio -k</span><br><span class="line">pulseaudio --start</span><br></pre></td></tr></table></figure>
+
+<p>然后连接设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">trust [MAC_ADDRESS]</span><br><span class="line">pair [MAC_ADDRESS]</span><br><span class="line">connect [MAC_ADDRESS]</span><br></pre></td></tr></table></figure>
+
+<p>终于成功</p>
+<p>退出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/>https://ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-08T22:43:08+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年4月8日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ubuntu/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>ubuntu</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/&title=解决Ubuntu连接华为freebuds3蓝牙耳机失败 - Ryao's Blog&summary=
+前言把Ubuntu18扬了后，重装Ubuntu20.04，莫名解决了在Ubuntu18上的一些问题，而耳机和brightness control的坑一直没碰，最近越发感到不能连接蓝牙耳机的不方面，终于解决，记录出来"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/&title=解决Ubuntu连接华为freebuds3蓝牙耳机失败 - Ryao's Blog&summary=
+前言把Ubuntu18扬了后，重装Ubuntu20.04，莫名解决了在Ubuntu18上的一些问题，而耳机和brightness control的坑一直没碰，最近越发感到不能连接蓝牙耳机的不方面，终于解决，记录出来"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/&title=解决Ubuntu连接华为freebuds3蓝牙耳机失败 - Ryao's Blog&summary=
+前言把Ubuntu18扬了后，重装Ubuntu20.04，莫名解决了在Ubuntu18上的一些问题，而耳机和brightness control的坑一直没碰，最近越发感到不能连接蓝牙耳机的不方面，终于解决，记录出来"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/%E6%8A%98%E8%85%BE/2021/4/Ubuntu%E8%B8%A9%E5%9D%91%EF%BC%9A%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E4%BD%8E%E4%BD%86%E6%98%BE%E7%A4%BA%E4%BB%8D%E7%84%B6%E5%8D%A1%E9%A1%BF/'>
+          <p class='title'>Ubuntu踩坑：资源占用情况低但显示仍然卡顿<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言系统：Ubuntu20.04 以及 Ubuntu18.04
+无论是拖动滑动条，还是播放视频，还是切换屏幕都会有间断性的卡顿
+这是一个一直困扰我的问题，以至于我认为是Ubuntu自身的问题，我...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -512,144 +711,28 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Ryao</h2>
-        
-        
-          <p>Stay hungry, stay foolish.</p>
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:liaocfe@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ryaochengfeng/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/CS/" href="/categories/CS/"
-            id="categoriesCS"
-            ><div class='name'>CS</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%98%E8%85%BE/" href="/categories/%E6%8A%98%E8%85%BE/"
-            id="categoriesE68A98E885BE"
-            ><div class='name'>折腾</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
-            id="categoriesE68AA5E99499"
-            ><div class='name'>报错</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
-            id="categoriesE7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
-            id="categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="toc-text">方案二</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 24px; color: #555">http</a> <a href="/tags/nginx/" style="font-size: 19px; color: #777">nginx</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 19px; color: #777">ubuntu</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -659,8 +742,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="解决Ubuntu连接华为freebuds3蓝牙耳机失败";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

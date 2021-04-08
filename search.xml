@@ -407,4 +407,31 @@ P1059重新想了一下，也可以用快排
         <tag>教程</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Ubuntu踩坑：资源占用情况低但显示仍然卡顿</title>
+    <url>/CS/%E6%8A%98%E8%85%BE/2021/4/Ubuntu%E8%B8%A9%E5%9D%91%EF%BC%9A%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E4%BD%8E%E4%BD%86%E6%98%BE%E7%A4%BA%E4%BB%8D%E7%84%B6%E5%8D%A1%E9%A1%BF/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>系统：Ubuntu20.04 以及 Ubuntu18.04</p>
+<p>无论是拖动滑动条，还是播放视频，还是切换屏幕都会有间断性的卡顿</p>
+<p>这是一个一直困扰我的问题，以至于我认为是Ubuntu自身的问题，我在Ubuntu的体验上一直不如windows上丝滑，他会有间断性的卡顿，以至于我感觉是帧率太低或者其他的原因</p>
+<h2 id="初步尝试过程"><a href="#初步尝试过程" class="headerlink" title="初步尝试过程"></a>初步尝试过程</h2><p>我怀疑是nvidia驱动的问题，于是我尝试卸载并重新安装nvidia驱动，问题依然没有解决。于是我又更新了Ubuntu内核，但是无效</p>
+<p>那么真的是帧率低吗</p>
+<p>我尝试使用<code>mesa-utils</code>用<code>glxgears</code>来监视帧率，发现能够一直保持在140以上，这显然是不低的。</p>
+<p>我又将nvidia驱动禁用，使用intel集显，但没有改变卡顿问题。</p>
+<p>我将这个问题搁置又拾起了多次</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>在多次搜索之后竟然偶然在csdn上找到了一个相同的问题<a href="https://blog.csdn.net/qq_43334196/article/details/107374390">https://blog.csdn.net/qq_43334196/article/details/107374390</a><br>我发现我也安装了这个所谓的“系统监视器”，安装命令是 <code>sudo apt install indicator-multiload</code></p>
+<p>（所以在你翻到这篇文章后一定不要用它了）</p>
+<p>你在首选项中能找到这样的东西</p>
+<p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/Untitled.png" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/Untitled.png" srcset="data:image/png;base64,666"></p>
+<p>于是它每次检测的时候你的界面就会卡顿一次，体验非常不好</p>
+<p>于是<strong>卸载</strong>它就行了</p>
+<p><strong>但是我目前依然不清楚卡顿的内部原因，按道理检测系统资源是不会卡顿的，现在我的Ubuntu异常丝滑了</strong></p>
+]]></content>
+      <categories>
+        <category>CS</category>
+        <category>折腾</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
 </search>

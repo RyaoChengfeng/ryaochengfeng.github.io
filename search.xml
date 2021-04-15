@@ -138,7 +138,6 @@
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> Elemtype;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    Elemtype data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">Link</span>;</span></span><br><span class="line"></span><br><span class="line">Link **head;</span><br><span class="line">Link **tail;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 先进后出link</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">d_CreateLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    Link *p;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    (*L)-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        p-&gt;next=(*L)-&gt;next;</span><br><span class="line">        (*L)-&gt;next=p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先进先出link</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    Link *p,*r;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">    r=*L;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        r-&gt;next=p;</span><br><span class="line">        r=p;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增量式单链表（正序）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddLink</span><span class="params">(Link **L,Elemtype data[],<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    Link *p,*r;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">if</span> (tail!=<span class="literal">NULL</span>)&#123;</span><br><span class="line">        r=*tail;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        *L=(Link *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        r=*L;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        p=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span> (Link));</span><br><span class="line">        p-&gt;data=*data++;</span><br><span class="line">        r-&gt;next=p;</span><br><span class="line">        r=p;</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    *tail=r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到第i个节点的data</span></span><br><span class="line"><span class="function">Elemtype <span class="title">GetElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p;</span><br><span class="line">    p=L-&gt;next;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e=p-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在第i个节点之前插入新的node，L长度+1</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span>  </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*s;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!p||j&gt;i) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    s=(Link*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Link));</span><br><span class="line">    s-&gt;data=e;</span><br><span class="line">    s-&gt;next=p-&gt;next;</span><br><span class="line">    p-&gt;next=s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Elemtype <span class="title">DeleteElem</span><span class="params">(Link *L,<span class="keyword">int</span> i,Elemtype e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    Link *p,*q;</span><br><span class="line">    p=L;</span><br><span class="line">    j=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p-&gt;next&amp;&amp;j&lt;i)&#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(p-&gt;next)||j&gt;i)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q=p-&gt;next;</span><br><span class="line">    p-&gt;next=q-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>CS</category>
         <category>数据结构</category>
         <category>笔记</category>
       </categories>
@@ -266,7 +265,6 @@ P1059重新想了一下，也可以用快排
 
 ]]></content>
       <categories>
-        <category>CS</category>
         <category>题解</category>
       </categories>
       <tags>
@@ -297,7 +295,6 @@ P1059重新想了一下，也可以用快排
 
 <h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
       <categories>
-        <category>CS</category>
         <category>题解</category>
       </categories>
       <tags>
@@ -323,7 +320,6 @@ P1059重新想了一下，也可以用快排
 
 ]]></content>
       <categories>
-        <category>CS</category>
         <category>题解</category>
       </categories>
       <tags>
@@ -345,7 +341,6 @@ P1059重新想了一下，也可以用快排
 <p>发现也可以直接在配置ssl的server块中监听80端口，自己当时的理解错了，url里的http和https只是指定协议，域名依旧是dns解析出来的ip地址，只要改一下端口就好了</p>
 ]]></content>
       <categories>
-        <category>CS</category>
         <category>报错</category>
       </categories>
       <tags>
@@ -427,7 +422,6 @@ P1059重新想了一下，也可以用快排
 <p><strong>但是我目前依然不清楚卡顿的内部原因，按道理检测系统资源是不会卡顿的，现在我的Ubuntu异常丝滑了</strong></p>
 ]]></content>
       <categories>
-        <category>CS</category>
         <category>折腾</category>
       </categories>
       <tags>
@@ -484,11 +478,28 @@ P1059重新想了一下，也可以用快排
 <p>退出</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">exit</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>CS</category>
         <category>折腾</category>
       </categories>
       <tags>
         <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决jetbrains IDE(Goland)莫名报错: Unresolved reference</title>
+    <url>/%E6%8A%A5%E9%94%99/2021/4/%E8%A7%A3%E5%86%B3jetbrains-IDE%E8%8E%AB%E5%90%8D%E6%8A%A5%E9%94%99-Unresolved-reference/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一觉醒来项目直接爆红，很怪很怪，go mod是没有问题的</p>
+<p>struct全部unresolved reference的错误，但是程序却可以正常运行</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>目前有两种解决方案，这对于jetbrains家的所有IDE都是可行的</p>
+<h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>在settings - go - gopath下方勾上 “Index entire gopath”</p>
+<p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/c0404681-7e89-453e-b401-b263d5d75dbc.png" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/c0404681-7e89-453e-b401-b263d5d75dbc.png" srcset="data:image/png;base64,666"></p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>在file - invalidate caches中选择invalidate and restart</p>
+<p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/82b2dc87-0434-4fcc-b779-8354c4b3063b.png" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/82b2dc87-0434-4fcc-b779-8354c4b3063b.png" srcset="data:image/png;base64,666"></p>
+]]></content>
+      <categories>
+        <category>报错</category>
+      </categories>
+      <tags>
+        <tag>jetbrains</tag>
       </tags>
   </entry>
 </search>

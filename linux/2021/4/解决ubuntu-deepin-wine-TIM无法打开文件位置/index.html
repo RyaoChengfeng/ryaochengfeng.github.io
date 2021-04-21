@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：笔记 - Ryao&#39;s Blog</title>
+  <title>解决ubuntu deepin-wine TIM无法打开文件位置 - Ryao&#39;s Blog</title>
+  
+    <meta name="keywords" content="ubuntu,wine">
   
 
   
@@ -356,7 +356,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ev0015a.jpg"></div>
           
@@ -445,87 +445,263 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        解决ubuntu deepin-wine TIM无法打开文件位置
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/1373800024e6ce978842c.jpeg">
+    <p>Ryao</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/%E7%AC%94%E8%AE%B0/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E9%93%BE%E8%A1%A8/">
-        数据结构-1-链表
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        单链表指针大法好
-真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久
-
-
-
-  核心
-
-增
-1234p=(Link*)malloc(sizeof (Link));p-&gt;data=*data++; //data为数据集合p-&gt;next=L-&gt;next;L-&gt;next=p;
-
-删
-1234Link *q;q=p-&gt;next;p...
-      
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/linux/">linux</a><span class="sep"></span><a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+    </a>
   </div>
+
+
+          
+        
+          
+            
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ubuntu/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>ubuntu</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/wine/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>wine</p></a></div>
+
+
+          
         
-        <time>2020-12-23</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年4月21日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a><span class="sep"></span><a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：164字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>这个坑其实比较好理解 打开文件位置,其实是两个步骤: 打开资源管理器–&gt;跳转到指定位置 deepin-tim是在deepin系统上的, deepin的资源管理器是<code>dde-file-manager</code> ubuntu上面可没有这玩意, 所以打不开很正常 所以添加可执行文件<code>dde-file-manager</code>间接打开ubuntu的资源管理器就可以了</p>
+<p>在/usr/bin/ 下面创建文件 dde-file-manager</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/bin/dde-file-manager</span><br></pre></td></tr></table></figure>
+
+<p>输入以下命令</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.system(<span class="string">&#x27;nautilus &quot;&#x27;</span>+sys.argv[<span class="number">2</span>]+<span class="string">&#x27;&quot;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>nautilus 是ubuntu的资源管理器</li>
+</ul>
+<p>对该文件授权</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/bin/dde-file-manager</span><br></pre></td></tr></table></figure>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/%E7%AC%94%E8%AE%B0/2020/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1-%E9%93%BE%E8%A1%A8/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/>https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-04-21T14:16:42+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年4月21日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ubuntu/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>ubuntu</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/wine/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>wine</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="解决ubuntu deepin-wine TIM无法打开文件位置" data-path="/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/&title=解决ubuntu deepin-wine TIM无法打开文件位置 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/&title=解决ubuntu deepin-wine TIM无法打开文件位置 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/&title=解决ubuntu deepin-wine TIM无法打开文件位置 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,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">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/%E6%8A%A5%E9%94%99/2021/4/%E8%A7%A3%E5%86%B3jetbrains-IDE%E8%8E%AB%E5%90%8D%E6%8A%A5%E9%94%99-Unresolved-reference/'>
+          <p class='title'>解决jetbrains IDE(Goland)莫名报错: Unresolved reference<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言一觉醒来项目直接爆红，很怪很怪，go mod是没有问题的
+struct全部unresolved reference的错误，但是程序却可以正常运行
+解决目前有两种解决方案，这对于jetbrai...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -533,154 +709,14 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Ryao</h2>
-        
-        
-          <p>Stay hungry, stay foolish.</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:liaocfe@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ryaochengfeng/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/CS/" href="/categories/CS/"
-            id="categoriesCS"
-            ><div class='name'>CS</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/linux/" href="/categories/linux/"
-            id="categorieslinux"
-            ><div class='name'>linux</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%98%E8%85%BE/" href="/categories/%E6%8A%98%E8%85%BE/"
-            id="categoriesE68A98E885BE"
-            ><div class='name'>折腾</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
-            id="categoriesE68AA5E99499"
-            ><div class='name'>报错</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
-            id="categoriesE69CAAE58886E7B1BB"
-            ><div class='name'>未分类</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
-            id="categoriesE7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
-            id="categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 24px; color: #555">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/nginx/" style="font-size: 19px; color: #777">nginx</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 24px; color: #555">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 14px; color: #999">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -690,8 +726,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="解决ubuntu deepin-wine TIM无法打开文件位置";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

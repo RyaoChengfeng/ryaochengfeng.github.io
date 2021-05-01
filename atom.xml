@@ -18,8 +18,8 @@
   
   <entry>
     <title>解决ubuntu deepin-wine TIM无法打开文件位置</title>
-    <link href="https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/"/>
-    <id>https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/</id>
+    <link href="https://blog.ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/"/>
+    <id>https://blog.ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/</id>
     <published>2021-04-21T05:26:02.000Z</published>
     <updated>2021-04-21T06:16:42.462Z</updated>
     
@@ -33,9 +33,9 @@
     
     
     
-    <category term="折腾" scheme="https://blog.ryaoknw.site/categories/%E6%8A%98%E8%85%BE/"/>
-    
     <category term="linux" scheme="https://blog.ryaoknw.site/categories/linux/"/>
+    
+    <category term="折腾" scheme="https://blog.ryaoknw.site/categories/%E6%8A%98%E8%85%BE/"/>
     
     
     <category term="ubuntu" scheme="https://blog.ryaoknw.site/tags/ubuntu/"/>
@@ -71,8 +71,8 @@
   
   <entry>
     <title>解决Ubuntu连接华为freebuds3蓝牙耳机失败</title>
-    <link href="https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/"/>
-    <id>https://blog.ryaoknw.site/linux/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/</id>
+    <link href="https://blog.ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/"/>
+    <id>https://blog.ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3Ubuntu%E8%BF%9E%E6%8E%A5%E5%8D%8E%E4%B8%BAfreebuds3%E8%93%9D%E7%89%99%E8%80%B3%E6%9C%BA%E5%A4%B1%E8%B4%A5/</id>
     <published>2021-04-08T14:28:40.000Z</published>
     <updated>2021-04-21T05:27:40.510Z</updated>
     
@@ -84,9 +84,9 @@
     
     
     
-    <category term="折腾" scheme="https://blog.ryaoknw.site/categories/%E6%8A%98%E8%85%BE/"/>
-    
     <category term="linux" scheme="https://blog.ryaoknw.site/categories/linux/"/>
+    
+    <category term="折腾" scheme="https://blog.ryaoknw.site/categories/%E6%8A%98%E8%85%BE/"/>
     
     
     <category term="ubuntu" scheme="https://blog.ryaoknw.site/tags/ubuntu/"/>
@@ -95,8 +95,8 @@
   
   <entry>
     <title>Ubuntu踩坑：资源占用情况低但显示仍然卡顿</title>
-    <link href="https://blog.ryaoknw.site/linux/2021/4/Ubuntu%E8%B8%A9%E5%9D%91%EF%BC%9A%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E4%BD%8E%E4%BD%86%E6%98%BE%E7%A4%BA%E4%BB%8D%E7%84%B6%E5%8D%A1%E9%A1%BF/"/>
-    <id>https://blog.ryaoknw.site/linux/2021/4/Ubuntu%E8%B8%A9%E5%9D%91%EF%BC%9A%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E4%BD%8E%E4%BD%86%E6%98%BE%E7%A4%BA%E4%BB%8D%E7%84%B6%E5%8D%A1%E9%A1%BF/</id>
+    <link href="https://blog.ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/Ubuntu%E8%B8%A9%E5%9D%91%EF%BC%9A%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E4%BD%8E%E4%BD%86%E6%98%BE%E7%A4%BA%E4%BB%8D%E7%84%B6%E5%8D%A1%E9%A1%BF/"/>
+    <id>https://blog.ryaoknw.site/%E6%8A%98%E8%85%BE/2021/4/Ubuntu%E8%B8%A9%E5%9D%91%EF%BC%9A%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E4%BD%8E%E4%BD%86%E6%98%BE%E7%A4%BA%E4%BB%8D%E7%84%B6%E5%8D%A1%E9%A1%BF/</id>
     <published>2021-04-08T10:46:53.000Z</published>
     <updated>2021-04-21T05:27:51.987Z</updated>
     
@@ -111,9 +111,9 @@
     
     
     
-    <category term="折腾" scheme="https://blog.ryaoknw.site/categories/%E6%8A%98%E8%85%BE/"/>
-    
     <category term="linux" scheme="https://blog.ryaoknw.site/categories/linux/"/>
+    
+    <category term="折腾" scheme="https://blog.ryaoknw.site/categories/%E6%8A%98%E8%85%BE/"/>
     
     
     <category term="ubuntu" scheme="https://blog.ryaoknw.site/tags/ubuntu/"/>

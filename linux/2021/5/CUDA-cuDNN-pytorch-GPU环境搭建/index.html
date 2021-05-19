@@ -506,13 +506,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：0字</p>
+      <p>字数：773字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：3分钟</p>
     </a>
   </div>
 
@@ -525,7 +525,60 @@
 
 
   
-  
+  <h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><blockquote>
+<p>安装</p>
+</blockquote>
+<p>首先去英伟达官网下载cuda安装包：<a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a192cd3-87a8-44ea-bef2-b066327e2f88/Untitled.png" class="lazyload" data-srcset="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a192cd3-87a8-44ea-bef2-b066327e2f88/Untitled.png" srcset="data:image/png;base64,666" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4a192cd3-87a8-44ea-bef2-b066327e2f88/Untitled.png"></p>
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13e86b36-a609-43fc-bab4-78ddb5915152/Untitled.png" class="lazyload" data-srcset="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13e86b36-a609-43fc-bab4-78ddb5915152/Untitled.png" srcset="data:image/png;base64,666" alt="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13e86b36-a609-43fc-bab4-78ddb5915152/Untitled.png"></p>
+<p><strong>踩坑：这里最好不要使用deb的安装，推荐使用runfile</strong></p>
+<p>我最初在使用deb的安装时，在最后一步</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -y install cuda</span><br></pre></td></tr></table></figure>
+
+<p>中，得到了<code>depends: cuda-11-3 (&gt;= 11.3.0) but it is not going to be installed site:forums.developer.nvidia.com</code>的错误，而这个错误并没有得到良好的解决方案。</p>
+<p>我在搜索资料后推测是由于本身已经安装了nvidia-driver所导致的结果，而英伟达的cuda本身已经自带了驱动（这是一件很奇怪的事情）。</p>
+<p>因此我推荐<strong>runfile</strong>的安装，我在此安装成功。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget &lt;https:<span class="comment">//developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/cuda_11.3.0_465.19.01_linux.run&gt;</span></span><br><span class="line">sudo sh cuda_11<span class="number">.3</span><span class="number">.0</span>_465<span class="number">.19</span><span class="number">.01</span>_linux.run</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，在执行<code>sudo sh cuda_11.3.0_465.19.01_linux.run</code>时，最好使用<code>sudo sh cuda_11.3.0_465.19.01_linux.run -no-opengl-libs</code></p>
+<p><strong>cuda</strong>主要有以下参数：</p>
+<ul>
+<li><code>-no-opengl-libs</code>：表示只安装驱动文件，不安装<strong>OpenGL</strong>文件。必需参数，原因同上。注意：不是<code>no-opengl-files</code>。</li>
+<li><code>-uninstall (deprecated)</code>：用于卸载<strong>CUDA Driver</strong>（已废弃）。</li>
+<li><code>-toolkit</code>：表示只安装<strong>CUDA Toolkit</strong>，不安装<strong>Driver</strong>和<strong>Samples</strong></li>
+<li><code>-help</code>：查看更多高级选项。</li>
+</ul>
+<p><strong>安装过程中的坑</strong></p>
+<p>首先会有一个阅读声明，一直滑到底部输入accept即可。我遇到了无法滑到底部的情况，也就是不能输入accpet。</p>
+<p>解决：</p>
+<p>使用<code>init 3</code>关闭图形界面即可。</p>
+<p><strong>选项</strong></p>
+<p>选项<strong>install nvidia accelerated Graphics Driver</strong>,输入<strong>n</strong>，因为我们已经安装了<strong>nvidia</strong>的驱动。</p>
+<p>选项<strong>install the OpenGL libraries</strong>,如果双显卡(集显+独显)选择<strong>n</strong>，如果只有独显可以选择<strong>y</strong>，如果双显卡选择<strong>y</strong>的话，会出现<strong>黑屏</strong>或者<strong>循环登录</strong>的问题，如果加了上面的参数就不会出现这个选项了。</p>
+<p>后面的可以都选择<strong>yes</strong>，最后一个选项我们可以选择<strong>n</strong>,也就是不复制<strong>Samples</strong>，因为安装目录下有<strong>samples</strong>。</p>
+<p>之后install等待安装结束即可</p>
+<p>此时使用<code>startx</code>重新进入图形界面。</p>
+<blockquote>
+<p>配置环境</p>
+</blockquote>
+<p>终端编辑<code>/etc/profile</code>或者<code>.bashrc</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda<span class="number">-11.3</span>/lib64</span><br><span class="line"><span class="keyword">export</span> PATH=$PATH:/usr/local/cuda<span class="number">-11.3</span>/bin</span><br><span class="line"><span class="keyword">export</span> CUDA_HOME=$CUDA_HOME:/usr/local/cuda<span class="number">-11.3</span></span><br></pre></td></tr></table></figure>
+
+<p>运行<code>source /etc/profile</code>或者<code>source .bashrc</code></p>
+<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><strong>Installing from a Tar File</strong></p>
+<p>1.Navigate to your <cudnnpath> directory containing the cuDNN Tar file.</p>
+<p>2.Unzip the cuDNN package.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf cudnn-9.0-linux-x64-v7.tgz</span><br></pre></td></tr></table></figure>
+
+<p>3.Copy the following files into the CUDA Toolkit directory, and change the filepermissions.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp cuda/include/cudnn*.h /usr/<span class="built_in">local</span>/cuda/include <span class="comment">#此处我和官方文档不同</span></span><br><span class="line">sudo cp cuda/lib64/libcudnn* /usr/<span class="built_in">local</span>/cuda/lib64</span><br><span class="line">sudo chmod a+r /usr/<span class="built_in">local</span>/cuda/include/cudnn.h /usr/<span class="built_in">local</span>/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2</code>可以查看版本</p>
+<p>网上的<code>cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</code>这个操作显然在官方文档的操作下是不行的。</p>
+<h2 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h2><p>conda使用一个正确的环境，不然会默认安装在base上</p>
+<p>在<a target="_blank" rel="noopener" href="https://pytorch.org/get-started/locally/%E9%80%89%E6%8B%A9%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%96%B9%E6%A1%88%E5%8D%B3%E5%8F%AF%EF%BC%8C%E5%A6%82%EF%BC%9A">https://pytorch.org/get-started/locally/选择正确的方案即可，如：</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia</span><br></pre></td></tr></table></figure>
+
   
   
     
@@ -559,7 +612,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-19T16:58:16+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-19T17:11:48+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年5月19日</p>
@@ -697,6 +750,20 @@
     
 
 
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85CUDA"><span class="toc-text">安装CUDA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cuDNN"><span class="toc-text">安装cuDNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85pytorch"><span class="toc-text">安装pytorch</span></a></li></ol>
+    </div>
+  </section>
 
 
   

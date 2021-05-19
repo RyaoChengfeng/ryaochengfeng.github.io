@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：go - Ryao&#39;s Blog</title>
+  <title>CUDA+cuDNN+pytorch GPU环境搭建 - Ryao&#39;s Blog</title>
+  
+    <meta name="keywords" content="教程,linux">
   
 
   
@@ -356,7 +356,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/ev0015a.jpg"></div>
           
@@ -445,74 +445,250 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        CUDA+cuDNN+pytorch GPU环境搭建
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/1373800024e6ce978842c.jpeg">
+    <p>Ryao</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/">
-        用go-cqhttp搭建qqbot
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>好久没写博客了（同时前几篇也太水了），之前在折腾博客基建，这段时间也搞了一堆东西，虽然有记录，但是没时间整理一下然后写出来，刚好最近没有什么</p>
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/linux/">linux</a>
+    </a>
   </div>
+
+
+          
+        
+          
+            
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>教程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>linux</p></a></div>
+
+
+          
         
-        <time>2021-04-04</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年5月19日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/CS/">CS</a>
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：0字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/CS/2021/4/%E7%94%A8go-cqhttp%E6%90%AD%E5%BB%BAqqbot/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.ryaoknw.site/linux/2021/5/CUDA-cuDNN-pytorch-GPU%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/>https://blog.ryaoknw.site/linux/2021/5/CUDA-cuDNN-pytorch-GPU%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-05-19T16:58:16+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年5月19日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%99%E7%A8%8B/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>教程</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><p>linux</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="CUDA+cuDNN+pytorch GPU环境搭建" data-path="/linux/2021/5/CUDA-cuDNN-pytorch-GPU%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/linux/2021/5/CUDA-cuDNN-pytorch-GPU%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=CUDA+cuDNN+pytorch GPU环境搭建 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/linux/2021/5/CUDA-cuDNN-pytorch-GPU%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=CUDA+cuDNN+pytorch GPU环境搭建 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/linux/2021/5/CUDA-cuDNN-pytorch-GPU%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=CUDA+cuDNN+pytorch GPU环境搭建 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png" srcset="data:image/png;base64,666"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFJ0lEQVR42u3aS3YbMRADQN3/0skJ9IaNBmXLr7hL7PmwOBsY/fpn/ch6IQAP3gIP3gIP3irAv8L19sbDn58+5+m+jxt+uO+7+0/f93Ef4MGDBw8ePHjw4MEX4acbmL7gFGa7Wh/E9D6P9wUPHjx48ODBgwcP/gL8NMjEQWL43HZgOw1WaaACDx48ePDgwYMHD/6b4W8XJWlBc/r72w8GPHjw4MGDBw8ePPhvgJ8Goun126A1BQcPHjx48ODBgwcP/hvgxwM6YYGQDkpNQaeA2+LlY5Nk4MGDBw8ePHjw4MEHKz2Iv/Lv2As8ePDgwYMHDx48+AL8dqWFxK3iYjsgle7r2As8ePDgwYMHDx48+AJ8GhCmBcm0mGgFlvYHtH0+ePDgwYMHDx48ePAN+NsBZnpA2wM8PeBW4Js+Bzx48ODBgwcPHjz4JvzxheViYRqotge5LVTSwS7w4MGDBw8ePHjw4JvwU9jTgDF90XZx0SpmWoUOePDgwYMHDx48ePBN+PQP/7cKj3Tg6fSA0gPbFjbgwYMHDx48ePDgwd+ETzeUHlxrwGha0Nwa1IoDFHjw4MGDBw8ePHjwA/jtH/rTF9sWK63g9an3AA8ePHjw4MGDBw++Cd8OLK0Nt4uK1nPWLuDBgwcPHjx48ODBF+DTQaNtAdK6f3rgp8Fvu7/j5AoePHjw4MGDBw8e/AX4dMNpgdDaaBq0tkUJePDgwYMHDx48ePA34U9fNAWZXpcOSI2DTGkQanww4MGDBw8ePHjw4MEX4F+Hq30wp0GqVdik+5se9ON9wYMHDx48ePDgwYMvwH9qI7cBtwebBsl1cgUPHjx48ODBgwcPvgC/DUTTYqL189aHsS1wHj8s8ODBgwcPHjx48OAL8GkQmQ4QfaoQSQNbu5B5+z7gwYMHDx48ePDgwRfgbwWo6YHcen67qJkGKPDgwYMHDx48ePDgb8C3BozaG0mf/zRg1Lru1OGxCAEPHjx48ODBgwcPvgi/PZDpgNA2CB1vfPnBjKHBgwcPHjx48ODBg78A3w4eU/hWENseVHr96QGABw8ePHjw4MGDB/+T8FOItBBJg8wY4vA9tuDgwYMHDx48ePDgwTfhp0FhW0y0A1XrAKbw6T7AgwcPHjx48ODBg2/Cp8Gm/futQaL2e6dB8zFAgQcPHjx48ODBgwdfhN8WEK1Bp+n18aDR8v+P3xc8ePDgwYMHDx48+AJ8CyYtVlqA0+ds950GKfDgwYMHDx48ePDgb8BPN3QKdVo0TIuN7UFM758WOuDBgwcPHjx48ODBN+FbQWP7gtuiJb1/+p7xhwsePHjw4MGDBw8efAF+G0zSoDUNNmmw2wa31iAVePDgwYMHDx48ePA34NOBomkwaQ1ObT+EdB/T+4AHDx48ePDgwYMHfwN+/Yf9ZXBqw0yLkW1QmgZC8ODBgwcPHjx48OAb8Nt1GrTSwaRtgEqhpoXK8fPAgwcPHjx48ODBgy/AbwuA9sBQK3ilAS99fpxcwYMHDx48ePDgwYMvFiGnoGkBkR5MGqCm+2kFKPDgwYMHDx48ePDgPwG/DTAp8LZoSKFbzzsekAIPHjx48ODBgwcP/hfBp4NP22C1vS4NjunAFnjw4MGDBw8ePHjwvwl+WyikgSeF3gbBtIABDx48ePDgwYMHD/4G/K0g0RqYagWZ1gDWuGgBDx48ePDgwYMHD74Ivx3c2QaX6QFvB5haH8p4X+DBgwcPHjx48ODBF+Ctzy7w4MFb4MFb4MFbi/Uf13qoigPDGQMAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/%E6%8A%98%E8%85%BE/2021/4/%E8%A7%A3%E5%86%B3ubuntu-deepin-wine-TIM%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/'>
+          <p class='title'>解决ubuntu deepin-wine TIM无法打开文件位置<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>这个坑其实比较好理解 打开文件位置,其实是两个步骤: 打开资源管理器–&gt;跳转到指定位置 deepin-tim是在deepin系统上的, deepin的资源管理器是dde-file-mana...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -520,154 +696,14 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Ryao</h2>
-        
-        
-          <p>Stay hungry, stay foolish.</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:liaocfe@gmail.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ryaochengfeng/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/CS/" href="/categories/CS/"
-            id="categoriesCS"
-            ><div class='name'>CS</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/linux/" href="/categories/linux/"
-            id="categorieslinux"
-            ><div class='name'>linux</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%98%E8%85%BE/" href="/categories/%E6%8A%98%E8%85%BE/"
-            id="categoriesE68A98E885BE"
-            ><div class='name'>折腾</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
-            id="categoriesE68AA5E99499"
-            ><div class='name'>报错</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
-            id="categoriesE69CAAE58886E7B1BB"
-            ><div class='name'>未分类</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
-            id="categoriesE7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
-            id="categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 24px; color: #555">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/nginx/" style="font-size: 19px; color: #777">nginx</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 24px; color: #555">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 19px; color: #777">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 24px; color: #555">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -677,8 +713,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="CUDA+cuDNN+pytorch GPU环境搭建";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

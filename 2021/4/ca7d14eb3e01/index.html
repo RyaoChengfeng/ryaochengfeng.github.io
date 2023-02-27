@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2545,7 +2545,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2021/4/ca7d14eb3e01/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2646,9 +2648,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <p>这个坑其实比较好理解 打开文件位置,其实是两个步骤: 打开资源管理器–&gt;跳转到指定位置 deepin-tim是在deepin系统上的, deepin的资源管理器是<code>dde-file-manager</code> ubuntu上面可没有这玩意, 所以打不开很正常 所以添加可执行文件<code>dde-file-manager</code>间接打开ubuntu的资源管理器就可以了</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <p>这个坑其实比较好理解 打开文件位置,其实是两个步骤: 打开资源管理器–&gt;跳转到指定位置 deepin-tim是在deepin系统上的, deepin的资源管理器是<code>dde-file-manager</code> ubuntu上面可没有这玩意, 所以打不开很正常 所以添加可执行文件<code>dde-file-manager</code>间接打开ubuntu的资源管理器就可以了</p>
 <p>在&#x2F;usr&#x2F;bin&#x2F; 下面创建文件 dde-file-manager</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /usr/bin/dde-file-manager</span><br></pre></td></tr></table></figure>
 
@@ -2660,40 +2663,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 <p>对该文件授权</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> +x /usr/bin/dde-file-manager</span><br></pre></td></tr></table></figure>
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2021/4/ca7d14eb3e01/">https://blog.ryaoknw.site/2021/4/ca7d14eb3e01/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2021/4/ca7d14eb3e01/">
+                                              https://blog.ryaoknw.site/2021/4/ca7d14eb3e01/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2784,36 +2792,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2021/5/8432c972721a/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>CUDA+cuDNN+pytorch GPU环境搭建</p>
-          <p class='content'>安装CUDA
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2021/5/8432c972721a/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          CUDA+cuDNN+pytorch GPU环境搭建
+                                        </p>
+                                        <p class='content'>
+                                          安装CUDA
 安装
 
 首先去英伟达官网下载cuda安装包：https://developer.nvidia.com/cuda-toolkit-archive
 
 
-踩坑：这里最好不要使用deb的安...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/4/ed34e8e9b6f3/'>
-          <p class='title'>解决jetbrains IDE(Goland)莫名报错: Unresolved reference<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言一觉醒来项目直接爆红，很怪很怪，go mod是没有问题的
+踩坑：这里最好不要使用deb的安...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2021/4/ed34e8e9b6f3/'>
+                                            <p class='title'>
+                                              解决jetbrains IDE(Goland)莫名报错: Unresolved reference<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              前言一觉醒来项目直接爆红，很怪很怪，go mod是没有问题的
 struct全部unresolved reference的错误，但是程序却可以正常运行
-解决目前有两种解决方案，这对于jetbrai...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+解决目前有两种解决方案，这对于jetbrai...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2833,9 +2850,7 @@ struct全部unresolved reference的错误，但是程序却可以正常运行
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

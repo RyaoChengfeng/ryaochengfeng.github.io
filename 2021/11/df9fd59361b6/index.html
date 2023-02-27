@@ -1747,7 +1747,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2543,7 +2543,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2021/11/df9fd59361b6/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2636,9 +2638,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h1 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h1><h2 id="MapReduce是什么"><a href="#MapReduce是什么" class="headerlink" title="MapReduce是什么"></a>MapReduce是什么</h2><h3 id="Google三驾马车"><a href="#Google三驾马车" class="headerlink" title="Google三驾马车"></a>Google三驾马车</h3><p><img src="https://i.loli.net/2021/11/23/9Rc8LHqpAxMVIlO.png" class="lazyload" data-srcset="https://i.loli.net/2021/11/23/9Rc8LHqpAxMVIlO.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h1 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h1><h2 id="MapReduce是什么"><a href="#MapReduce是什么" class="headerlink" title="MapReduce是什么"></a>MapReduce是什么</h2><h3 id="Google三驾马车"><a href="#Google三驾马车" class="headerlink" title="Google三驾马车"></a>Google三驾马车</h3><p><img src="https://i.loli.net/2021/11/23/9Rc8LHqpAxMVIlO.png" class="lazyload" data-srcset="https://i.loli.net/2021/11/23/9Rc8LHqpAxMVIlO.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p>Google的基础设施有三驾马车，分别是《Google File System》、《Google MapReduce》以及《Google BigTable》</p>
 <p>现代各种优秀的分布式系统实现的本质，都源于那几篇经典的研究和论文。比如非常流行的 Hadoop(HDFS、MapReduce、Hbase)、Spark、Hive，以及国产数据库软件 TiDB、OceanBase 都是参考这几篇经典论文设计的</p>
 <p>三驾马车之间的关系：</p>
@@ -2720,40 +2723,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h3 id="合并函数"><a href="#合并函数" class="headerlink" title="合并函数"></a>合并函数</h3><p>比如在进行词频统计时，一些词的出现频率非常的高，这会导致产生例如<code>(I,1)</code>这种key&#x2F;value pair，导致中间文件到同一个Reduce的大小不均衡。</p>
 <p>此时可以通过指定一个可选的combiner函数，combiner函数首先在本地将这些记录进行一次合并，然后将合并的结果再通过网络发送出去。</p>
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2021/11/df9fd59361b6/">https://blog.ryaoknw.site/2021/11/df9fd59361b6/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2021/11/df9fd59361b6/">
+                                              https://blog.ryaoknw.site/2021/11/df9fd59361b6/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2840,32 +2848,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2021/12/2d290da6e095/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><萌化>Ubuntu设置启用“嗨多磨!”登录音效</p>
-          <p class='content'>[萌化]Ubuntu设置启用“嗨多磨！”登录音效前言
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2021/12/2d290da6e095/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          <萌化>Ubuntu设置启用“嗨多磨!”登录音效
+                                        </p>
+                                        <p class='content'>
+                                          [萌化]Ubuntu设置启用“嗨多磨！”登录音效前言
 はいどうもー！ バーチャルYouTuber【キズナアイ】です！
 
-HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI D...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/9/7a37f059971a/'>
-          <p class='title'>磁盘挂载没有写权限？彻底关闭你的windows快速启动<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>win10的快速启动我们都知道windows10在“电源管理”处有一个“快速启动”选项，默认情况下他是开启的。
-这会让windows10更快的关闭和启动。在启用该选项时，本质上win10让你的P...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI D...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2021/9/7a37f059971a/'>
+                                            <p class='title'>
+                                              磁盘挂载没有写权限？彻底关闭你的windows快速启动<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              win10的快速启动我们都知道windows10在“电源管理”处有一个“快速启动”选项，默认情况下他是开启的。
+这会让windows10更快的关闭和启动。在启用该选项时，本质上win10让你的P...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2885,9 +2902,7 @@ HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI D...</p>
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

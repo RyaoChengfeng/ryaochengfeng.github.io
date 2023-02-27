@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2545,7 +2545,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2020/11/bbf6c1bf9db3/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2642,9 +2644,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <p>报错如下： </p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <p>报错如下： </p>
 <p>解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123; </span><br><span class="line"><span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line"><span class="attribute">server_name</span> ryaoknw.site; </span><br><span class="line"><span class="attribute">return</span> <span class="number">301</span> https://<span class="variable">$server_name</span><span class="variable">$request_uri</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2654,40 +2657,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <p>发现也可以直接在配置ssl的server块中监听80端口，自己当时的理解错了，url里的http和https只是指定协议，域名依旧是dns解析出来的ip地址，只要改一下端口就好了</p>
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2020/11/bbf6c1bf9db3/">https://blog.ryaoknw.site/2020/11/bbf6c1bf9db3/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2020/11/bbf6c1bf9db3/">
+                                              https://blog.ryaoknw.site/2020/11/bbf6c1bf9db3/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2778,32 +2786,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/11/e7a4c959b321/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>note:图解HTTP(1)</p>
-          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2020/11/e7a4c959b321/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          note:图解HTTP(1)
+                                        </p>
+                                        <p class='content'>
+                                          报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
 报文要么是一个请求报文，要么就是一个响应报文。
-一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
-        </a>
-      
-      
-        <a class='next' href='/2020/11/f953da04e2b2/'>
-          <p class='title'>Hello, World!<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
+一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2020/11/f953da04e2b2/'>
+                                            <p class='title'>
+                                              Hello, World!<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              
 历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃
-之后使用云帮...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+之后使用云帮...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2823,9 +2840,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

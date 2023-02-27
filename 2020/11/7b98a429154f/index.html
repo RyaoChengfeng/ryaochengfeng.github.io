@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2545,7 +2545,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2020/11/7b98a429154f/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2642,9 +2644,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下</p>
 <p>https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2相比于https有了一些新特性。于是这里配置http2. </p>
 <h2 id="配置http2"><a href="#配置http2" class="headerlink" title="配置http2"></a>配置http2</h2><p>使用免费的<a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a>，在官网中会告诉你用 <a class="wp-editor-md-post-content-link" target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a> ACME 客户端自动配置，进去选择自己的nginx版本和系统版本就好了。页面上会出现操作步骤。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install core;</span><br><span class="line">sudo snap refresh core</span><br></pre></td></tr></table></figure>
@@ -2695,40 +2698,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssl_stapling</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">ssl_stapling_verify</span> <span class="literal">on</span>; </span><br><span class="line"><span class="attribute">ssl_trusted_certificate</span> /etc/nginx/cert/trustchain.crt; </span><br><span class="line"><span class="attribute">resolver</span> <span class="number">233.5.5.5</span> <span class="number">233.6.6.6</span> valid=<span class="number">300s</span>;</span><br></pre></td></tr></table></figure>
 
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2020/11/7b98a429154f/">https://blog.ryaoknw.site/2020/11/7b98a429154f/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2020/11/7b98a429154f/">
+                                              https://blog.ryaoknw.site/2020/11/7b98a429154f/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2819,32 +2827,41 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/12/c03d6b73cca7/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>用hexo搭建个人网站</p>
-          <p class='content'>用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2020/12/c03d6b73cca7/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          用hexo搭建个人网站
+                                        </p>
+                                        <p class='content'>
+                                          用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
 来了，网站却用不了
-虽然我启用了81端口，nginx也监听了相应端口，然而Wo...</p>
-        </a>
-      
-      
-        <a class='next' href='/2020/11/e7a4c959b321/'>
-          <p class='title'>note:图解HTTP(1)<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
+虽然我启用了81端口，nginx也监听了相应端口，然而Wo...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2020/11/e7a4c959b321/'>
+                                            <p class='title'>
+                                              note:图解HTTP(1)<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              报文和实体的差别关于第三章中报文和实体的差别，书中讲得太简洁。
 报文要么是一个请求报文，要么就是一个响应报文。
-一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2864,9 +2881,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

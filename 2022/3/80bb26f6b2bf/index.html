@@ -1747,7 +1747,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2543,7 +2543,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2022/3/80bb26f6b2bf/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2636,9 +2638,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h1 id="Linux下设定键盘Fn键控制功能"><a href="#Linux下设定键盘Fn键控制功能" class="headerlink" title="Linux下设定键盘Fn键控制功能"></a>Linux下设定键盘Fn键控制功能</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>入手新键盘，在Linux上使用时发现顶部F1-F12区域默认为功能键，应该是Mac的键盘行为。我希望在使用Fn+FXX来使用这些功能。</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h1 id="Linux下设定键盘Fn键控制功能"><a href="#Linux下设定键盘Fn键控制功能" class="headerlink" title="Linux下设定键盘Fn键控制功能"></a>Linux下设定键盘Fn键控制功能</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>入手新键盘，在Linux上使用时发现顶部F1-F12区域默认为功能键，应该是Mac的键盘行为。我希望在使用Fn+FXX来使用这些功能。</p>
 <h2 id="设定方法"><a href="#设定方法" class="headerlink" title="设定方法"></a>设定方法</h2><p>可以通过设定 <code>/sys/module/hid_apple/parameters/fnmode</code>来控制Fn的模式</p>
 <ul>
 <li><code>0</code> 禁用功能键，按<code>Fn+FXX</code>等同于触发<code>FXX</code></li>
@@ -2656,40 +2659,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>键轴直接用的87个<strong>G白pro</strong>，很舒服的线段轴。（在寝室用也比较优雅，不会被刀）。插轴的时候，轴脚买回来歪了要掰直再插。</p>
 <p>键帽随便买一套好看的就好，只要是PBT的材质。二色工艺的可以透光，不过其实无所谓</p>
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2022/3/80bb26f6b2bf/">https://blog.ryaoknw.site/2022/3/80bb26f6b2bf/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2022/3/80bb26f6b2bf/">
+                                              https://blog.ryaoknw.site/2022/3/80bb26f6b2bf/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2776,31 +2784,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2022/3/5008382d91a6/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Ubuntu依赖错误记录(未解决)</p>
-          <p class='content'>Ubuntu依赖错误记录(未解决)前言在使用如apt update apt upgrade apt install等等依赖操作时偶尔出现的错误，一直没有找到通用的解决方案，且dependenci...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/12/2d290da6e095/'>
-          <p class='title'><萌化>Ubuntu设置启用“嗨多磨!”登录音效<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>[萌化]Ubuntu设置启用“嗨多磨！”登录音效前言
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2022/3/5008382d91a6/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          Ubuntu依赖错误记录(未解决)
+                                        </p>
+                                        <p class='content'>
+                                          Ubuntu依赖错误记录(未解决)前言在使用如apt update apt upgrade apt install等等依赖操作时偶尔出现的错误，一直没有找到通用的解决方案，且dependenci...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2021/12/2d290da6e095/'>
+                                            <p class='title'>
+                                              <萌化>Ubuntu设置启用“嗨多磨!”登录音效<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              [萌化]Ubuntu设置启用“嗨多磨！”登录音效前言
 はいどうもー！ バーチャルYouTuber【キズナアイ】です！
 
-HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI D...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI D...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2820,9 +2837,7 @@ HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI D...</p>
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

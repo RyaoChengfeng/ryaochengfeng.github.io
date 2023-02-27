@@ -1747,7 +1747,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2543,7 +2543,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2022/3/5008382d91a6/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2636,9 +2638,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h1 id="Ubuntu依赖错误记录-未解决"><a href="#Ubuntu依赖错误记录-未解决" class="headerlink" title="Ubuntu依赖错误记录(未解决)"></a>Ubuntu依赖错误记录(未解决)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用如<code>apt update</code> <code>apt upgrade</code> <code>apt install</code>等等依赖操作时偶尔出现的错误，一直没有找到通用的解决方案，且<code>dependencies</code>的错误种类各样，故在此仅仅记录解决的操作</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h1 id="Ubuntu依赖错误记录-未解决"><a href="#Ubuntu依赖错误记录-未解决" class="headerlink" title="Ubuntu依赖错误记录(未解决)"></a>Ubuntu依赖错误记录(未解决)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用如<code>apt update</code> <code>apt upgrade</code> <code>apt install</code>等等依赖操作时偶尔出现的错误，一直没有找到通用的解决方案，且<code>dependencies</code>的错误种类各样，故在此仅仅记录解决的操作</p>
 <h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><h3 id="The-following-packages-have-unmet-dependencies"><a href="#The-following-packages-have-unmet-dependencies" class="headerlink" title="The following packages have unmet dependencies:"></a>The following packages have unmet dependencies:</h3><blockquote>
 <p>下列软件包有未满足的依赖关系：<br> libpython2-stdlib : 破坏: libpython-stdlib (&lt; 2.7.15-2) 但是 2.7.5-5ubuntu3 正要被安装<br> python2 : 破坏: python (&lt; 2.7.15-2) 但是 2.7.5-5ubuntu3 正要被安装<br> python2-minimal : 破坏: python-minimal (&lt; 2.7.15-2) 但是 2.7.5-5ubuntu3 正要被安装</p>
 </blockquote>
@@ -2663,40 +2666,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i --force-overwrite /var/cache/apt/archives/*.deb</span><br></pre></td></tr></table></figure>
 
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2022/3/5008382d91a6/">https://blog.ryaoknw.site/2022/3/5008382d91a6/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2022/3/5008382d91a6/">
+                                              https://blog.ryaoknw.site/2022/3/5008382d91a6/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2783,34 +2791,43 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2022/3/7cad8c576e96/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>图片文件结构与PNG编码</p>
-          <p class='content'>图片文件结构与PNG编码图像存储颜色在计算机的存储
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2022/3/7cad8c576e96/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          图片文件结构与PNG编码
+                                        </p>
+                                        <p class='content'>
+                                          图片文件结构与PNG编码图像存储颜色在计算机的存储
 颜色模式
 
 RGB色彩模式是颜色模式之一（除此之外还有YUV模式和CMYK模式等等）
 
-在实际的开发中，我们可能还会遇到RGBA模式，其中的A...</p>
-        </a>
-      
-      
-        <a class='next' href='/2022/3/80bb26f6b2bf/'>
-          <p class='title'>Linux下设定键盘Fn键控制功能<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Linux下设定键盘Fn键控制功能前言入手新键盘，在Linux上使用时发现顶部F1-F12区域默认为功能键，应该是Mac的键盘行为。我希望在使用Fn+FXX来使用这些功能。
-设定方法可以通过设定...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+在实际的开发中，我们可能还会遇到RGBA模式，其中的A...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2022/3/80bb26f6b2bf/'>
+                                            <p class='title'>
+                                              Linux下设定键盘Fn键控制功能<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              Linux下设定键盘Fn键控制功能前言入手新键盘，在Linux上使用时发现顶部F1-F12区域默认为功能键，应该是Mac的键盘行为。我希望在使用Fn+FXX来使用这些功能。
+设定方法可以通过设定...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2830,9 +2847,7 @@ RGB色彩模式是颜色模式之一（除此之外还有YUV模式和CMYK模式�
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2545,7 +2545,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2020/12/a7d68e1b79ca/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2642,9 +2644,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h3 id="排序（c-）"><a href="#排序（c-）" class="headerlink" title="排序（c++）"></a>排序（c++）</h3><p>虽然是c++，其实是c语法</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h3 id="排序（c-）"><a href="#排序（c-）" class="headerlink" title="排序（c++）"></a>排序（c++）</h3><p>虽然是c++，其实是c语法</p>
 <h4 id="洛谷P1271-选举学生会"><a href="#洛谷P1271-选举学生会" class="headerlink" title="洛谷P1271 选举学生会"></a>洛谷P1271 选举学生会</h4><p>已经得知了数据范围，使用桶排序</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="type">int</span> bucket[n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; ++i) &#123;</span><br><span class="line">        bucket[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;num);</span><br><span class="line">        bucket[num] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n+<span class="number">1</span>; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; bucket[i]; ++j) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -2692,40 +2695,45 @@ P1059重新想了一下，也可以用快排
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(<span class="type">long</span> <span class="type">long</span> *a,<span class="type">long</span> <span class="type">long</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> t=*a;</span><br><span class="line">    *a=*b;</span><br><span class="line">    *b=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(<span class="type">long</span> <span class="type">long</span> arr[],<span class="type">long</span> <span class="type">long</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="type">const</span> <span class="type">long</span> <span class="type">long</span> pivot = arr[<span class="built_in">rand</span>() % len];</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; pivot)&#123;</span><br><span class="line">            <span class="built_in">swap</span>(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &lt; arr[i])&#123;</span><br><span class="line">            <span class="built_in">swap</span>(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(arr, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;n);</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> location[n+<span class="number">1</span>];</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> x,y,z;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>,&amp;x,&amp;y,&amp;z);</span><br><span class="line">        location[i]=z*<span class="number">100000000</span>+y*<span class="number">10000</span>+x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(location,n);</span><br><span class="line">    <span class="type">long</span> <span class="type">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">long</span> <span class="type">long</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i) &#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> z1=location[i]/<span class="number">100000000</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> y1=(location[i]%<span class="number">100000000</span>)/<span class="number">10000</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> x1=(location[i]%<span class="number">100000000</span>)%<span class="number">10000</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> z2=location[i+<span class="number">1</span>]/<span class="number">100000000</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> y2=(location[i+<span class="number">1</span>]%<span class="number">100000000</span>)/<span class="number">10000</span>;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> x2=(location[i+<span class="number">1</span>]%<span class="number">100000000</span>)%<span class="number">10000</span>;</span><br><span class="line">        sum+=<span class="built_in">sqrt</span>(<span class="number">1.0</span>*((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)+(z2-z1)*(z2-z1)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.3Lf&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2020/12/a7d68e1b79ca/">https://blog.ryaoknw.site/2020/12/a7d68e1b79ca/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2020/12/a7d68e1b79ca/">
+                                              https://blog.ryaoknw.site/2020/12/a7d68e1b79ca/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2816,30 +2824,39 @@ P1059重新想了一下，也可以用快排
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/12/4cd8ae11fe0e/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>算法题解(2)-二分</p>
-          <p class='content'>洛谷P1873 砍树123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;#defin...</p>
-        </a>
-      
-      
-        <a class='next' href='/2020/12/c03d6b73cca7/'>
-          <p class='title'>用hexo搭建个人网站<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2020/12/4cd8ae11fe0e/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          算法题解(2)-二分
+                                        </p>
+                                        <p class='content'>
+                                          洛谷P1873 砍树123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;#defin...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2020/12/c03d6b73cca7/'>
+                                            <p class='title'>
+                                              用hexo搭建个人网站<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              用hexo搭建个人网站前言未成年，所以域名无法备案，然后网站前几天挂了，本来想用来做新生实践课的大作业，然而ddl
 来了，网站却用不了
-虽然我启用了81端口，nginx也监听了相应端口，然而Wo...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+虽然我启用了81端口，nginx也监听了相应端口，然而Wo...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2859,9 +2876,7 @@ P1059重新想了一下，也可以用快排
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

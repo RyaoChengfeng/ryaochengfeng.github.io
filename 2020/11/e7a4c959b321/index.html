@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2545,7 +2545,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2020/11/e7a4c959b321/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2642,9 +2644,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h2 id="报文和实体的差别"><a href="#报文和实体的差别" class="headerlink" title="报文和实体的差别"></a>报文和实体的差别</h2><p>关于第三章中报文和实体的差别，书中讲得太简洁。</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h2 id="报文和实体的差别"><a href="#报文和实体的差别" class="headerlink" title="报文和实体的差别"></a>报文和实体的差别</h2><p>关于第三章中报文和实体的差别，书中讲得太简洁。</p>
 <p><strong>报文</strong>要么是一个请求报文，要么就是一个响应报文。</p>
 <p>一次传输中，在应用层来看，就是一个传输的单位（客户端请求服务器，是发送一个“请求报文”，服务器响应客户端，则发送“响应报文”），即为书中说的：</p>
 <p>报文是HTTP通信中的基本单位，通过HTTP通信传输 实体其实是报文的一部分，存在于报文主体内 如一个GET请求报文中，就没有报文主体。<br>那么这种情况下，也就不存在实体 实体是作为请求或响应的有效载荷数据被传输 那么在如响应报文中有： </p>
@@ -2673,40 +2676,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>每次浏览器接收到Strict-Transport-Security头，它都会更新这个网站的过期时间，所以网站可以刷新这些信息，防止过期发生。 </p>
 <p>Chrome、Firefox等浏览器里，当您尝试访问该域名下的内容时，会产生一个307 Internal Redirect（内部跳转），自动跳转到HTTPS请求</p>
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2020/11/e7a4c959b321/">https://blog.ryaoknw.site/2020/11/e7a4c959b321/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2020/11/e7a4c959b321/">
+                                              https://blog.ryaoknw.site/2020/11/e7a4c959b321/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2797,31 +2805,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/11/7b98a429154f/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>为网站配置https/http2</p>
-          <p class='content'>前言之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下
-https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2...</p>
-        </a>
-      
-      
-        <a class='next' href='/2020/11/bbf6c1bf9db3/'>
-          <p class='title'>解决网站配置完https后访问http失败<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>报错如下： 
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2020/11/7b98a429154f/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          为网站配置https/http2
+                                        </p>
+                                        <p class='content'>
+                                          前言之前建站的时候就配过了一次了，刚好新人任务有要求，就简单记录一下
+https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的方案来应对https存在的延迟等问题。http2...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2020/11/bbf6c1bf9db3/'>
+                                            <p class='title'>
+                                              解决网站配置完https后访问http失败<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              报错如下： 
 解决办法： 在nginx里配置，让请求http的时候跳转到https就可以啦
-12345server &#123; listen 80;server_name ryaoknw.si...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+12345server &#123; listen 80;server_name ryaoknw.si...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2841,9 +2858,7 @@ https由于传输原理的问题会比http要慢，在2012年谷歌提出SPDY的
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1675321040669),
+    lastupdate: new Date(1677466412826),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2545,7 +2545,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2020/12/0980416f6804/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2642,9 +2644,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  <div id="layoutHelper-page-plugins"></div>
-  <div id="post-body" itemprop="articleBody">
-    <h4 id="P2240-【深基12-例1】部分背包问题"><a href="#P2240-【深基12-例1】部分背包问题" class="headerlink" title="P2240 【深基12.例1】部分背包问题"></a>P2240 【深基12.例1】部分背包问题</h4><p>好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了</p>
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h4 id="P2240-【深基12-例1】部分背包问题"><a href="#P2240-【深基12-例1】部分背包问题" class="headerlink" title="P2240 【深基12.例1】部分背包问题"></a>P2240 【深基12.例1】部分背包问题</h4><p>好像只是数学问题，用单位价格排出性价比，取从大到小直到装满就可以了</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">mon</span>&#123;</span><br><span class="line">    <span class="type">int</span> w,v;</span><br><span class="line">    <span class="type">double</span> bili;</span><br><span class="line">&#125;money[<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(mon *a,mon *b)</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> t=a-&gt;bili;</span><br><span class="line">    a-&gt;bili=b-&gt;bili;</span><br><span class="line">    b-&gt;bili=t;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> d=a-&gt;w;</span><br><span class="line">    a-&gt;w=b-&gt;w;</span><br><span class="line">    b-&gt;w=d;</span><br><span class="line"></span><br><span class="line">    d=a-&gt;v;</span><br><span class="line">    a-&gt;v=b-&gt;v;</span><br><span class="line">    b-&gt;v=d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(mon arr[],<span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">nullptr</span>));</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> pivot = arr[<span class="built_in">rand</span>() % len].bili;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].bili &gt; pivot)&#123;</span><br><span class="line">            <span class="built_in">swap</span>(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &gt; arr[i].bili)&#123;</span><br><span class="line">            <span class="built_in">swap</span>(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(arr, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,bag;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;bag);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;money[i].w,&amp;money[i].v);</span><br><span class="line">        <span class="keyword">if</span> (money[i].w==<span class="number">0</span>) money[i].bili=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> money[i].bili=<span class="number">1.0</span>*money[i].v/money[i].w;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(money,n);</span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="type">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (bag&gt;=money[i].w)&#123;</span><br><span class="line">        bag-=money[i].w;</span><br><span class="line">        sum+=money[i].v;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    sum+=bag*money[i].bili;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>,sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="P1090合并果子"><a href="#P1090合并果子" class="headerlink" title="P1090合并果子"></a>P1090合并果子</h4><p>刚看到题目心想，这不就是个数学题嘛，排完序一个个加起来就好了，然后配合官方巨水的样例测一下后，一下就提交了。</p>
@@ -2658,40 +2661,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">per</span> &#123;</span><br><span class="line">    <span class="type">int</span> index;</span><br><span class="line">    <span class="type">int</span> time;</span><br><span class="line">&#125;person[<span class="number">2000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(per *a,per *b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> t=a-&gt;time;</span><br><span class="line">    a-&gt;time=b-&gt;time;</span><br><span class="line">    b-&gt;time=t;</span><br><span class="line"></span><br><span class="line">    t=a-&gt;index;</span><br><span class="line">    a-&gt;index=b-&gt;index;</span><br><span class="line">    b-&gt;index=t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">quick_sort</span><span class="params">(per arr[],<span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> pivot = arr[<span class="built_in">rand</span>() % len].time;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = len;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].time &lt; pivot)&#123;</span><br><span class="line">            <span class="built_in">swap</span>(&amp;arr[i], &amp;arr[j]);</span><br><span class="line">            i++;j++;&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (pivot &lt; arr[i].time)&#123;</span><br><span class="line">            <span class="built_in">swap</span>(&amp;arr[i], &amp;arr[k<span class="number">-1</span>]);</span><br><span class="line">            k--;&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(arr, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(arr + k, len - k);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        person[i].index=i+<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;person[i].time);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">quick_sort</span>(person,n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,person[i].index);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="type">double</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> shijian=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n<span class="number">-1</span>; ++i) &#123;</span><br><span class="line">        shijian+=person[i].time;</span><br><span class="line">        sum+=shijian;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf\n&quot;</span>,<span class="number">1.0</span>*sum/n);</span><br><span class="line">    <span class="comment">//?????我卡了半天,后面的1.0*sum/n是原本就有的,sum是int类型。</span></span><br><span class="line">    <span class="comment">//然后本是int的sum变成double,去掉了1.0,就又过了两个，但是第一个却过不了。</span></span><br><span class="line">    <span class="comment">//把1.0加上，就全部过了。离谱</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-  </div>
-  
-  
-    
-    <div class='footer'>
-       <!-- 参考资料、相关资料等 -->
-      
-       <!-- 相关文章 -->
-      
-      <!-- 版权声明组件 -->
-      
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href="https://blog.ryaoknw.site/2020/12/0980416f6804/">https://blog.ryaoknw.site/2020/12/0980416f6804/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-      
-      <!-- 打赏组件 -->
-      
     </div>
-  
-  
     
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2020/12/0980416f6804/">
+                                              https://blog.ryaoknw.site/2020/12/0980416f6804/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
 
 
   <div class='article-meta' id="bottom">
@@ -2782,15 +2790,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 
 
-  
-  
+                  
+                    
 
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2020/12/2fb9b06514d1/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>数据结构-1-链表</p>
-          <p class='content'>单链表指针大法好
+                                
+                                  <div class="prev-next">
+                                    
+                                      <a class='prev' href='/2020/12/2fb9b06514d1/'>
+                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                          数据结构-1-链表
+                                        </p>
+                                        <p class='content'>
+                                          单链表指针大法好
 真正到学习数据结构的时候才发现自己对指针的特性理解得非常肤浅，在真正使用链表的时候卡了很久
 
 
@@ -2798,20 +2809,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   核心
 
 增
-1234p=(Link*)malloc(sizeof (Lin...</p>
-        </a>
-      
-      
-        <a class='next' href='/2020/12/4cd8ae11fe0e/'>
-          <p class='title'>算法题解(2)-二分<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>洛谷P1873 砍树123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;#defin...</p>
-        </a>
-      
-    </div>
-  
-  <!-- Custom Files postEnd begin-->
-  
-  <!-- Custom Files postEnd end-->
+1234p=(Link*)malloc(sizeof (Lin...
+                                        </p>
+                                      </a>
+                                      
+                                        
+                                          <a class='next' href='/2020/12/4cd8ae11fe0e/'>
+                                            <p class='title'>
+                                              算法题解(2)-二分<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              洛谷P1873 砍树123456789101112131415161718192021222324252627282930313233#include &lt;stdio.h&gt;#defin...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
 </article>
 
 
@@ -2831,9 +2848,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-
-
-
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   

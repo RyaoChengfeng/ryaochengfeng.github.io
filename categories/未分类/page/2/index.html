@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://blog.ryaoknw.site/tags/cs144/"/>
+  <link rel="canonical" href="https://blog.ryaoknw.site/categories/未分类/page/2/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -35,13 +35,13 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Ryao's Blog" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>标签：CS144 - Ryao's Blog</title>
+  <title>分类：未分类 - Ryao's Blog</title>
   <meta name="keywords" content="">
   <meta desc name="description" content="|个人博客| - Ryao - Ryao's Blog">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ryao&#39;s Blog">
-<meta property="og:url" content="https://blog.ryaoknw.site/tags/CS144/index.html">
+<meta property="og:url" content="https://blog.ryaoknw.site/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/page/2/index.html">
 <meta property="og:site_name" content="Ryao&#39;s Blog">
 <meta property="og:description" content="|个人博客|">
 <meta property="og:locale" content="zh_CN">
@@ -2548,22 +2548,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
   <section class="post-list">
     
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
     
       
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/356cea6e7c3a/">
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2021/7/ac22932d46a9/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
   </span>
@@ -2581,17 +2571,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/356cea6e7c3a/"  itemprop="url">
-        CS144 Lab2
+      <a href="/2021/7/ac22932d46a9/"  itemprop="url">
+        敏感词过滤实现
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Lab2wrapping_int32实现序列号、绝对序列号与流索引间的转换。
-出现cmake报错为：
-1234CMake Error: The following variables are used in this project, but they are set to NOTFOUND.Please set them or make sure they are set and test...
+        前言需要实现一个基于已有的敏感词库的敏感词过滤的功能
+实现方案遍历匹配遍历词库的每一个词，匹配后进行过滤（比如把它们全部换成*号）
+字符串匹配比较常见的算法有：
+
+Brute Force算法
+KMP算法
+Boyer-Moore算法（BM算法）
+
+当然，用于字符串匹配的算法有非常多，这里不再赘述
+一个敏感词库的词量往往是巨大的，它会远大于需要处理的文本量，在这种场景下使用遍历匹配的方法显然不可...
       
     
   </div>
@@ -2599,20 +2596,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:27:30+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2021-07-21T19:23:13+08:00">2021-07-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Lab/">Lab</a>
+          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Lab/" itemprop="url"><span itemprop="name">Lab</span></a>
+              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/4/356cea6e7c3a/' itemprop="url">
+          <a class='readmore' href='/2021/7/ac22932d46a9/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2628,7 +2625,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/f440e1660a5f/">
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2020/11/f953da04e2b2/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
   </span>
@@ -2646,111 +2643,36 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/f440e1660a5f/"  itemprop="url">
-        CS144 Lab1
+      <a href="/2020/11/f953da04e2b2/"  itemprop="url">
+        Hello, World!
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        Lab1stream_reassembler实现一个流重组器，一个将字节流的字串或者小段按照正确顺序来拼接回连续字节流的模块。
-要求：
-
-接收子串（由一串字节和大数据流中该串的第一个字节的索引组成），并提供一个ByteStream，其中所有的数据都被正确排序
-注意考虑bytestream写满了的情况，以及reassembler满了的情况
-注意边界等号
-
-
-void StreamReassem...
-      
+      <p><img src="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/1000600035f02b5989ae5.jpeg" class="lazyload" data-srcset="https://gitee.com/ryaochengfeng/ryao-image/raw/master/img/1000600035f02b5989ae5.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>历经曲折，折腾了一个晚上加上一个下午，终于把博客建出来了。准备手动搭建环境，装好了nginx和mysql，php，但是最后的phpmyadmin总是有迷之问题，折腾了好久最终放弃</p>
+<p>之后使用云帮手来无脑搭环境，然而云帮手果然出了各种问题。。。无奈之下回到了最初的宝塔面板，装好环境后自己搭了WordPress，配了ssl和</p>
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:25:30+08:00">2023-04-02</time>
+        <time itemprop="dateCreated datePublished" datetime="2020-11-05T08:59:07+08:00">2020-11-05</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Lab/">Lab</a>
+          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Lab/" itemprop="url"><span itemprop="name">Lab</span></a>
+              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2023/4/f440e1660a5f/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/c97217e90828/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ryao's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Ryao's Blog">
-    <meta itemprop="description" content="|个人博客|">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/c97217e90828/"  itemprop="url">
-        CS144 Lab0
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言cs144的lab文档非常详细，非常详细，详细到每一个都有10几页的大小，像一个仓库的readme，以至于菜狗花大量时间读机翻却没看明白到底要干些什么，这也导致在开始lab0时根本不清楚自己要干些什么。无论如何，这是一个很值得写完的lab。
-
-Lab0webget在webget.cc实现一个webget，实现访问外部网页。
-需要使用TCPSocket和Address类
-123456789...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:24:30+08:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Lab/">Lab</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Lab/" itemprop="url"><span itemprop="name">Lab</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/4/c97217e90828/' itemprop="url">
+          <a class='readmore' href='/2020/11/f953da04e2b2/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2766,6 +2688,21 @@ Lab0webget在webget.cc实现一个webget，实现访问外部网页。
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">
+            <section class="post prev white-box shadow floatable blur" >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          2 / 2
+        </p>
+        
+      </div>
     
   
 
@@ -3470,7 +3407,7 @@ Lab0webget在webget.cc实现一个webget，实现访问外部网页。
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/tags/CS144/","name":"CS144"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/categories/未分类/","name":"未分类"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

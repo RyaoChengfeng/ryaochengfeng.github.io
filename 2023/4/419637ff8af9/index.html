@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://blog.ryaoknw.site/tags/cs144/"/>
+  
+  <link rel="canonical" href="https://blog.ryaoknw.site/2023/4/419637ff8af9/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -35,17 +35,19 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Ryao's Blog" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>标签：CS144 - Ryao's Blog</title>
+  <title>笔记同步方案 - Ryao's Blog</title>
   <meta name="keywords" content="">
   <meta desc name="description" content="|个人博客| - Ryao - Ryao's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ryao&#39;s Blog">
-<meta property="og:url" content="https://blog.ryaoknw.site/tags/CS144/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记同步方案">
+<meta property="og:url" content="https://blog.ryaoknw.site/2023/4/419637ff8af9/index.html">
 <meta property="og:site_name" content="Ryao&#39;s Blog">
-<meta property="og:description" content="|个人博客|">
+<meta property="og:description" content="笔记同步方案前言笔记里写了一大堆东西，现在在windows上保存，并把windows的磁盘开机自动挂载到linux上实现双端的同步，但这样在手机上是访问不到笔记的，很不方便，使用服务器搭建一个webdav倒是很方便，但是这个轻量学生机不是很可靠，万一哪天我玩崩了，内容就消失了，还是使用云服务比较靠谱。 typora+picgo+七牛云我只考虑使用typora作为md编辑器，因为它非常顺手，我的嘉然">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-04-07T13:17:52.000Z">
+<meta property="article:modified_time" content="2023-04-07T13:19:21.379Z">
 <meta property="article:author" content="Ryao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2453,7 +2455,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://pic.imgdb.cn/item/63fe5689f144a01007d040e2.jpg"></div>
 
@@ -2541,29 +2543,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/356cea6e7c3a/">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/419637ff8af9/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
   </span>
@@ -2572,206 +2556,322 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="|个人博客|">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/356cea6e7c3a/"  itemprop="url">
-        CS144 Lab2
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+    
+    
+      <h1 class="title" itemprop="name headline">
+        笔记同步方案
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://pic.imgdb.cn/item/5fcd8359394ac52378e72b38.jpg" class="lazyload" data-srcset="https://pic.imgdb.cn/item/5fcd8359394ac52378e72b38.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Ryao</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-07T21:17:52+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年4月7日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h1 id="笔记同步方案"><a href="#笔记同步方案" class="headerlink" title="笔记同步方案"></a>笔记同步方案</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>笔记里写了一大堆东西，现在在windows上保存，并把windows的磁盘开机自动挂载到linux上实现双端的同步，但这样在手机上是访问不到笔记的，很不方便，使用服务器搭建一个webdav倒是很方便，但是这个轻量学生机不是很可靠，万一哪天我玩崩了，内容就消失了，还是使用云服务比较靠谱。</p>
+<h2 id="typora-picgo-七牛云"><a href="#typora-picgo-七牛云" class="headerlink" title="typora+picgo+七牛云"></a>typora+picgo+七牛云</h2><p>我只考虑使用typora作为md编辑器，因为它非常顺手，<strong>我的嘉然主题和字体也非常好看</strong>。</p>
+<p>图片上传使用picgo，一开始用的smms图床，smms图床有足够的免费空间，但是不知何时开始国内无法访问了，图床转而用了聚合图床，免费而且快，但某日发现它会把png转成jpg，这导致我的图片从rgba变成了rgb，这非常不合理，于是转用了七牛云。</p>
+<p>七牛云的cdn用https要记流量付费，于是用nginx做一个反代来实现https的图片</p>
+<h2 id="尝试joplin"><a href="#尝试joplin" class="headerlink" title="尝试joplin"></a>尝试joplin</h2><p>了解到joplin可以作为一个开源的笔记同步工具，安装下来试了试，基本的流程就是</p>
+<ul>
+<li>导入笔记</li>
+<li>设置同步，可以同步到onedrive、dropdox等，也可以是任何的webdav</li>
+<li>然后设置外部编辑器为typora</li>
+</ul>
+<p>每次打开joplin，编辑时打开外部编辑器，但编辑完还得关闭，整个流程非常麻烦，体验非常不好。</p>
+<h2 id="坚果云"><a href="#坚果云" class="headerlink" title="坚果云"></a>坚果云</h2><p>有看到用typora+坚果云的方案，也去试了试，坚果云会提供免费的空间，也有提供linux的客户端</p>
+<p>同步的方法就是webdav，和onedrive是一样的</p>
+<p>但同步需要运行它的客户端，我不是很想每次开机都启动一个坚果云客户端，只把它用来同步我的md笔记</p>
+<h2 id="onedrive"><a href="#onedrive" class="headerlink" title="onedrive"></a>onedrive</h2><p>考虑到还是得用webdav，最后还是回到了onedrive，onedrive在windows上同步是非常方便的，但在linux上挂载需要额外的操作</p>
+<h3 id="rclone"><a href="#rclone" class="headerlink" title="rclone"></a>rclone</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>你需要拿到access_token,或者申请一个API key，用于后续配置中的<code>config_token&gt;</code>，没有API key，<code>client_id&gt;</code>和<code>client_secret&gt;</code>为空即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone authorize <span class="string">&quot;onedrive&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后配置rclone</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone config</span><br></pre></td></tr></table></figure>
+
+<p>验证：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone lsd &lt;配置的网盘名称&gt;:/</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20230407172742346.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20230407172742346.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h3 id="挂载onedrive"><a href="#挂载onedrive" class="headerlink" title="挂载onedrive"></a>挂载onedrive</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fuse</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone mount &lt;配置的云盘名称&gt;:&lt;要挂载的云盘目录&gt; &lt;作为挂载点的本地目录&gt; --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --<span class="built_in">umask</span> 000 --daemon</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone mount onedrive:/ /home/ryao/onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --<span class="built_in">umask</span> 000 --daemon</span><br></pre></td></tr></table></figure>
+
+<p>取消挂载：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fusermount -qzu &lt;挂载路径&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>开机自启</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span>=<span class="string">&quot; mount onedrive:/ /home/ryao/onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 --daemon&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> &gt; /etc/systemd/system/rclone.service &lt;&lt;<span class="string">EOF</span></span><br><span class="line"><span class="string">[Unit]</span></span><br><span class="line"><span class="string">Description=Rclone</span></span><br><span class="line"><span class="string">After=network-online.target</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Service]</span></span><br><span class="line"><span class="string">Type=simple</span></span><br><span class="line"><span class="string">ExecStart=$(command -v rclone) $&#123;command&#125;</span></span><br><span class="line"><span class="string">Restart=on-abort</span></span><br><span class="line"><span class="string">User=root</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[Install]</span></span><br><span class="line"><span class="string">WantedBy=default.target</span></span><br><span class="line"><span class="string">EOF</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 开机自启</span><br><span class="line">systemctl enable rclone</span><br><span class="line"># 启动</span><br><span class="line">systemctl start rclone</span><br><span class="line"># 重启</span><br><span class="line">systemctl restart  rclone</span><br><span class="line"># 停止</span><br><span class="line">systemctl status rclone</span><br></pre></td></tr></table></figure>
+
+<p>终于配置好了，然后发现onedrive的速度简直就是一种折磨，尝试使用了google drive，依旧慢的离谱</p>
+<h2 id="dropbox"><a href="#dropbox" class="headerlink" title="dropbox"></a>dropbox</h2><p><a target="_blank" rel="noopener" href="https://www.dropbox.com/install">https://www.dropbox.com/install</a></p>
+<p>放弃了折腾，选择了dropbox。</p>
+<p>不过由于国内连不上的原因，用代理安装后还要再安装Dropbox daemon，但是会connection reset by peer.</p>
+<p>通过下载Dropbox daemon放到根目录就行了。</p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20230407201040417.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20230407201040417.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h2 id="rclone-kodo"><a href="#rclone-kodo" class="headerlink" title="rclone+kodo"></a>rclone+kodo</h2><p>由于众所周知的原因，dropbox不方便访问，所以尽管它很好用，在我这也不好用。</p>
+<p>为什么我不能直接用对象存储来同步呢？难道我访问oss只能用cdn回源？</p>
+<p>在我考虑用rclone来操作dropbox而不是使用它的客户端时，我发现rclone有s3的选项</p>
+<p>配置好就行了，文档：<a target="_blank" rel="noopener" href="https://developer.qiniu.com/kodo/12285/docking-rclone">https://developer.qiniu.com/kodo/12285/docking-rclone</a></p>
+<p>rclone是一个强大的工具</p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20230407205059142.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20230407205059142.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>使用<code>rclone sync local-path qiniu:dest-bucket-name/dest-directory-path  </code>进行同步</p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20230407211058837.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20230407211058837.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>对比本地与云<code>rclone check local-path qiniu:dest-bucket-name/dest-directory-path</code></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20230407211352268.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20230407211352268.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>非常完美</p>
+
+    </div>
+    
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2023/4/419637ff8af9/">
+                                              https://blog.ryaoknw.site/2023/4/419637ff8af9/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-07T21:19:21+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年4月7日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Lab2wrapping_int32实现序列号、绝对序列号与流索引间的转换。
-出现cmake报错为：
-1234CMake Error: The following variables are used in this project, but they are set to NOTFOUND.Please set them or make sure they are set and test...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/2023/4/419637ff8af9/&title=笔记同步方案 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/2023/4/419637ff8af9/&title=笔记同步方案 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/2023/4/419637ff8af9/&title=笔记同步方案 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:27:30+08:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Lab/">Lab</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Lab/" itemprop="url"><span itemprop="name">Lab</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/4/356cea6e7c3a/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/f440e1660a5f/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ryao's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Ryao's Blog">
-    <meta itemprop="description" content="|个人博客|">
-  </span>
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+                  
+                    
+
+                                
+                                  <div class="prev-next">
+                                    
+                                        
+                                          <a class='next' href='/2023/4/704fa143084e/'>
+                                            <p class='title'>
+                                              音乐管理方案<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              音乐管理方案Navidrome使用Navidrome管理音乐
+
+部署12345678910111213141516version: &quot;3&quot;services:  navidro...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
+</article>
+
+
   
-  
-  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2023/4/419637ff8af9/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/f440e1660a5f/"  itemprop="url">
-        CS144 Lab1
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Lab1stream_reassembler实现一个流重组器，一个将字节流的字串或者小段按照正确顺序来拼接回连续字节流的模块。
-要求：
 
-接收子串（由一串字节和大数据流中该串的第一个字节的索引组成），并提供一个ByteStream，其中所有的数据都被正确排序
-注意考虑bytestream写满了的情况，以及reassembler满了的情况
-注意边界等号
+    <div id="layoutHelper-comments"></div>
 
+  </article>
 
-void StreamReassem...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:25:30+08:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Lab/">Lab</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Lab/" itemprop="url"><span itemprop="name">Lab</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/4/f440e1660a5f/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/c97217e90828/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ryao's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Ryao's Blog">
-    <meta itemprop="description" content="|个人博客|">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/c97217e90828/"  itemprop="url">
-        CS144 Lab0
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言cs144的lab文档非常详细，非常详细，详细到每一个都有10几页的大小，像一个仓库的readme，以至于菜狗花大量时间读机翻却没看明白到底要干些什么，这也导致在开始lab0时根本不清楚自己要干些什么。无论如何，这是一个很值得写完的lab。
-
-Lab0webget在webget.cc实现一个webget，实现访问外部网页。
-需要使用TCPSocket和Address类
-123456789...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:24:30+08:00">2023-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Lab/">Lab</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Lab/" itemprop="url"><span itemprop="name">Lab</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/4/c97217e90828/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
     
-  
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2780,170 +2880,48 @@ Lab0webget在webget.cc实现一个webget，实现访问外部网页。
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Ryao</h2>
-        
-        
-          <p>虚無を見出した後で、俺は美を見出した</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:liaocfe@gmail.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ryaochengfeng/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/CS/" href="/categories/CS/"
-            active-action="action-categoriesCS"
-            ><div class='name'>CS</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Lab/" href="/categories/Lab/"
-            active-action="action-categoriesLab"
-            ><div class='name'>Lab</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/linux/" href="/categories/linux/"
-            active-action="action-categorieslinux"
-            ><div class='name'>linux</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8A%A8%E7%94%BB/" href="/categories/%E5%8A%A8%E7%94%BB/"
-            active-action="action-categoriesE58AA8E794BB"
-            ><div class='name'>动画</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%98%E8%85%BE/" href="/categories/%E6%8A%98%E8%85%BE/"
-            active-action="action-categoriesE68A98E885BE"
-            ><div class='name'>折腾</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
-            active-action="action-categoriesE68AA5E99499"
-            ><div class='name'>报错</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            active-action="action-categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
-            active-action="action-categoriesE69CAAE58886E7B1BB"
-            ><div class='name'>未分类</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesE7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
-            active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/CS144/" style="font-size: 20.67px; color: #6c6c6c">CS144</a> <a href="/tags/DFA/" style="font-size: 14px; color: #999">DFA</a> <a href="/tags/MIT6-824/" style="font-size: 14px; color: #999">MIT6.824</a> <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 20.67px; color: #6c6c6c">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/kubernetes/" style="font-size: 14px; color: #999">kubernetes</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/nginx/" style="font-size: 17.33px; color: #828282">nginx</a> <a href="/tags/private/" style="font-size: 14px; color: #999">private</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 20.67px; color: #6c6c6c">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 24px; color: #555">动画</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" style="font-size: 14px; color: #999">敏感词过滤</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 17.33px; color: #828282">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 17.33px; color: #828282">评论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typora-picgo-%E4%B8%83%E7%89%9B%E4%BA%91"><span class="toc-text">typora+picgo+七牛云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%9D%E8%AF%95joplin"><span class="toc-text">尝试joplin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%9A%E6%9E%9C%E4%BA%91"><span class="toc-text">坚果云</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#onedrive"><span class="toc-text">onedrive</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rclone"><span class="toc-text">rclone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%82%E8%BD%BDonedrive"><span class="toc-text">挂载onedrive</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dropbox"><span class="toc-text">dropbox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rclone-kodo"><span class="toc-text">rclone+kodo</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2971,13 +2949,14 @@ Lab0webget在webget.cc实现一个webget，实现访问外部网页。
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3470,7 +3449,7 @@ Lab0webget在webget.cc实现一个webget，实现访问外部网页。
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/tags/CS144/","name":"CS144"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/categories/未分类/","name":"未分类"}},{"@type":"ListItem","position":3,"item":{"@id":"https://blog.ryaoknw.site/2023/4/419637ff8af9/","name":"笔记同步方案"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"笔记同步方案","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.ryaoknw.site/2023/4/419637ff8af9/"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://blog.ryaoknw.site/2023/4/419637ff8af9/","wordCount":0,"datePublished":"2023-04-07T13:17:52.000Z","dateModified":"2023-04-07T13:19:21.379Z","articleSection":"未分类","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

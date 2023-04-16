@@ -1746,7 +1746,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681193786950),
+    lastupdate: new Date(1681676060050),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2575,6 +2575,137 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/6eb8dc2e76dc/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ryao's Blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Ryao's Blog">
+    <meta itemprop="description" content="|个人博客|">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/4/6eb8dc2e76dc/"  itemprop="url">
+        媒体资源管理方案
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        媒体资源管理方案前言Navidrome实在不好用，选择了一些媒体管理的工具。
+plex：一键安装的媒体管理工具，安装自动将服务注册到systemd。有免费版，不开源，试了一下还行，但是我不太想用，因为不折腾，因为我不喜欢。
+找到了开源的jellyfin，也部署了，太丑，发现了它的衍生商业版emby，看着舒服多了，决定用它
+embyemby有免费版，阉割了很多功能，甚至不能更换主题
+当然，我选...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-17T03:18:10+08:00">2023-04-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/4/6eb8dc2e76dc/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/82c24833ebd8/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ryao's Blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Ryao's Blog">
+    <meta itemprop="description" content="|个人博客|">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/4/82c24833ebd8/"  itemprop="url">
+        frp配置内网穿透暴露kubernetes集群
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        frp配置内网穿透暴露kubernetes集群前言1核2G的服务器太垃圾了，搭了kubernetes，但是各种组件都吃性能，研究了一下内网穿透，尝试让电脑在开机的时候可以用公网ip访问服务，这样就完全没有性能瓶颈了
+折腾了很久。。。对于rancher，helm装完有一大大大大堆的资源被安装下来了，也不知道它的流量是怎么走的，会重定向一次host，导致循环重定向，排查了半天，最终放弃挣扎了，但...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-17T03:15:54+08:00">2023-04-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/kubernetes/">kubernetes</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/kubernetes/" itemprop="url"><span itemprop="name">kubernetes</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/4/82c24833ebd8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/419637ff8af9/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -2812,6 +2943,14 @@ kube-apiserver API 服务器，公开了 Kubernetes APIetcd 键值数据库，�
       <div>
         
         <time itemprop="dateCreated datePublished" datetime="2023-04-02T14:36:16+08:00">2023-04-02</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/kubernetes/">kubernetes</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/kubernetes/" itemprop="url"><span itemprop="name">kubernetes</span></a>
+            </span>
+          
         
       </div>
       
@@ -3097,141 +3236,24 @@ Lab0webget在webget.cc实现一个webget，实现访问外部网页。
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/2/7e899c277a7b/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ryao's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Ryao's Blog">
-    <meta itemprop="description" content="|个人博客|">
-  </span>
-  
-  
-  
-    <div class='headimg-div'>
-      <a class='headimg-a' href="/2023/2/7e899c277a7b/">
-        <img itemprop="image" class='headimg' alt="向这狗娘养的世界" src='https://cdn.ryaoknw.site/picgo/yande.re 80237 kira_kira shiino_kirari.png'/>
-      </a>
-    </div>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/2/7e899c277a7b/"  itemprop="url">
-        向这狗娘养的世界
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      [ENCRYPTED]今日、海を見た。もう怖くない。
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-02-26T16:56:50+08:00">2023-02-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/2/7e899c277a7b/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/1/72c99cd69d60/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ryao's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Ryao's Blog">
-    <meta itemprop="description" content="|个人博客|">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/1/72c99cd69d60/"  itemprop="url">
-        2022年10月追番锐评·兼年度动画排名
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前言懒得写但又总是想写，于是便随便水水罢
-本来还打算单独以一篇「看动画破放了怎么办·尬黑·孤独摇滚」来作为评价的，但是懒，以及感觉怎么写也无法准确表达自己的想法，于是也随便水水罢
-2022年10月电锯人
-stars：7
-中山龙拿着电锯人ip的红利追求所谓的“电影感”，最后做出来的东西实在不太符合期望。
-可笑的是吹的几话都不是龙哥监督的。
-作画水准实在不敢恭维，一堆异样的走路摆动幅度，极其粗糙...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-01-24T19:50:14+08:00">2023-01-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%8A%A8%E7%94%BB/">动画</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%8A%A8%E7%94%BB/" itemprop="url"><span itemprop="name">动画</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/1/72c99cd69d60/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+        <p class="current">
+          1 / 2
+        </p>
+        
+          <a class="next" rel="next" href="/archives/2023/page/2/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        
+      </div>
     
   
 
@@ -3332,6 +3354,11 @@ stars：7
             ><div class='name'>Lab</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/kubernetes/" href="/categories/kubernetes/"
+            active-action="action-categorieskubernetes"
+            ><div class='name'>kubernetes</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/linux/" href="/categories/linux/"
             active-action="action-categorieslinux"
             ><div class='name'>linux</div><div class='badge'>(4)</div></a></li>
@@ -3359,7 +3386,7 @@ stars：7
           <li><a class="flat-box"
             title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
             active-action="action-categoriesE69CAAE58886E7B1BB"
-            ><div class='name'>未分类</div><div class='badge'>(12)</div></a></li>
+            ><div class='name'>未分类</div><div class='badge'>(13)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
@@ -3394,7 +3421,7 @@ stars：7
 
 
     <div class='content'>
-      <a href="/tags/CS144/" style="font-size: 20.67px; color: #6c6c6c">CS144</a> <a href="/tags/DFA/" style="font-size: 14px; color: #999">DFA</a> <a href="/tags/MIT6-824/" style="font-size: 14px; color: #999">MIT6.824</a> <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 20.67px; color: #6c6c6c">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/kubernetes/" style="font-size: 14px; color: #999">kubernetes</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/nginx/" style="font-size: 17.33px; color: #828282">nginx</a> <a href="/tags/private/" style="font-size: 14px; color: #999">private</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 20.67px; color: #6c6c6c">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 24px; color: #555">动画</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" style="font-size: 14px; color: #999">敏感词过滤</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 17.33px; color: #828282">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 17.33px; color: #828282">评论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
+      <a href="/tags/CS144/" style="font-size: 20.67px; color: #6c6c6c">CS144</a> <a href="/tags/DFA/" style="font-size: 14px; color: #999">DFA</a> <a href="/tags/MIT6-824/" style="font-size: 14px; color: #999">MIT6.824</a> <a href="/tags/frp/" style="font-size: 14px; color: #999">frp</a> <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 20.67px; color: #6c6c6c">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/kubernetes/" style="font-size: 17.33px; color: #828282">kubernetes</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/nginx/" style="font-size: 17.33px; color: #828282">nginx</a> <a href="/tags/private/" style="font-size: 14px; color: #999">private</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 20.67px; color: #6c6c6c">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 24px; color: #555">动画</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" style="font-size: 14px; color: #999">敏感词过滤</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 17.33px; color: #828282">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 17.33px; color: #828282">评论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
     </div>
   </section>
 

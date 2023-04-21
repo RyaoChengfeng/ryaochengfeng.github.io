@@ -1746,7 +1746,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681676060050),
+    lastupdate: new Date(1682090375019),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2577,6 +2577,76 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/0542e4f627a8/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Ryao's Blog">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Ryao's Blog">
+    <meta itemprop="description" content="|个人博客|">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/4/0542e4f627a8/"  itemprop="url">
+        TOTP和2FA实现
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        TOTP和2FA实现很多网站的登陆系统都会提供一个开启2FA认证的安全选项，一些对安全性要求较高的还会要求必须使用2FA。
+2FA是啥？二步验证（双因素验证，Two-factor authentication, 2FA）。在检查口令之外，还检查一个一次性认证码。典型的二步认证手段包括有：
+
+短信&#x2F;邮箱验证码
+银行发的密码器
+基于 HOTP&#x2F;TOTP 协议的应用程序
+
+2F...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-04-21T23:17:07+08:00">2023-04-21</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2023/4/0542e4f627a8/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/6eb8dc2e76dc/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
@@ -3185,71 +3255,6 @@ HAI DOMO！VIRTUAL YOUTUBER KIZUNA AI DESU！
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2021/11/df9fd59361b6/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Ryao's Blog">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Ryao's Blog">
-    <meta itemprop="description" content="|个人博客|">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/11/df9fd59361b6/"  itemprop="url">
-        MapReduce论文学习
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        MapReduceMapReduce是什么Google三驾马车
-Google的基础设施有三驾马车，分别是《Google File System》、《Google MapReduce》以及《Google BigTable》
-现代各种优秀的分布式系统实现的本质，都源于那几篇经典的研究和论文。比如非常流行的 Hadoop(HDFS、MapReduce、Hbase)、Spark、Hive，以及国产数...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-11-23T10:29:59+08:00">2021-11-23</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/11/df9fd59361b6/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3401,7 +3406,7 @@ Google的基础设施有三驾马车，分别是《Google File System》、《Go
           <li><a class="flat-box"
             title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
             active-action="action-categoriesE69CAAE58886E7B1BB"
-            ><div class='name'>未分类</div><div class='badge'>(13)</div></a></li>
+            ><div class='name'>未分类</div><div class='badge'>(14)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"

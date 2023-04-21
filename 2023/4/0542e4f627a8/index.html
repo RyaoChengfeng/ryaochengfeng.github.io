@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://blog.ryaoknw.site/tags/frp/"/>
+  
+  <link rel="canonical" href="https://blog.ryaoknw.site/2023/4/0542e4f627a8/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -35,17 +35,19 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Ryao's Blog" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>标签：frp - Ryao's Blog</title>
+  <title>TOTP和2FA实现 - Ryao's Blog</title>
   <meta name="keywords" content="">
   <meta desc name="description" content="|个人博客| - Ryao - Ryao's Blog">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ryao&#39;s Blog">
-<meta property="og:url" content="https://blog.ryaoknw.site/tags/frp/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TOTP和2FA实现">
+<meta property="og:url" content="https://blog.ryaoknw.site/2023/4/0542e4f627a8/index.html">
 <meta property="og:site_name" content="Ryao&#39;s Blog">
-<meta property="og:description" content="|个人博客|">
+<meta property="og:description" content="TOTP和2FA实现很多网站的登陆系统都会提供一个开启2FA认证的安全选项，一些对安全性要求较高的还会要求必须使用2FA。 2FA是啥？二步验证（双因素验证，Two-factor authentication, 2FA）。在检查口令之外，还检查一个一次性认证码。典型的二步认证手段包括有：  短信&#x2F;邮箱验证码 银行发的密码器 基于 HOTP&#x2F;TOTP 协议的应用程序  2FA 中">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-04-21T15:17:07.000Z">
+<meta property="article:modified_time" content="2023-04-21T15:18:27.320Z">
 <meta property="article:author" content="Ryao">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2453,7 +2455,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  dock' style="display: none;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.ryaoknw.site/picgo/63fe5689f144a01007d040e2.jpg"></div>
 
@@ -2541,25 +2543,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/82c24833ebd8/">
+  <article itemscope itemtype="http://schema.org/Article"
+  class="article post white-box reveal md shadow floatable blur article-type-post"
+  id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/4/0542e4f627a8/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
   </span>
@@ -2568,67 +2556,310 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="|个人博客|">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/4/82c24833ebd8/"  itemprop="url">
-        frp配置内网穿透暴露kubernetes集群
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+    
+    
+      <h1 class="title" itemprop="name headline">
+        TOTP和2FA实现
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://cdn.ryaoknw.site/picgo/5fcd8359394ac52378e72b38.jpg" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/5fcd8359394ac52378e72b38.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Ryao</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-21T23:17:07+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年4月21日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.3k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：5 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+    <div id="layoutHelper-page-plugins"></div>
+    <div id="post-body" itemprop="articleBody">
+      
+          <h1 id="TOTP和2FA实现"><a href="#TOTP和2FA实现" class="headerlink" title="TOTP和2FA实现"></a>TOTP和2FA实现</h1><p>很多网站的登陆系统都会提供一个开启2FA认证的安全选项，一些对安全性要求较高的还会要求必须使用2FA。</p>
+<p>2FA是啥？二步验证（双因素验证，Two-factor authentication, 2FA）。在检查口令之外，还检查一个<strong>一次性认证码</strong>。典型的二步认证手段包括有：</p>
+<ul>
+<li>短信&#x2F;邮箱验证码</li>
+<li>银行发的密码器</li>
+<li>基于 HOTP&#x2F;TOTP 协议的应用程序</li>
+</ul>
+<p>2FA 中使用的是一次性密码（One Time Password，OTP），也被称作动态密码。一般 OTP 有两种策略：HOTP ( HMAC-based One Time Password) 和 TOTP ( Time-based One-time Password)</p>
+<h2 id="TOTP工作流程"><a href="#TOTP工作流程" class="headerlink" title="TOTP工作流程"></a>TOTP工作流程</h2><p>如果用户选择打开 2FA，网站会生成一个预共享的 secret key。后续的验证码都是从这个 secret key 派生出来的，这个 secret key 应该严格保密，只有服务器和客户应当知晓。</p>
+<p>用户登录时，首先完成传统的第一步认证，然后提供 6 位数字认证码（这个认证码由 secret key 与当前时间计算得出，每 30s 变一次），若与服务器的计算结果一致，则完成认证。</p>
+<p>（由于Google Authenticator界面下我截不了图，偷一下应用市场的）</p>
+<img src="https://cdn.ryaoknw.site/picgo/unnamed.webp" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/unnamed.webp" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="zoom:50%;" />
+
+<h2 id="TOTP计算原理"><a href="#TOTP计算原理" class="headerlink" title="TOTP计算原理"></a>TOTP计算原理</h2><p>参考<a target="_blank" rel="noopener" href="https://datatracker.ietf.org/doc/html/rfc4226">RFC4226</a></p>
+<h3 id="HOTP"><a href="#HOTP" class="headerlink" title="HOTP"></a>HOTP</h3><p>HMAC-based One Time Password，由 RFC 4226 定义。一次性验证码是secret key $K$与计数器$C$的函数，其中 HMAC 过程使用的哈希函数$H$默认是 SHA-1。<br>$$<br>HOTP(K,C) &#x3D; Truncate(HMAC_{H}(K,C))<br>$$<br>HMAC 算法得出的值位数比较多，不方便用户输入，因此需要截断（Truncate）成为一组不太长十进制数。要用六位数，就是$HOTP(K,C) \mod10^6$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># https://github.com/pyauth/pyotp</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">generate_otp</span>(<span class="params">self, <span class="built_in">input</span>: <span class="built_in">int</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">       <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">       :param input: the HMAC counter value to use as the OTP input.</span></span><br><span class="line"><span class="string">           Usually either the counter, or the computed integer based on the Unix timestamp</span></span><br><span class="line"><span class="string">       &quot;&quot;&quot;</span></span><br><span class="line">       <span class="keyword">if</span> <span class="built_in">input</span> &lt; <span class="number">0</span>:</span><br><span class="line">           <span class="keyword">raise</span> ValueError(<span class="string">&quot;input must be positive integer&quot;</span>)</span><br><span class="line">       hasher = hmac.new(self.byte_secret(), self.int_to_bytestring(<span class="built_in">input</span>), self.digest)</span><br><span class="line">       hmac_hash = <span class="built_in">bytearray</span>(hasher.digest())</span><br><span class="line">       <span class="comment"># 从160位的 SHA-1 结果中，提取出31位</span></span><br><span class="line">       offset = hmac_hash[-<span class="number">1</span>] &amp; <span class="number">0xF</span></span><br><span class="line">       code = (</span><br><span class="line">           (hmac_hash[offset] &amp; <span class="number">0x7F</span>) &lt;&lt; <span class="number">24</span></span><br><span class="line">           | (hmac_hash[offset + <span class="number">1</span>] &amp; <span class="number">0xFF</span>) &lt;&lt; <span class="number">16</span></span><br><span class="line">           | (hmac_hash[offset + <span class="number">2</span>] &amp; <span class="number">0xFF</span>) &lt;&lt; <span class="number">8</span></span><br><span class="line">           | (hmac_hash[offset + <span class="number">3</span>] &amp; <span class="number">0xFF</span>)</span><br><span class="line">       )</span><br><span class="line">       <span class="comment"># 得到digits位的一次性密码</span></span><br><span class="line">       str_code = <span class="built_in">str</span>(<span class="number">10_000_000_000</span> + (code % <span class="number">10</span>**self.digits))</span><br><span class="line">       <span class="keyword">return</span> str_code[-self.digits :]</span><br></pre></td></tr></table></figure>
+
+<p><strong>工作流程</strong></p>
+<ol>
+<li><p>客户端和服务器各有一个计数器C，并且事先将计数值同步。</p>
+</li>
+<li><p>客户端用K,C计算一次性密码。</p>
+</li>
+<li><p>计算完成之后客户端计数器C计数值加1，验证通过，服务器端将计数值C加1。</p>
+</li>
+</ol>
+<p>如果验证失败或者客户端不小心多进行了一次生成密码操作，那么服务器和客户端之间的计数器C将不再同步，因此需要有一个重新同步（Resynchronization）的机制：</p>
+<p><strong>Resynchronization</strong></p>
+<p>定义一个向前查找的参数s，服务器可以重新计算接下来的s个HOTP值，并将它们与接收到的HOTP客户端进行比较</p>
+<p>计数器同步只需服务器计算下一个HOTP值并确定是否匹配。系统可以要求用户发送一系列（例如C&#x3D;2, 3）的HOTP值以进行重新同步，因为伪造连续的HOTP值比猜测单个HOTP值更难。</p>
+<h3 id="TOTP"><a href="#TOTP" class="headerlink" title="TOTP"></a>TOTP</h3><p>HOTP 与 TOTP 的区别在于：HOTP 是用一个整数 counter 来计算一次性验证码，而 TOTP 是基于当前时间来计算。显然，实现了前者就能实现后者——只需要把当前时间除以 $T$ 向下取整，就能得到一个整数 counter 送进 HOTP 协议里。</p>
+<p>Google Authenticator把$T$设置为了30s.</p>
+<p>由于网络延时，用户输入延迟等因素，可能当服务器端接收到一次性密码时，T的数值已经改变，这样就会导致服务器计算的一次性密码值与用户输入的不同，验证失败。这可以通过同样的思路来解决，服务器计算当前时间片以及前面的n个时间片内的一次性密码值，只要其中有一个与用户输入的密码相同，则验证通过。当然，n不能太大，否则会降低安全性</p>
+<h2 id="服务实现"><a href="#服务实现" class="headerlink" title="服务实现"></a>服务实现</h2><ol>
+<li>服务端随机生成一个secret key，并且把这个密钥保存在数据库中。</li>
+<li>在页面上显示一个二维码，内容是一个URI地址（<code>otpauth://totp/GitHub:LarryLuTW?secret=&#123;secret_key&#125;&amp;issuer=GitHub</code>）</li>
+<li>客户端用某个应用扫描二维码，把secret key保存。</li>
+<li>客户端每30秒使用secret key和时间戳生成一个6位数字的一次性密码</li>
+<li>用户输入这个一次性密码，然后服务端进行验证</li>
+</ol>
+<p><strong>recovery code</strong></p>
+<p>服务端有时会提供一个或一组recovery code，用于在你把手机砸了或者其他故障后能够登陆账户。</p>
+<p>我们可以做一个简单的实现：</p>
+<ul>
+<li><p>随便用某些方法一组唯一且不能伪造的recovery code，将它们存在数据库，并对应用户和用户的secret key</p>
+</li>
+<li><p>用户输入recovery code后，验证recovery code是否对应该用户，验证成功后销毁recovery code和secret key，取消用户的2FA并给用户态（或者把用户跳转到setting并引导重新设置）</p>
+</li>
+</ul>
+
+    </div>
+    
+        
+          
+            <div class='footer'>
+              <!-- 参考资料、相关资料等 -->
+              
+                  <!-- 相关文章 -->
+                  
+                        <!-- 版权声明组件 -->
+                        
+                          
+                                <div class='copyright'>
+                                  <blockquote>
+                                    
+                                      
+                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                                            
+                                              
+                                      
+                                        <p>
+                                          本文永久链接是：<a
+                                              href="https://blog.ryaoknw.site/2023/4/0542e4f627a8/">
+                                              https://blog.ryaoknw.site/2023/4/0542e4f627a8/
+                                            </a>
+                                        </p>
+                                        
+                                              
+                                  </blockquote>
+                                </div>
+                                
+                                  
+                                    <!-- 打赏组件 -->
+                                    
+            </div>
+            
+              
+                
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-21T23:18:27+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年4月21日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        frp配置内网穿透暴露kubernetes集群前言1核2G的服务器太垃圾了，搭了kubernetes，但是各种组件都吃性能，研究了一下内网穿透，尝试让电脑在开机的时候可以用公网ip访问服务，这样就完全没有性能瓶颈了
-折腾了很久。。。对于rancher，helm装完有一大大大大堆的资源被安装下来了，也不知道它的流量是怎么走的，会重定向一次host，导致循环重定向，排查了半天，最终放弃挣扎了，但...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/2023/4/0542e4f627a8/&title=TOTP和2FA实现 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/2023/4/0542e4f627a8/&title=TOTP和2FA实现 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/2023/4/0542e4f627a8/&title=TOTP和2FA实现 - Ryao's Blog&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-17T03:15:54+08:00">2023-04-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/kubernetes/">kubernetes</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/kubernetes/" itemprop="url"><span itemprop="name">kubernetes</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/4/82c24833ebd8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
+    </div>
+    <!-- Custom Files bottomMeta begin -->
     
-  </section>
-  
-    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+                  
+                    
+
+                                
+                                  <div class="prev-next">
+                                    
+                                        
+                                          <a class='next' href='/2023/4/6eb8dc2e76dc/'>
+                                            <p class='title'>
+                                              媒体资源管理方案<i
+                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                            </p>
+                                            <p class='content'>
+                                              媒体资源管理方案前言Navidrome实在不好用，选择了一些媒体管理的工具。
+plex：一键安装的媒体管理工具，安装自动将服务注册到systemd。有免费版，不开源，试了一下还行，但是我不太想用...
+                                            </p>
+                                          </a>
+                                          
+                                  </div>
+                                  
+                                    <!-- Custom Files postEnd begin-->
+                                    
+                                      <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/4/0542e4f627a8/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-  
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+    
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2637,175 +2868,48 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Ryao</h2>
-        
-        
-          <p>虚無を見出した後で、俺は美を見出した</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:liaocfe@gmail.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/ryaochengfeng/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/CS/" href="/categories/CS/"
-            active-action="action-categoriesCS"
-            ><div class='name'>CS</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Lab/" href="/categories/Lab/"
-            active-action="action-categoriesLab"
-            ><div class='name'>Lab</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/kubernetes/" href="/categories/kubernetes/"
-            active-action="action-categorieskubernetes"
-            ><div class='name'>kubernetes</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/linux/" href="/categories/linux/"
-            active-action="action-categorieslinux"
-            ><div class='name'>linux</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8A%A8%E7%94%BB/" href="/categories/%E5%8A%A8%E7%94%BB/"
-            active-action="action-categoriesE58AA8E794BB"
-            ><div class='name'>动画</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%98%E8%85%BE/" href="/categories/%E6%8A%98%E8%85%BE/"
-            active-action="action-categoriesE68A98E885BE"
-            ><div class='name'>折腾</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
-            active-action="action-categoriesE68AA5E99499"
-            ><div class='name'>报错</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            active-action="action-categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
-            active-action="action-categoriesE69CAAE58886E7B1BB"
-            ><div class='name'>未分类</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
-            active-action="action-categoriesE7AC94E8AEB0"
-            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
-            active-action="action-categoriesE9A298E8A7A3"
-            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/CS144/" style="font-size: 20.67px; color: #6c6c6c">CS144</a> <a href="/tags/DFA/" style="font-size: 14px; color: #999">DFA</a> <a href="/tags/MIT6-824/" style="font-size: 14px; color: #999">MIT6.824</a> <a href="/tags/frp/" style="font-size: 14px; color: #999">frp</a> <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 20.67px; color: #6c6c6c">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/kubernetes/" style="font-size: 17.33px; color: #828282">kubernetes</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/nginx/" style="font-size: 17.33px; color: #828282">nginx</a> <a href="/tags/private/" style="font-size: 14px; color: #999">private</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 20.67px; color: #6c6c6c">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 24px; color: #555">动画</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" style="font-size: 14px; color: #999">敏感词过滤</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 17.33px; color: #828282">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 17.33px; color: #828282">评论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TOTP%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">TOTP工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TOTP%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86"><span class="toc-text">TOTP计算原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HOTP"><span class="toc-text">HOTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TOTP"><span class="toc-text">TOTP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0"><span class="toc-text">服务实现</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2833,13 +2937,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3332,7 +3437,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/tags/frp/","name":"frp"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/categories/未分类/","name":"未分类"}},{"@type":"ListItem","position":3,"item":{"@id":"https://blog.ryaoknw.site/2023/4/0542e4f627a8/","name":"TOTP和2FA实现"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"TOTP和2FA实现","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.ryaoknw.site/2023/4/0542e4f627a8/"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://blog.ryaoknw.site/2023/4/0542e4f627a8/","wordCount":0,"datePublished":"2023-04-21T15:17:07.000Z","dateModified":"2023-04-21T15:18:27.320Z","articleSection":"未分类","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

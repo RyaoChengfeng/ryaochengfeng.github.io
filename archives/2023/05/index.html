@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.6">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  
-  <link rel="canonical" href="https://blog.ryaoknw.site/2021/7/ac22932d46a9/"/>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://blog.ryaoknw.site/archives/2023/05/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -35,22 +35,18 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Ryao's Blog" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>敏感词过滤实现 - Ryao's Blog</title>
-  <meta name="keywords" content="敏感词过滤,DFA,">
+  <title>归档：2023/5 - Ryao's Blog</title>
+  <meta name="keywords" content="">
   <meta desc name="description" content="|个人博客| - Ryao - Ryao's Blog">
   
-<meta property="og:type" content="article">
-<meta property="og:title" content="敏感词过滤实现">
-<meta property="og:url" content="https://blog.ryaoknw.site/2021/7/ac22932d46a9/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ryao&#39;s Blog">
+<meta property="og:url" content="https://blog.ryaoknw.site/archives/2023/05/index.html">
 <meta property="og:site_name" content="Ryao&#39;s Blog">
-<meta property="og:description" content="前言需要实现一个基于已有的敏感词库的敏感词过滤的功能 实现方案遍历匹配遍历词库的每一个词，匹配后进行过滤（比如把它们全部换成*号） 字符串匹配比较常见的算法有：  Brute Force算法 KMP算法 Boyer-Moore算法（BM算法）  当然，用于字符串匹配的算法有非常多，这里不再赘述 一个敏感词库的词量往往是巨大的，它会远大于需要处理的文本量，在这种场景下使用遍历匹配的方法显然不可行 利">
+<meta property="og:description" content="|个人博客|">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2021-07-21T11:23:13.000Z">
-<meta property="article:modified_time" content="2022-09-21T12:55:02.882Z">
 <meta property="article:author" content="Ryao">
-<meta property="article:tag" content="敏感词过滤">
-<meta property="article:tag" content="DFA">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2168,7 +2164,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2457,7 +2453,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post dock' style="display: none;">
+      <div id="half" class='cover-wrapper  dock' style="display: ;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.ryaoknw.site/picgo/63fe5689f144a01007d040e2.jpg"></div>
 
@@ -2546,10 +2542,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article"
-  class="article post white-box reveal md shadow floatable blur article-type-post"
-  id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2021/7/ac22932d46a9/">
+	
+		
+  <section class="post-list">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://blog.ryaoknw.site/2023/5/522336ae5c77/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ryao's Blog">
   </span>
@@ -2558,335 +2566,67 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="|个人博客|">
   </span>
   
-
-
+  
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  <div class="article-meta" id="top">
-    
-    
-    
-      <h1 class="title" itemprop="name headline">
-        敏感词过滤实现
-      </h1>
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' href="/" rel="nofollow">
-    <img itemprop="image" src="https://cdn.ryaoknw.site/picgo/5fcd8359394ac52378e72b38.jpg" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/5fcd8359394ac52378e72b38.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-    <p itemprop="name">Ryao</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
-      </span>
-    
-  </div>
-
-
-          
-        
-          
-            
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>敏感词过滤</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DFA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>DFA</p></a></div>
-  <span hidden itemprop="keywords">敏感词过滤 DFA</span>
-
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-07-21T19:23:13+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年7月21日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k 字</p>
-    </a>
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2023/5/522336ae5c77/"  itemprop="url">
+        彻底禁用独立显卡
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        [Manjaro]彻底禁用独立显卡已知的问题我在使用chrome时应用启动非常迅速，但图形界面却出现的非常慢，准确来说，是一个全屏透明占用了整个屏幕，把它最小化（通过点击应用图标等方法）在屏幕上拖动会有重影，重影是buffer未清除，应该是图形（GPU）渲染的问题。
+然而，在firefox上却完全没有这个问题。
+我难以准确描述我遇到的问题，在google上搜不到任何和我相似的情况，只有类似”...
+      
+    
   </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5 分钟</p>
-    </a>
-  </div>
-
-
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-05-02T15:02:25+08:00">2023-05-02</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" itemprop="url"><span itemprop="name">未分类</span></a>
+            </span>
           
         
-        <!-- Custom Files topMeta begin-->
-        
-        <!-- Custom Files topMeta end-->
       </div>
-    
-  </div>
-
-
-    <div id="layoutHelper-page-plugins"></div>
-    <div id="post-body" itemprop="articleBody">
       
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>需要实现一个基于已有的敏感词库的敏感词过滤的功能</p>
-<h2 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h2><h3 id="遍历匹配"><a href="#遍历匹配" class="headerlink" title="遍历匹配"></a>遍历匹配</h3><p>遍历词库的每一个词，匹配后进行过滤（比如把它们全部换成*号）</p>
-<p>字符串匹配比较常见的算法有：</p>
-<ul>
-<li>Brute Force算法</li>
-<li>KMP算法</li>
-<li>Boyer-Moore算法（BM算法）</li>
-</ul>
-<p>当然，用于字符串匹配的算法有非常多，这里不再赘述</p>
-<p><strong>一个敏感词库的词量往往是巨大的，它会远大于需要处理的文本量</strong>，在这种场景下使用遍历匹配的方法显然<strong>不可行</strong></p>
-<h3 id="利用-DFA-算法"><a href="#利用-DFA-算法" class="headerlink" title="利用 DFA 算法"></a>利用 DFA 算法</h3><h4 id="DFA：Deterministic-Finite-Automata-（确定型有穷自动机）"><a href="#DFA：Deterministic-Finite-Automata-（确定型有穷自动机）" class="headerlink" title="DFA：Deterministic Finite Automata （确定型有穷自动机）"></a>DFA：Deterministic Finite Automata （确定型有穷自动机）</h4><p>从一个状态通过一系列的事件转换到另一个状态，即 state -&gt; event -&gt; state。</p>
-<ul>
-<li>确定：状态以及引起状态转换的事件都是可确定的，不存在“意外”。</li>
-<li>有穷：状态以及事件的数量都是可穷举的。</li>
-</ul>
-<p>计算机操作系统中的进程状态与切换可以作为 DFA 算法的一种近似理解</p>
-<p><img src="https://i.loli.net/2021/09/15/4rHS1xYozvfKkOT.png" class="lazyload" data-srcset="https://i.loli.net/2021/09/15/4rHS1xYozvfKkOT.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p><strong>举例：将DFA算法用于匹配关键词</strong></p>
-<p>我们可以将每个文本片段作为状态，例如“匹配关键词”可拆分为“匹”、“匹配”、“ 匹配关”、“匹配关键”和“匹配关键词”五个文本片段。</p>
-<p><img src="https://i.loli.net/2021/09/15/PkS2OrVw5ysxaDc.png" class="lazyload" data-srcset="https://i.loli.net/2021/09/15/PkS2OrVw5ysxaDc.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="20210915205452.png"></p>
-<p>过程：</p>
-<ul>
-<li>初始状态为空，当触发事件“匹”时转换到状态“匹”；</li>
-<li>触发事件“配”，转换到状态“匹配”；</li>
-<li>依次类推，直到转换为最后一个状态“匹配关键词”。</li>
-</ul>
-<p>再让我们考虑多个关键词的情况，例如“匹配算法”、“匹)配关键词”以及“信息抽取”。</p>
-<p><img src="https://i.loli.net/2021/09/15/XldZQIhN1EjasFy.png" class="lazyload" data-srcset="https://i.loli.net/2021/09/15/XldZQIhN1EjasFy.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>我们可以发现对于关键词匹配，它的状态是一个树形结构，这样我们判断一个词是否为敏感词时就大大减少了检索的匹配范围。</p>
-<p><strong>如何构建图示结构？</strong></p>
-<p> 为了处理整个关键词库，我们可以使用字典（数组、哈希表、balabala…..）</p>
-<p>字典使用 HashTable 实现，因为一个节点的子节点个数未知，而 HashTable 可以动态扩展，而且可以在 O(1) 的时间复杂度内判断某个子节点是否存在</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">state_event_dict = &#123;</span><br><span class="line">    <span class="string">&quot;匹&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;配&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;算&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;法&quot;</span>: &#123;</span><br><span class="line">                    <span class="string">&quot;is_end&quot;</span>: <span class="literal">True</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;关&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;键&quot;</span>: &#123;</span><br><span class="line">                    <span class="string">&quot;词&quot;</span>: &#123;</span><br><span class="line">                        <span class="string">&quot;is_end&quot;</span>: <span class="literal">True</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;信&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;息&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;抽&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;取&quot;</span>: &#123;</span><br><span class="line">                    <span class="string">&quot;is_end&quot;</span>: <span class="literal">True</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;is_end&quot;</span>: <span class="literal">False</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用嵌套字典来作为树形结构（这玩意就是Trie 树），<code>key</code> 作为事件，通过<code>is_end</code>字段来判断状态是否为最后一个状态，如果是最后一个状态，则停止状态转换，获取匹配的关键词。</p>
-<p>每一个敏感词都可以看做一个关键词，构建敏感词的时间复杂度是可以忽略不计的，因为构建完成后我们是可以无数次使用的。对于查找敏感词的时间复杂度。如果字符串的长度为 <code>n</code>，而每个敏感词查找的时间复杂度是 <code>O(m)</code>（<code>m</code> 为最长的字符串的长度），我们需要对字符串遍历 <code>n</code>遍，所以查找敏感词的这个过程的时间复杂度为 <code>O(m*n)</code>。用DFA算法能够很好的满足需求。</p>
-<p>缺点：占用的内存和敏感词库的大小成正比。</p>
-<h3 id="为什么不使用正则匹配"><a href="#为什么不使用正则匹配" class="headerlink" title="为什么不使用正则匹配"></a>为什么不使用正则匹配</h3><p>正则表达式引擎有两种：NFA和DFA。我们常常说用正则去匹配文本，这是NFA的思路。</p>
-<p>大多数正则表达式引擎本质是NFA（非确定性有穷自动机）。而NFA由于在匹配时会多次回溯，导致相比于DFA效率低了很多</p>
-<p><strong>为什么正则使用NFA？：</strong></p>
-<h4 id="NFA：Nondeterministic-Final-Auomaton（非确定型有穷自动机）"><a href="#NFA：Nondeterministic-Final-Auomaton（非确定型有穷自动机）" class="headerlink" title="NFA：Nondeterministic Final Auomaton（非确定型有穷自动机）"></a>NFA：Nondeterministic Final Auomaton（非确定型有穷自动机）</h4><p><img src="https://i.loli.net/2021/09/15/VYpGLw1dtZbS3Uj.png" class="lazyload" data-srcset="https://i.loli.net/2021/09/15/VYpGLw1dtZbS3Uj.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>对于正则匹配，同样逐个读入待匹配字符，每读一个字符，即选取多种可能的匹配规则的一种继续匹配，一旦发现匹配失败，则回溯（backtrack）到之前的状态，重新开始尝试新的一种匹配，直至匹配完成</p>
-<h4 id="NFA-vs-DFA"><a href="#NFA-vs-DFA" class="headerlink" title="NFA vs DFA"></a>NFA vs DFA</h4><p><img src="https://i.loli.net/2021/09/15/KZLsoQ2Erbq5p3i.png" class="lazyload" data-srcset="https://i.loli.net/2021/09/15/KZLsoQ2Erbq5p3i.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>正则表达式在计算机看来只是一串符号，正则引擎首先肯定要解析它。NFA引擎只需要编译就好了；而DFA引擎则比较繁琐，编译完还不算，还要遍历出表达式中所有的可能。因为对DFA引擎来说机会只有一次，它必须得提前知道所有的可能，才能匹配出最优的结果</p>
-<p>DFA的时间复杂度是线性的。DFA不记录所有可能的路径，结果是确定的。</p>
-<p>NFA的时间复杂度较不稳定，好坏程度取决于正则表达式的书写与匹配对象的复杂程度。但NFA相较于DFA，它具有更强大的功能。因此，它也成为Java，JavaScript，PHP，Python，Ruby实现正则表达式的方式。NFA匹配结果，基于表达式，它记录所有可能的路径</p>
-<p>正则中的非贪婪模式、反向引用、零宽断言等只有使用NFA引擎才有。因此大部分正则引擎都使用NFA来实现</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43378396/article/details/105910145?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162681308016780271543050%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162681308016780271543050&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-105910145.first_rank_v2_pc_rank_v29&utm_term=dfa%E7%AE%97%E6%B3%95&spm=1018.2226.3001.4187">DFA 算法</a></p>
-<p><a target="_blank" rel="noopener" href="https://hooj0.github.io/sensitive-words-filter/">敏感词过滤、脱敏</a></p>
-<p><a target="_blank" rel="noopener" href="https://houbb.github.io/2020/01/07/regex-and-dfa-02">Regex 正则表达式原理及如何从零实现</a></p>
-<p><a target="_blank" rel="noopener" href="https://houbb.github.io/2020/01/07/sensitive-word-dfa">java 实现敏感词过滤</a></p>
-
+        <div>
+          <a class='readmore' href='/2023/5/522336ae5c77/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
     </div>
-    
-        
-          
-            <div class='footer'>
-              <!-- 参考资料、相关资料等 -->
-              
-                  <!-- 相关文章 -->
-                  
-                        <!-- 版权声明组件 -->
-                        
-                          
-                                <div class='copyright'>
-                                  <blockquote>
-                                    
-                                      
-                                          <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                                            
-                                              
-                                      
-                                        <p>
-                                          本文永久链接是：<a
-                                              href="https://blog.ryaoknw.site/2021/7/ac22932d46a9/">
-                                              https://blog.ryaoknw.site/2021/7/ac22932d46a9/
-                                            </a>
-                                        </p>
-                                        
-                                              
-                                  </blockquote>
-                                </div>
-                                
-                                  
-                                    <!-- 打赏组件 -->
-                                    
-            </div>
-            
-              
-                
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-09-21T20:55:02+08:00">
-  <a class='notlink'>
-    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年9月21日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>敏感词过滤</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DFA/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>DFA</p></a></div>
-  <span hidden itemprop="keywords">敏感词过滤 DFA</span>
 
-
-        
-      
-        
-          
-
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.ryaoknw.site/2021/7/ac22932d46a9/&title=敏感词过滤实现 - Ryao's Blog&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.ryaoknw.site/2021/7/ac22932d46a9/&title=敏感词过滤实现 - Ryao's Blog&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.ryaoknw.site/2021/7/ac22932d46a9/&title=敏感词过滤实现 - Ryao's Blog&summary="
-          
-          >
-          
-            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
 </div>
 
-
-
+          </div>
         
       
-    </div>
-    <!-- Custom Files bottomMeta begin -->
     
-    <!-- Custom Files bottomMeta end -->
-  </div>
-
-
-                  
-                    
-
-                                
-                                  <div class="prev-next">
-                                    
-                                      <a class='prev' href='/2021/9/7a37f059971a/'>
-                                        <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                                          磁盘挂载没有写权限？彻底关闭你的windows快速启动
-                                        </p>
-                                        <p class='content'>
-                                          win10的快速启动我们都知道windows10在“电源管理”处有一个“快速启动”选项，默认情况下他是开启的。
-这会让windows10更快的关闭和启动。在启用该选项时，本质上win10让你的P...
-                                        </p>
-                                      </a>
-                                      
-                                        
-                                          <a class='next' href='/2021/5/8432c972721a/'>
-                                            <p class='title'>
-                                              CUDA+cuDNN+pytorch GPU环境搭建<i
-                                                  class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                                            </p>
-                                            <p class='content'>
-                                              安装CUDA
-安装
-
-首先去英伟达官网下载cuda安装包：https://developer.nvidia.com/cuda-toolkit-archive
-
-
-踩坑：这里最好不要使用deb的安...
-                                            </p>
-                                          </a>
-                                          
-                                  </div>
-                                  
-                                    <!-- Custom Files postEnd begin-->
-                                    
-                                      <!-- Custom Files postEnd end-->
-</article>
-
-
+  </section>
+  
+    
   
 
 
-  <article class="post white-box shadow floatable blur" id="comments">
-    <span hidden>
-      <meta itemprop="discussionUrl" content="/2021/7/ac22932d46a9/index.html#comments">
-    </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
-    
-
-    <div id="layoutHelper-comments"></div>
-
-  </article>
-
-
-
-    
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2895,48 +2635,175 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
+<section class="widget blogger desktop mobile pjax">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://pic.downk.cc/item/5fcd845e394ac52378e7dd73.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Ryao</h2>
+        
+        
+          <p>虚無を見出した後で、俺は美を見出した</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fa-solid fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:liaocfe@gmail.com"
+              class="social fa-solid fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/ryaochengfeng/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget category desktop pjax">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>Category</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/CS/" href="/categories/CS/"
+            active-action="action-categoriesCS"
+            ><div class='name'>CS</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Lab/" href="/categories/Lab/"
+            active-action="action-categoriesLab"
+            ><div class='name'>Lab</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/kubernetes/" href="/categories/kubernetes/"
+            active-action="action-categorieskubernetes"
+            ><div class='name'>kubernetes</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/linux/" href="/categories/linux/"
+            active-action="action-categorieslinux"
+            ><div class='name'>linux</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%8A%A8%E7%94%BB/" href="/categories/%E5%8A%A8%E7%94%BB/"
+            active-action="action-categoriesE58AA8E794BB"
+            ><div class='name'>动画</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8A%98%E8%85%BE/" href="/categories/%E6%8A%98%E8%85%BE/"
+            active-action="action-categoriesE68A98E885BE"
+            ><div class='name'>折腾</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%8A%A5%E9%94%99/" href="/categories/%E6%8A%A5%E9%94%99/"
+            active-action="action-categoriesE68AA5E99499"
+            ><div class='name'>报错</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
+            active-action="action-categoriesE695B0E68DAEE7BB93E69E84"
+            ><div class='name'>数据结构</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/"
+            active-action="action-categoriesE69CAAE58886E7B1BB"
+            ><div class='name'>未分类</div><div class='badge'>(15)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%AC%94%E8%AE%B0/" href="/categories/%E7%AC%94%E8%AE%B0/"
+            active-action="action-categoriesE7AC94E8AEB0"
+            ><div class='name'>笔记</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%A2%98%E8%A7%A3/" href="/categories/%E9%A2%98%E8%A7%A3/"
+            active-action="action-categoriesE9A298E8A7A3"
+            ><div class='name'>题解</div><div class='badge'>(3)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+    
+  
+
+  
+    
+    
+      
+  
+  <section class="widget tagcloud desktop mobile pjax">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>Tagcloud</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/CS144/" style="font-size: 20.67px; color: #6c6c6c">CS144</a> <a href="/tags/DFA/" style="font-size: 14px; color: #999">DFA</a> <a href="/tags/MIT6-824/" style="font-size: 14px; color: #999">MIT6.824</a> <a href="/tags/frp/" style="font-size: 14px; color: #999">frp</a> <a href="/tags/go/" style="font-size: 14px; color: #999">go</a> <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a> <a href="/tags/http/" style="font-size: 20.67px; color: #6c6c6c">http</a> <a href="/tags/jetbrains/" style="font-size: 14px; color: #999">jetbrains</a> <a href="/tags/kubernetes/" style="font-size: 17.33px; color: #828282">kubernetes</a> <a href="/tags/linux/" style="font-size: 14px; color: #999">linux</a> <a href="/tags/nginx/" style="font-size: 17.33px; color: #828282">nginx</a> <a href="/tags/private/" style="font-size: 14px; color: #999">private</a> <a href="/tags/qqbot/" style="font-size: 14px; color: #999">qqbot</a> <a href="/tags/ubuntu/" style="font-size: 20.67px; color: #6c6c6c">ubuntu</a> <a href="/tags/wine/" style="font-size: 14px; color: #999">wine</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 14px; color: #999">二分查找</a> <a href="/tags/%E5%8A%A8%E7%94%BB/" style="font-size: 24px; color: #555">动画</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 14px; color: #999">排序</a> <a href="/tags/%E6%95%8F%E6%84%9F%E8%AF%8D%E8%BF%87%E6%BB%A4/" style="font-size: 14px; color: #999">敏感词过滤</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 17.33px; color: #828282">教程</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 14px; color: #999">杂谈</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20.67px; color: #6c6c6c">算法</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/" style="font-size: 14px; color: #999">线性表</a> <a href="/tags/%E8%AF%84%E8%AE%BA/" style="font-size: 17.33px; color: #828282">评论</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 14px; color: #999">读书笔记</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 14px; color: #999">贪心</a>
+    </div>
+  </section>
+
+
     
   
 
 
 <div class="widget-sticky pjax">
 
-  
-  
-
-
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
-    
-  <header>
-    
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>TOC</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="toc-text">实现方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86%E5%8C%B9%E9%85%8D"><span class="toc-text">遍历匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-DFA-%E7%AE%97%E6%B3%95"><span class="toc-text">利用 DFA 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DFA%EF%BC%9ADeterministic-Finite-Automata-%EF%BC%88%E7%A1%AE%E5%AE%9A%E5%9E%8B%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%EF%BC%89"><span class="toc-text">DFA：Deterministic Finite Automata （确定型有穷自动机）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D"><span class="toc-text">为什么不使用正则匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NFA%EF%BC%9ANondeterministic-Final-Auomaton%EF%BC%88%E9%9D%9E%E7%A1%AE%E5%AE%9A%E5%9E%8B%E6%9C%89%E7%A9%B7%E8%87%AA%E5%8A%A8%E6%9C%BA%EF%BC%89"><span class="toc-text">NFA：Nondeterministic Final Auomaton（非确定型有穷自动机）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NFA-vs-DFA"><span class="toc-text">NFA vs DFA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
-    </div>
-  </section>
-
-  
-
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
-
-  <div class="pjax">
-    <!-- pjax占位 -->
-  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2964,14 +2831,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
-
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=true;
+  pdata.ispage=false;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2980,14 +2846,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -3464,7 +3330,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/categories/未分类/","name":"未分类"}},{"@type":"ListItem","position":3,"item":{"@id":"https://blog.ryaoknw.site/2021/7/ac22932d46a9/","name":"敏感词过滤实现"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"敏感词过滤实现","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.ryaoknw.site/2021/7/ac22932d46a9/"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://blog.ryaoknw.site/2021/7/ac22932d46a9/","wordCount":0,"datePublished":"2021-07-21T11:23:13.000Z","dateModified":"2022-09-21T12:55:02.882Z","articleSection":"未分类","keywords":"敏感词过滤,DFA","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://blog.ryaoknw.site/archives/2023/","name":"2023年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://blog.ryaoknw.site/archives/2023/5/","name":"5月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

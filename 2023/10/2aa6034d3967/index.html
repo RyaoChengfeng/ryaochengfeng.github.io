@@ -47,7 +47,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-10-26T15:23:05.000Z">
-<meta property="article:modified_time" content="2023-10-26T15:28:10.008Z">
+<meta property="article:modified_time" content="2023-10-30T05:52:26.422Z">
 <meta property="article:author" content="Ryao">
 <meta property="article:tag" content="分布式">
 <meta name="twitter:card" content="summary">
@@ -1749,7 +1749,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1698644790609),
+    lastupdate: new Date(1698645172584),
     sidebar: {
       for_page: ["blogger","category","tagcloud"],
       for_post: ["toc"],
@@ -2654,9 +2654,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>使用共识算法，就是为了实现复制状态机，各节点间通过共识算法来保证命令序列的一致，从而保持状态的一致。</p>
 <h2 id="状态简化"><a href="#状态简化" class="headerlink" title="状态简化"></a>状态简化</h2><p>状态：leader,follower,candidate</p>
 <p>相比起paxos,raft只需要关系状态的转换，而不是考虑状态的共存和相互影响</p>
-<p><img src="/./pictures/image-20231018151718685.png" class="lazyload" data-srcset="/./pictures/image-20231018151718685.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018151718685"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018151718685.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018151718685.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018151718685"></p>
 <p>时间被分割为任意长度的任期（term），任期用连续的整数标记</p>
-<p><img src="/./pictures/image-20231018151842771.png" class="lazyload" data-srcset="/./pictures/image-20231018151842771.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018151842771"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018151842771.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018151842771.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018151842771"></p>
 <h2 id="领导者选举"><a href="#领导者选举" class="headerlink" title="领导者选举"></a>领导者选举</h2><ul>
 <li><p>心跳机制</p>
 <p>如果存在leader,它会向所有follower周期性的发送心跳，如果follower在一段时间内没有收到心跳，它会认为系统中没有可用的leader，然后开始选举。</p>
@@ -2717,7 +2717,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ol>
 <p>日志号和任期号才能唯一确定一条日志。</p>
-<p><img src="/./pictures/image-20231018155529506.png" class="lazyload" data-srcset="/./pictures/image-20231018155529506.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018155529506"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018155529506.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018155529506.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018155529506"></p>
 <p>leader并行发送AppendEntries RPC给follower，follower复制该日志条目，当条目被半数以上的follower复制后，leader就可以在本地执行该指令并把结果给client</p>
 <p>本地指令指令，也就是leader应用日志和状态机，称作<strong>提交</strong>（图中可以提交的日志是7）</p>
 <p>为了保证所有节点的日志都是完整且顺序一致的：</p>
@@ -2733,7 +2733,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li><p>leader宕机：崩溃的leader可能存在已经复制到了部分follower但是未提交的日志，而新选举出来的leader并不存在这些日志。</p>
 <p>leader会强制follower复制它的日志来解决不一致的问题，这意味着follower中与leader冲突的日志会新leader的条目被覆盖，因为没有提交，所以不影响外部的一致性。</p>
-<p><img src="/./pictures/image-20231018163043684.png" class="lazyload" data-srcset="/./pictures/image-20231018163043684.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018163043684"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018163043684.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018163043684.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018163043684"></p>
 </li>
 </ol>
 <p>AppendEntries RPC:</p>
@@ -2744,7 +2744,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">term // 当前任期号，以便于候选人去更新自己的任期号</span><br><span class="line">success	// 如果跟随者所含有的条目和 prevLogIndex 以及 prevLogTerm 匹配上了，则为 true</span><br></pre></td></tr></table></figure>
 
 <p>对于follower宕机时的优化：</p>
-<p><img src="/./pictures/image-20231018162519179.png" class="lazyload" data-srcset="/./pictures/image-20231018162519179.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018162519179"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018162519179.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018162519179.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018162519179"></p>
 <h2 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h2><ul>
 <li><p>选举限制</p>
 <p>如果一个follower落后了leader的若干日志，它依旧可能当选leader,在当选后就不会补上缺失的日志部分，因此需要限制保证leader一定包含了之前各任期所有的被提交的日志条目</p>
@@ -2756,7 +2756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>提交：在AppendEntries中，follower可以通过leaderCommit确定自己应该提交到哪个日志</p>
 </li>
 </ul>
-<p><img src="/./pictures/image-20231018170626734.png" class="lazyload" data-srcset="/./pictures/image-20231018170626734.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018170626734"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018170626734.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018170626734.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018170626734"></p>
 <p>事实上，在leader提交后，并返回客户端success后，但follower还没提交时，也就是leaderCommit还没给大多数的follower，在这一个心跳内的时间内，leader挂了，这个时候就会出现不一致的情况。</p>
 <p>应用可以设置一个集群提交的概念，在集群中超过半数的节点提交后，才认为集群提交完成（复杂的场景在precolator事务模型）</p>
 <p>leader可以通过AppendEntries RPC中的success判断这个follower是否完成了提交</p>
@@ -2775,7 +2775,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </blockquote>
 </li>
 </ul>
-<h2 id="集群成员变化"><a href="#集群成员变化" class="headerlink" title="集群成员变化"></a>集群成员变化</h2><p><img src="/./pictures/image-20231018194820342.png" class="lazyload" data-srcset="/./pictures/image-20231018194820342.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018194820342"></p>
+<h2 id="集群成员变化"><a href="#集群成员变化" class="headerlink" title="集群成员变化"></a>集群成员变化</h2><p><img src="https://cdn.ryaoknw.site/picgo/image-20231018194820342.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018194820342.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018194820342"></p>
 <p>为了让配置修改机制能够安全，那么在转换的过程中不能够存在任何时间点使得两个领导人在同一个任期里同时被选举成功</p>
 <p>任何服务器直接从旧的配置直接转换到新的配置的方案都是不安全的。一次性原子地转换所有服务器是不可能的。</p>
 <p>为了让配置修改机制能够安全，那么在转换的过程中不能够存在任何时间点使得两个领导人在同一个任期里同时被选举成功。：<strong>脑裂问题</strong></p>
@@ -2786,21 +2786,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>假设leader在发起$C_{new}$时崩溃，已经复制了$C_{new}$的节点会按照$C_{new}$进行选举，而没有复制$C_{new}$的节点会按照$C_{old}$或者$C_{old,new}$进行选举，这依旧能保证选举得到的leader至少是复制了$C_{old,new}$的节点，如果是$C_{old,new}$的节点，由于$C_{old,new}$已经提交，它依旧会发起$C_{new}$，使得节点最终达到$C_{new}$的配置</p>
 <p>当缩减节点时，leader崩溃，由于复制了$C_{old,new}$没有复制$C_{new}$的节点必须要在两个配置中都达到大多数才能生效（选举和提交），因此选举得到的leader一定会是复制了$C_{new}$的节点。</p>
 <p>联合一致可以让集群在配置转换的过程中依然响应客户端的请求，但是需要在两种配置中都达到大多数才能生效。</p>
-<p><img src="/./pictures/image-20231018194842620.png" class="lazyload" data-srcset="/./pictures/image-20231018194842620.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018194842620"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018194842620.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018194842620.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018194842620"></p>
 <blockquote>
 <p>一旦一个服务器将新的配置日志条目增加到它的日志中，他就会用这个配置来做出未来所有的决定（<strong>服务器总是使用最新的配置，无论他是否已经被提交</strong>）。这意味着领导人要使用 C-old,new 的规则来决定日志条目 C-old,new 什么时候需要被提交。如果领导人崩溃了，被选出来的新领导人可能是使用 C-old 配置也可能是 C-old,new 配置，这取决于赢得选举的候选人是否已经接收到了 C-old,new 配置。在任何情况下， C-new 配置在这一时期都不会单方面的做出决定。</p>
 <p>一旦 C-old,new 被提交，那么无论是 C-old 还是 C-new，如果不经过另一个配置的允许都不能单独做出决定，并且<strong>领导人完全特性保证了只有拥有 C-old,new 日志条目的服务器才有可能被选举为领导人</strong>。这个时候，领导人创建一条关于 C-new 配置的日志条目并复制给集群就是安全的了。再者，每个服务器在见到新的配置的时候就会立即生效。当新的配置在 C-new 的规则下被提交，旧的配置就变得无关紧要，同时不使用新的配置的服务器就可以被关闭了。如图 11，C-old 和 C-new 没有任何机会同时做出单方面的决定；这保证了安全性。</p>
 </blockquote>
 <p>这种方案使得不会出现脑裂现象。</p>
-<p><img src="/./pictures/image-20231018201812966.png" class="lazyload" data-srcset="/./pictures/image-20231018201812966.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018201812966"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018201812966.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018201812966.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018201812966"></p>
 <p>对于第一点，让未完成同步日志的节点不具有投票权，也不参与大多数的计数即可。如何判断</p>
-<p><img src="/./pictures/image-20231018202413259.png" class="lazyload" data-srcset="/./pictures/image-20231018202413259.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018202413259"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018202413259.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018202413259.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018202413259"></p>
 <p>这种方法又称为<strong>多节点变更</strong>，实际上边界情况很多，实现起来非常复杂，现在多使用<strong>单节点变更</strong></p>
 <h2 id="日志压缩"><a href="#日志压缩" class="headerlink" title="日志压缩"></a>日志压缩</h2><p>快照是最简单的压缩方法。在快照系统中，整个系统的状态都以快照的形式写入到稳定的持久化存储中，然后到那个时间点之前的日志全部丢弃。</p>
 <p>增量压缩的方法，例如日志清理或者日志结构合并树，都是可行的。这些方法每次只对一小部分数据进行操作，这样就分散了压缩的负载压力。首先，他们先选择一个已经积累的大量已经被删除或者被覆盖对象的区域，然后重写那个区域还活跃的对象，之后释放那个区域。和简单操作整个数据集合的快照相比，需要增加复杂的机制来实现。状态机可以实现 LSM tree 使用和快照相同的接口，但是日志清除方法就需要修改 Raft 了。</p>
-<p><img src="/./pictures/image-20231018215019467.png" class="lazyload" data-srcset="/./pictures/image-20231018215019467.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018215019467"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018215019467.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018215019467.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018215019467"></p>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><strong>no-op</strong></p>
-<p><img src="/./pictures/v2-56ab97b584df30b7f8787307f82b5415_r.jpg" class="lazyload" data-srcset="/./pictures/v2-56ab97b584df30b7f8787307f82b5415_r.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/v2-56ab97b584df30b7f8787307f82b5415_r.jpg" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/v2-56ab97b584df30b7f8787307f82b5415_r.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
 <p><strong>在leader刚选举成功的时候，leader首先发送一个no-op log entry。从而保证之前term的log entry提交成功</strong>。并且通过no-op，新当选的leader可快速确认自己的<code>CommitIndex</code>，来保证系统迅速进入可读状态</p>
 <ol>
 <li><p><code>(a)</code>:S1是Term2的leader，选为主后，将no-op LogEntry复制到S1和S2之后crash。</p>
@@ -2840,25 +2840,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 </ul>
 <p><strong>单一节点变更</strong>（single-server change）</p>
-<p><img src="/./pictures/image-20231018212550290.png" class="lazyload" data-srcset="/./pictures/image-20231018212550290.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018212550290"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018212550290.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018212550290.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018212550290"></p>
 <p>这种方法保证了一次只能选出新配置或者旧配置的leader,而不会有两个leader,避免了脑裂问题</p>
 <p>实际上这样也会遇到问题，正如上面的安全性问题一样，在边界情况下导致一个节点的已提交的变更日志被覆盖，但使用no-op就可以解决：<strong>新 leader 必须提交一条自己的 term 的 no-op 日志, 才允许接着变更日志</strong>。</p>
 <p><strong>新节点日志同步</strong></p>
-<p><img src="/./pictures/image-20231018214129954.png" class="lazyload" data-srcset="/./pictures/image-20231018214129954.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018214129954"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018214129954.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018214129954.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018214129954"></p>
 <p>比如，在第一轮同步数据时，leader的最大数据索引为10，那么第一轮就同步10之前的数据。而在同步第一轮数据的同时，leader还能继续接收新的数据，假设当同步第一轮完毕时，最大数据索引变成了20，那么第二轮将继续同步从10到20的数据。以此类推。</p>
 <p>这个同步的轮次并不能一直持续下去，一般会有一个限制的轮次数量，比如最多同步10轮。</p>
 <p>之后再进行成员变更</p>
 <p><strong>一致性读</strong></p>
-<p><img src="/./pictures/image-20231018215405421.png" class="lazyload" data-srcset="/./pictures/image-20231018215405421.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018215405421"></p>
-<p><img src="/./pictures/image-20231018215418991.png" class="lazyload" data-srcset="/./pictures/image-20231018215418991.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018215418991"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018215405421.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018215405421.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018215405421"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018215418991.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018215418991.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018215418991"></p>
 <p>对于最后一点，由于安全性，leader无法提交之前任期的日志，只能提交自己任期内产生的日志，所以需要加入no-op来提交自己任期的日志。安全性只保证了选举出来的leader具有已提交的所有日志，但是leader可能具有未提交的日志，如果这个日志不属于自己的任期，leader不能去提交它，leader也不能确定哪些日志到底被提交了（比如3），当发送no-op并成功提交no-op后，此时3一定被提交了，leader便可以返回结果给client</p>
-<p><img src="/./pictures/image-20231018220117409.png" class="lazyload" data-srcset="/./pictures/image-20231018220117409.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018220117409"></p>
-<p><img src="/./pictures/image-20231018220948816.png" class="lazyload" data-srcset="/./pictures/image-20231018220948816.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018220948816"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018220117409.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018220117409.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018220117409"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018220948816.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018220948816.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018220948816"></p>
 <p>事实上，分布式系统中，由于时钟偏移，full gc等原因，时钟是不可靠的，所以追求强一致性不建议省略一个rpc的时间。</p>
 <p>对于允许读follower的应用，可以通过readIndex来让follower也能保证线性一致性。</p>
 <p><strong>性能</strong></p>
-<p><img src="/./pictures/image-20231018221522701.png" class="lazyload" data-srcset="/./pictures/image-20231018221522701.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018221522701"></p>
-<p><img src="/./pictures/image-20231018221716909.png" class="lazyload" data-srcset="/./pictures/image-20231018221716909.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018221716909"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018221522701.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018221522701.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018221522701"></p>
+<p><img src="https://cdn.ryaoknw.site/picgo/image-20231018221716909.png" class="lazyload" data-srcset="https://cdn.ryaoknw.site/picgo/image-20231018221716909.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20231018221716909"></p>
 
     </div>
     
@@ -2905,10 +2905,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-10-26T23:28:10+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-10-30T13:52:26+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年10月26日</p>
+    <p>更新于：2023年10月30日</p>
   </a>
 </div>
 
@@ -3664,7 +3664,7 @@ EP10在大家都说出自己的希望时，爱丽丝也...
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/categories/未分类/","name":"未分类"}},{"@type":"ListItem","position":3,"item":{"@id":"https://blog.ryaoknw.site/2023/10/2aa6034d3967/","name":"Raft论文学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Raft论文学习","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.ryaoknw.site/2023/10/2aa6034d3967/"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://blog.ryaoknw.site/2023/10/2aa6034d3967/","wordCount":0,"datePublished":"2023-10-26T15:23:05.000Z","dateModified":"2023-10-26T15:28:10.008Z","articleSection":"未分类","keywords":"分布式","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","sameAs":["https://github.com/volantis-x"],"description":"|个人博客|"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://blog.ryaoknw.site/","name":"Ryao's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://blog.ryaoknw.site/categories/未分类/","name":"未分类"}},{"@type":"ListItem","position":3,"item":{"@id":"https://blog.ryaoknw.site/2023/10/2aa6034d3967/","name":"Raft论文学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","keywords":"","description":"|个人博客|","author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/","description":"|个人博客|"},"publisher":{"@type":"Organization","name":"Ryao's Blog","url":"https://blog.ryaoknw.site/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://blog.ryaoknw.site?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Raft论文学习","description":"|个人博客|","inLanguage":["zh-CN","en","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.ryaoknw.site/2023/10/2aa6034d3967/"},"author":{"@type":"Person","name":"Ryao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://blog.ryaoknw.site/"},"publisher":{"@type":"Organization","name":"Ryao's Blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://blog.ryaoknw.site/2023/10/2aa6034d3967/","wordCount":0,"datePublished":"2023-10-26T15:23:05.000Z","dateModified":"2023-10-30T05:52:26.422Z","articleSection":"未分类","keywords":"分布式","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
